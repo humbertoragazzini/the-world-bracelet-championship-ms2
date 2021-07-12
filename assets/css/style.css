@@ -1,0 +1,18 @@
+body {
+    max-width: 1920px;
+    height: auto;
+    margin: auto;
+}
+
+#main-background{
+    width: auto;
+    max-height: 1400px;
+    margin: auto -150px auto -150px;
+}
+
+svg{
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
