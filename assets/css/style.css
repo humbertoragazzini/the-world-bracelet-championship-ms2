@@ -1,12 +1,10 @@
 body {
-    max-width: 1920px;
-    height: auto;
     margin: auto;
 }
 
 #main-background{
     width: auto;
-    max-height: 1400px;
+    max-height: 1080px;
     margin: auto -150px auto -150px;
 }
 
@@ -19,13 +17,23 @@ svg{
 }
 
 #animated-background{
-    position: absolute;
+    min-width: 360px;
+    max-width: 1920px;
+    overflow: hidden;
 }
 
 #animated-background .row div{
     z-index: 3;
-    background-color: red;
-    border: solid 1px white;
-    width: 16vw;
+    width: 16.66vw;
+    max-width: 320px;
     height: 100vh;
+}
+
+#animated-background .row .jewel{
+    display: inline-block;
+    background-color: red;
+    border-radius: 50%;
+    width: 3vw;
+    height: 3vw;
+    background-color: antiquewhite;
 }
