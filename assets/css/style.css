@@ -20,6 +20,10 @@ svg{
     min-width: 360px;
     max-width: 1920px;
     overflow: hidden;
+    background-image: url('../image/backgrounds/background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0);
 }
 
 #animated-background .row div{
@@ -31,7 +35,9 @@ svg{
 
 #animated-background .row .jewel{
     display: inline-block;
-    background-color: red;
+    background-image: url('../image/backgrounds/jewels/joyamoviendose.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
     border-radius: 50%;
     width: 3vw;
     height: 3vw;
