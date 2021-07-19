@@ -5,6 +5,8 @@
 }
 
 #animated-background{
+  background-image: url('../image/backgrounds/background.png');
+  background-size: cover;
   background-color: black;
   overflow: hidden;
   height: 100vh;
@@ -67,12 +69,18 @@ svg{
 }
 
 .moving-jewels{
-  display: inline-block;
+  display: block;
   z-index: 1;
   width: 3vw;
-  height: 3vw;
+  height: 0vw;
   position: relative;
   background-size: cover;
-  background-image: url('../image/backgrounds/jewels/diamante5.gif');
+  background-image: url('../image/backgrounds/jewels/joyamoviendose.gif');
 }
+
+img{
+  width: 40px;
+  height: 40px;
+}
+
 
