@@ -9,7 +9,6 @@ function animationJewels(){
       speed = Math.random()*(50-10)+10;
       jewels[i].style.left = String( Math.round((document.getElementById("animated-background").getBoundingClientRect().right-document.getElementById("animated-background").getBoundingClientRect().left)) ) + "px";
       movements[i] = setInterval(moving, 100, jewels[i], speed);
-      console.log(movements[i])
     }
 
 
@@ -27,9 +26,3 @@ function moving(jewel,speed){
   }
 
 }
-
-function jewelsCreation(){
-  body = document.getElementById('thebody');
-  
-}
-

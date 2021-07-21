@@ -5,6 +5,11 @@
 }
 
 
+/*---- INDEX ----*/
+
+body{
+}
+
 #animated-background{
   background-image: url('../image/backgrounds/background.png');
   background-size: cover;
@@ -13,11 +18,21 @@
   height: 100vh;
 }
 .part{
-  height: 33.33%;
+  height: 5%;
 }
 
 #image-background{
  position: relative;
+ z-index: 2;
+ height: 90%;
+ background-image: url('../image/backgrounds/background-new.png');
+ background-position: center;
+ background-repeat: no-repeat;
+ background-size: contain;
+}
+
+#menu-logo{
+  height: 90%
 }
 
 svg{
@@ -29,19 +44,21 @@ svg{
   width: 100%;
   height: 260%;
   left: 0%;
-  top: -94%;
+  top: -89%;
 }
 
 #start-button{
   position: relative;
   font-family: Ethnocentric;
-  font-size: 62px;
-  margin: auto 40%;
-  margin: auto 39.5%;
-  top: 106px;
+  font-size: 70px;
+  top: 11vh;
   z-index: 6;
-  color: black;
-  text-shadow: 1px 1px 20px white,-1px -1px 20px white,0px 1px 20px white,0px -1px 20px white;
+  color: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(223,176,0,0.5298494397759104) 100%);
+  animation-duration: 2s;
+  animation-name: glowing;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  text-decoration: none;
 }
 
 #left-bottom-light{
@@ -87,5 +104,44 @@ img{
   width: 57px;
   height: 57px;
 }
+/*--RESPOSIVE--*/
 
+@media only screen and (max-width: 1400px) {
+  #start-button{
+    font-size: 60px;
+  }
+}
 
+@media only screen and (max-width: 1200px) {
+  #start-button{
+    font-size: 50px;
+  }
+}
+@media only screen and (max-width: 992px) {
+  #start-button{
+    font-size: 37px;
+  } 
+} 
+@media only screen and (max-width: 768px) {
+  #start-button{
+    font-size: 27px;
+  }
+}
+@media only screen and (max-width: 575px) {
+  #start-button{
+    font-size: 5vw;
+  } 
+}
+
+/*--ANIMATION--*/
+
+@keyframes glowing {
+  from{
+    text-shadow: 1px 1px 20px white,-1px -1px 20px white,0px 1px 20px white,0px -1px 20px white;
+  }
+  to{
+    text-shadow: 1px 1px 0px white,-1px -1px 0px white,0px 1px 0px white,0px -1px 0px white;
+  }
+}
+
+/*---- INDEX ----*/
