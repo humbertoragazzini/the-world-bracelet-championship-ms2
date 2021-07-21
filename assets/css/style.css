@@ -4,6 +4,7 @@
   src: url(../fonts/Ethnocentric-regular.woff);
 }
 
+
 #animated-background{
   background-image: url('../image/backgrounds/background.png');
   background-size: cover;
@@ -34,9 +35,13 @@ svg{
 #start-button{
   position: relative;
   font-family: Ethnocentric;
-  left: 39%;
-  top: 78%;
-  font-size: 23px;
+  font-size: 62px;
+  margin: auto 40%;
+  margin: auto 39.5%;
+  top: 106px;
+  z-index: 6;
+  color: black;
+  text-shadow: 1px 1px 20px white,-1px -1px 20px white,0px 1px 20px white,0px -1px 20px white;
 }
 
 #left-bottom-light{
