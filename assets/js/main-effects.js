@@ -34,7 +34,7 @@ function animationJewels(){
 
     for(var i=0;i<jewels.length;i++){
       speed = Math.random()*(50-10)+10;
-      jewels[i].style.left = String((Math.round(Math.random() * (document.getElementById("animated-background").getBoundingClientRect().right - document.getElementById("animated-background").getBoundingClientRect().left) + document.getElementById("animated-background").getBoundingClientRect().left)-47)) + "px";
+      jewels[i].style.left = String( Math.round((document.getElementById("animated-background").getBoundingClientRect().right-document.getElementById("animated-background").getBoundingClientRect().left)) ) + "px";
       movements[i] = setInterval(moving, 100, jewels[i], speed);
       console.log(movements[i])
     }
@@ -48,7 +48,7 @@ function moving(jewel,speed){
     
   }else{
     jewel.style.top = "-50px";
-    jewel.style.left = String((Math.round(Math.random() * (document.getElementById("animated-background").getBoundingClientRect().right - document.getElementById("animated-background").getBoundingClientRect().left) + document.getElementById("animated-background").getBoundingClientRect().left)-47)) + "px";
+    jewel.style.left = String((Math.round(Math.random() * (document.getElementById("animated-background").getBoundingClientRect().right - document.getElementById("animated-background").getBoundingClientRect().left)))) + "px";
   }
 
 }
