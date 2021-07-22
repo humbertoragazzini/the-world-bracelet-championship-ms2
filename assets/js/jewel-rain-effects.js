@@ -26,3 +26,4 @@ function moving(jewel,speed){
   }
 
 }
+
