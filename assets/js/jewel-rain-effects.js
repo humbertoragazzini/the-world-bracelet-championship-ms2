@@ -1,4 +1,5 @@
-function animationJewels(){
+
+document.addEventListener("DOMContentLoaded", function animationJewels(){
 
   var movements = [];
   var speed;
@@ -10,7 +11,7 @@ function animationJewels(){
       jewels[i].style.left = String( Math.round((document.getElementById("animated-background").getBoundingClientRect().right-document.getElementById("animated-background").getBoundingClientRect().left)) ) + "px";
       movements[i] = setInterval(moving, 100, jewels[i], speed);
     }
-
+    
 
 function moving(jewel,speed){
 
@@ -19,6 +20,7 @@ function moving(jewel,speed){
       jewel.style.top = String(Number(jewel.style.top.replace( /px/, ''))+speed)+"px";
     
     }else{
+      console.log("sigue")
       jewel.style.top = "-50px";
       jewel.style.left = String((Math.round(Math.random() * (document.getElementById("animated-background").getBoundingClientRect().right - document.getElementById("animated-background").getBoundingClientRect().left)))) + "px";
     }
@@ -27,3 +29,4 @@ function moving(jewel,speed){
 
 }
 
+)
