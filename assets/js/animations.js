@@ -2,15 +2,16 @@
 
 class Animation{
 
-  constructor(time,animation){
+  constructor(time,animation,parameter1,parameter2){
     this.timer = time;
     this.animation = animation;
     this.intervalidentifier;
+    this.parameter1 = parameter1;
+    this.parameter2 = parameter2;
   }
 
   animationOn(){
-    console.log(String(this.animation) +" el tiempo es:"+ this.timer);
-    setInterval(this.animation,this.timer);
+    this.intervalidentifier = setInterval(this.animation,this.timer,this.parameter1,this.parameter2);
   }
 
   animationOff(){
@@ -20,19 +21,18 @@ class Animation{
 }
 
 //jewels rain animation code
-
+var movements = [];
 document.addEventListener("DOMContentLoaded", function animationJewels(){
 
-  var movements = [];
+  
   var speed;
 
   var jewels = document.getElementsByClassName("moving-jewels");
 
     for(var i=0;i<jewels.length;i++){
       speed = Math.random()*(50-10)+10;
-      let hola = "hola";
       jewels[i].style.left = String( Math.round((document.getElementById("animated-background").getBoundingClientRect().right-document.getElementById("animated-background").getBoundingClientRect().left)) ) + "px";
-      movements[i] = new Animation(100,moving(jewels[i],15));
+      movements[i] = new Animation(100,moving,jewels[i],speed);
       movements[i].animationOn();
     }
 
@@ -69,6 +69,10 @@ function cleanIndex(){
   var elementstoclean = document.getElementsByClassName('main-menu-element');
   let fadeupintervals = [];
 
+      for(let i=0;i<movements.length;i++){
+        console.log(movements[i])
+        movements[i].animationOff();
+      }
       for(let i=0;i<elementstoclean.length;i++)
           {
               elementstoclean[i].style.opacity = 1;
