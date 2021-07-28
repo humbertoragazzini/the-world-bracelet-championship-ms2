@@ -1,5 +1,6 @@
 //animations classes
 
+//this class add the posibility to start and stop an animation with his two methods
 class Animation{
 
   constructor(time,animation,parameter1,parameter2){
@@ -29,6 +30,7 @@ document.addEventListener("DOMContentLoaded", function animationJewels(){
 
   var jewels = document.getElementsByClassName("moving-jewels");
 
+    //in this part of the function we create random left positions for every single jewels
     for(var i=0;i<jewels.length;i++){
       speed = Math.random()*(50-10)+10;
       jewels[i].style.left = String( Math.round((document.getElementById("animated-background").getBoundingClientRect().right-document.getElementById("animated-background").getBoundingClientRect().left)) ) + "px";
@@ -39,12 +41,13 @@ document.addEventListener("DOMContentLoaded", function animationJewels(){
 
 function moving(jewel,speed){
 
+  //here we make them go from the top of our space to the bottom
+
   if((jewel.style.top.replace( /px/, '')) < document.getElementById("thebody").getBoundingClientRect().height)
     { 
       jewel.style.top = String(Number(jewel.style.top.replace( /px/, ''))+speed)+"px";
     
     }else{
-      console.log("sigue")
       jewel.style.top = "-50px";
       jewel.style.left = String((Math.round(Math.random() * (document.getElementById("animated-background").getBoundingClientRect().right - document.getElementById("animated-background").getBoundingClientRect().left)))) + "px";
     }
@@ -67,40 +70,30 @@ function startMenu(){
 function cleanIndex(){
 
   var elementstoclean = document.getElementsByClassName('main-menu-element');
-  let fadeupintervals = [];
+  var fadeupanimationobjects = [];
 
-      for(let i=0;i<movements.length;i++){
-        console.log(movements[i])
-        movements[i].animationOff();
-      }
       for(let i=0;i<elementstoclean.length;i++)
           {
               elementstoclean[i].style.opacity = 1;
-              fadeupintervals[i] = setInterval(fadeUp,100,elementstoclean[i]);
+              fadeupanimationobjects[i] = new Animation(100,fadeUp,elementstoclean[i],i);
+              fadeupanimationobjects[i].animationOn();
           }
-      
-  function fadeUp(element,interval)
+  
+  //fade up animation to make them blurry until disappear
+  function fadeUp(element,interval,indexposition)
       {
-          console.log("sigue haciendo looping")
+        
           if(removePxFromPosition(element.style.filter)<150){
               element.style.filter = `blur(${String((removePxFromPosition(element.style.filter)+5))}px)`;
               element.style.opacity = element.style.opacity - 0.034;
           }else{
-              element.remove();
-              if(elementstoclean.length==0)
-              {
-                  clearIntervals();
-              }               
+                  element.remove();      
+                  for(let i=0;i<fadeupanimationobjects.length;i++)
+                    {
+                      fadeupanimationobjects[i].animationOff();
+                    }
           }            
       }
-  
-  function clearIntervals()
-  {
-      for(let i=0;i<fadeupintervals.length;i++)
-          {
-              clearInterval(fadeupintervals[i]);
-          } 
-  }
 }
 
 
