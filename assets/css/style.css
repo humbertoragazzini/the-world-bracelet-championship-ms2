@@ -112,3 +112,48 @@ img{
 
 
 /*-------------*/
+
+.lvl-background{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
+  border-radius: 10px;
+  text-align: center;
+  z-index: 2;
+  top: 3%;
+}
+
+.score-record-background.lvl-background{
+  top: 10%;
+}
+
+#tittle{
+  height: 9%;
+  font-family: Ethnocentric;
+  font-size: 4vw;
+  color: white;
+}
+
+#panel-score-record{
+  height: 14%;
+  font-family: Ethnocentric;
+  font-size: 4vw;
+  color: white;
+}
+
+#game-in-progres{
+  height: 74%;
+  font-family: Ethnocentric;
+  font-size: 4vw;
+  color: white;
+}
+
+.points{
+  background-color: rgba(0,0,0,0.5);
+  width: 13%;
+  height: 39%;
+  float: left;
+  margin-left: 3%;
+  border-radius: 10px;
+}
