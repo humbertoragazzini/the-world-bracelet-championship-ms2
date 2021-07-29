@@ -3,16 +3,17 @@
 //this class add the posibility to start and stop an animation with his two methods
 class Animation{
 
-  constructor(time,animation,parameter1,parameter2){
+  constructor(time,animation,parameter1,parameter2,parameter3){
     this.timer = time;
     this.animation = animation;
     this.intervalidentifier;
     this.parameter1 = parameter1;
     this.parameter2 = parameter2;
+    this.parameter3 = parameter3;
   }
 
   animationOn(){
-    this.intervalidentifier = setInterval(this.animation,this.timer,this.parameter1,this.parameter2);
+    this.intervalidentifier = setInterval(this.animation,this.timer,this.parameter1,this.parameter2,this.parameter3);
   }
 
   animationOff(){
@@ -20,6 +21,7 @@ class Animation{
   }
 
 }
+//--------------------------
 
 //jewels rain animation code
 var movements = [];
@@ -69,8 +71,8 @@ function startMenu(){
 
 function cleanIndex(){
 
-  var elementstoclean = document.getElementsByClassName('main-menu-element');
-  var fadeupanimationobjects = [];
+  let elementstoclean = document.getElementsByClassName('main-menu-element');
+  let fadeupanimationobjects = [];
 
       for(let i=0;i<elementstoclean.length;i++)
           {
@@ -94,6 +96,44 @@ function cleanIndex(){
                     }
           }            
       }
+}
+//--------------------------
+
+//numbers counters, animation for make the numbers change in the points and score squares
+
+
+//function test(){
+
+function probamos(data,type){
+
+let numberchain = data;
+let animationsnumbers = [];
+let elementnumbers = document.getElementsByClassName(type);
+for(let i=0; i<numberchain.length;i++){
+  if(numberchain[i] != 0)
+    {
+      animationsnumbers[i] = new Animation(25,movingNumbers,elementnumbers[i],i,Number(numberchain[i]));
+      animationsnumbers[i].animationOn()
+    }
+  }
+
+
+
+function movingNumbers(number,inter,numberToMatch){
+  console.log("llego")
+  if((number.style.top.replace( /px/, '')) < document.getElementById("score").getBoundingClientRect().height)
+  { 
+    number.style.top = String(Number(number.style.top.replace( /px/, ''))+10)+"px";
+    if(number.style.top == "0px" && number.innerHTML == numberToMatch)
+        {
+          number.style.top = "0px";
+          animationsnumbers[inter].animationOff();
+        }   
+    }else{
+      number.style.top = String(-10)+"px";
+      number.innerHTML = String(Number(number.innerHTML)+1);
+    }
+  }
 }
 
 
