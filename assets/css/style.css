@@ -227,10 +227,12 @@ img{
 #score{
   height: 100%;
 }
+
 .numbers-points{
   position: relative;
   top: 0px;
 }
+
 .numbers-record{
   position: relative;
   top: 0px;

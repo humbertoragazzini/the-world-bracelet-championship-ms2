@@ -112,26 +112,33 @@ let elementnumbers = document.getElementsByClassName(type);
 for(let i=0; i<numberchain.length;i++){
   if(numberchain[i] != 0)
     {
-      animationsnumbers[i] = new Animation(25,movingNumbers,elementnumbers[i],i,Number(numberchain[i]));
+      animationsnumbers[i] = new Animation(25,movingNumbers,elementnumbers[i],i,numberchain[i]);
       animationsnumbers[i].animationOn()
-    }
+    }else{if(numberchain[i] != elementnumbers[i].innerText)
+    {
+    animationsnumbers[i] = new Animation(25,movingNumbers,elementnumbers[i],i,numberchain[i]);
+    animationsnumbers[i].animationOn()
+    }}
   }
 
 
 
 function movingNumbers(number,inter,numberToMatch){
-  console.log("llego")
   if((number.style.top.replace( /px/, '')) < document.getElementById("score").getBoundingClientRect().height)
   { 
     number.style.top = String(Number(number.style.top.replace( /px/, ''))+10)+"px";
-    if(number.style.top == "0px" && number.innerHTML == numberToMatch)
+    if(number.style.top == "0px" && number.innerText == numberToMatch)
         {
           number.style.top = "0px";
           animationsnumbers[inter].animationOff();
         }   
     }else{
       number.style.top = String(-10)+"px";
-      number.innerHTML = String(Number(number.innerHTML)+1);
+      if(number.innerHTML<10){
+        number.innerHTML = String(Number(number.innerHTML)+1);
+      }else{
+        number.innerHTML = String(0);
+      }
     }
   }
 }
