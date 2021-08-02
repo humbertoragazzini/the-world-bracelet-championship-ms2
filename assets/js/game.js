@@ -97,20 +97,35 @@ function popupgamestart(){
 
     thejewelposition.innerHTML = '<p>In this place will be every single jewel to use, remember the positions, shape and colors, it will be the differece betwen be a champion or just another bracelet maker</p>';
     thebraceletposition.innerHTML = '<p>And in this other place you will have the bracelet ready to be filled, again be careful, you have to fill it with the jewels in the correct positions, colors and shapes, inside of the holes where the jewels have to be fitted you will see a number, this number correspond to the actual position, wich is randomly changed</p>';
-    setTimeout(theGameStart,4000,thejewelposition,thebraceletposition);
+    setTimeout(theGameStartChallenge,4000,thejewelposition,thebraceletposition);
+    setTimeout(theGameStartFillersButtons,4000,thebraceletposition,thebraceletposition);
 }
 
-function theGameStart(jewels,bracelet){
-    jewels.innerHTML = `<div class="row align-items-center" style="
-    height: 100%;
-">
-    <div class="col-2"><p>First</p><img src="assets/image/backgrounds/jewels/jewel-square.gif"> </div>
-    <div class="col-2"><p>Second</p><img src="assets/image/backgrounds/jewels/jewel-square.gif"> </div>
-    <div class="col-2"><p>Third</p><img src="assets/image/backgrounds/jewels/jewel-square.gif"> </div>
-    <div class="col-2"><p>Fourth</p><img src="assets/image/backgrounds/jewels/jewel-square.gif"> </div>
-    <div class="col-2"><p>Fiveht</p><img src="assets/image/backgrounds/jewels/jewel-square.gif"> </div>
-    <div class="col-2"><p>Sixht</p><img src="assets/image/backgrounds/jewels/jewel-square.gif"> </div>
+function theGameStartChallenge(jewels,bracelet){
+    jewels.innerHTML = `
+    <div class="row align-items-center" style="height: 100%;">
+    <div class="col-2"><p>1</p><img src="assets/image/backgrounds/jewels/jewel-diamond.gif"> </div>
+    <div class="col-2"><p>2</p><img src="assets/image/backgrounds/jewels/jewel-diamond.gif"> </div>
+    <div class="col-2"><p>3</p><img src="assets/image/backgrounds/jewels/jewel-diamond.gif"> </div>
+    <div class="col-2"><p>4</p><img src="assets/image/backgrounds/jewels/jewel-diamond.gif"> </div>
+    <div class="col-2"><p>5</p><img src="assets/image/backgrounds/jewels/jewel-diamond.gif"> </div>
+    <div class="col-2"><p>6</p><img src="assets/image/backgrounds/jewels/jewel-diamond.gif"> </div>
 </div>`;
+}
+
+function theGameStartFillersButtons(jewels,bracelet){
+    jewels.innerHTML = `
+    
+<div class="row" style="height: 75%;"></div>
+<div id="picestouse">
+<div class="row align-items-center" style="height: 100%;">
+<div class="col-2"><button type="button" class="btn"><img src="assets/image/backgrounds/jewels/jewel-diamond.gif"></button></div>
+<div class="col-2"><button type="button" class="btn"><img src="assets/image/backgrounds/jewels/jewel-diamond.gif"></button></div>
+<div class="col-2"><button type="button" class="btn"><img src="assets/image/backgrounds/jewels/jewel-diamond.gif"></button></div>
+<div class="col-2"><button type="button" class="btn"><img src="assets/image/backgrounds/jewels/jewel-diamond.gif"></button></div>
+<div class="col-2"><button type="button" class="btn"><img src="assets/image/backgrounds/jewels/jewel-diamond.gif"></button></div>
+<div class="col-2"><button type="button" class="btn"><img src="assets/image/backgrounds/jewels/jewel-diamond.gif"></button></div>
+</div></div>`;
 }
 
   setTimeout(popupgamestart, 3000);
