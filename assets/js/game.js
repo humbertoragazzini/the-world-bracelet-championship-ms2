@@ -91,5 +91,26 @@ class Player{
     return usuario;
   }
 
-  let numero = '1';
-  console.log(recoverDataFromLocal(localStorage.getItem(numero),numero));
+function popupgamestart(){
+    let thejewelposition = document.getElementById('picestouse');
+    let thebraceletposition = document.getElementById('bracelettomake');
+
+    thejewelposition.innerHTML = '<p>In this place will be every single jewel to use, remember the positions, shape and colors, it will be the differece betwen be a champion or just another bracelet maker</p>';
+    thebraceletposition.innerHTML = '<p>And in this other place you will have the bracelet ready to be filled, again be careful, you have to fill it with the jewels in the correct positions, colors and shapes, inside of the holes where the jewels have to be fitted you will see a number, this number correspond to the actual position, wich is randomly changed</p>';
+    setTimeout(theGameStart,4000,thejewelposition,thebraceletposition);
+}
+
+function theGameStart(jewels,bracelet){
+    jewels.innerHTML = `<div class="row align-items-center" style="
+    height: 100%;
+">
+    <div class="col-2"><p>First</p><img src="assets/image/backgrounds/jewels/jewel-square.gif"> </div>
+    <div class="col-2"><p>Second</p><img src="assets/image/backgrounds/jewels/jewel-square.gif"> </div>
+    <div class="col-2"><p>Third</p><img src="assets/image/backgrounds/jewels/jewel-square.gif"> </div>
+    <div class="col-2"><p>Fourth</p><img src="assets/image/backgrounds/jewels/jewel-square.gif"> </div>
+    <div class="col-2"><p>Fiveht</p><img src="assets/image/backgrounds/jewels/jewel-square.gif"> </div>
+    <div class="col-2"><p>Sixht</p><img src="assets/image/backgrounds/jewels/jewel-square.gif"> </div>
+</div>`;
+}
+
+  setTimeout(popupgamestart, 3000);
