@@ -286,12 +286,12 @@ img{
   transform: rotate3d(1,0,0,60deg);
 }
 .disapear{
-  animation-duration: 2s;
+  animation-duration: 1s;
   animation-name: disapear-element;
   opacity: 0;
 }
 .appear{
-  animation-duration: 2s;
+  animation-duration: 1s;
   animation-name: appear-element;
   opacity: 1;
 }

@@ -99,11 +99,12 @@ function startGame(){
     }
     for(let i=0;i<startmenu.length;i++)
     {
-        setTimeout(added,3000,startmenu[i],"hidden");
-        setTimeout(added,3000,gameelements[i],"appear");
+        setTimeout(added,1500,startmenu[i],"hidden");
+        setTimeout(added,1500,gameelements[i],"appear");
     }
-
 }
+
+
 
 
 
