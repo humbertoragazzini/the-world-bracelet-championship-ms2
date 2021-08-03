@@ -166,6 +166,23 @@ img{
   }
 }
 
+@keyframes disapear-element {
+  from{
+    opacity: 1.0;
+  }
+  to{
+    opacity: 0.0;
+  }
+}
+
+@keyframes appear-element {
+  from{
+    opacity: 0.0;
+  }
+  to{
+    opacity: 1.0;
+  }
+}
 
 
 /*------game styling-------*/
@@ -268,4 +285,13 @@ img{
 .braceletjewels{
   transform: rotate3d(1,0,0,60deg);
 }
-
+.disapear{
+  animation-duration: 2s;
+  animation-name: disapear-element;
+  opacity: 0;
+}
+.appear{
+  animation-duration: 2s;
+  animation-name: appear-element;
+  opacity: 1;
+}
