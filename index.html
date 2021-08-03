@@ -38,8 +38,8 @@
         <div id="U" class="moving-jewels "><img src='assets/image/backgrounds/jewels/jewel-square.gif'></div>
         <div id="Y" class="moving-jewels "><img src='assets/image/backgrounds/jewels/jewel-diamond.gif'></div>
         
-    <div class="row part"></div>
-        <div id="image-background" class="row justify-content-center align-items-center  main-menu-element">
+    <div class="row part the-start-menu-elements"></div>
+        <div id="image-background" class="row justify-content-center align-items-center  main-menu-element the-start-menu-elements">
             <div class="col-4">
                 <div id="test">
                     <a  onclick="startGame()" id="start-button" class="position-absolute top-50 start-50 translate-middle">START</a>
@@ -47,7 +47,75 @@
 
             </div>
         </div>
-        <div class="row part"></div>
+        <div class="row part the-start-menu-elements"></div>
+        <!--the game html code-->
+    <div id="tittle" class="row justify-content-center spacer-bottom spacer-top the-game-elements">
+        <div class="col-6">
+            <div class="lvl-background">
+                <p id="text-squares">LEVEL 1</p>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="lvl-background">
+                <p id="text-squares">00:00</p>
+            </div>
+        </div>
+    </div>
+    <div id="panel-score-record" class="row spacer-bottom align-items-center the-game-elements">
+        <div id="score" class="col-6">
+            <div class="lvl-background score-record-background">
+                <p id="text-squares" class="core-record-tittle">SCORE</p>
+                <div class="points">
+                    <span class="numbers-points">0</span>
+                </div>
+                <div class="points">
+                    <span class="numbers-points">0</span>
+                </div>
+                <div class="points">
+                    <span class="numbers-points">0</span>
+                </div>
+                <div class="points">
+                    <span class="numbers-points">0</span>
+                </div>
+                <div class="points">
+                    <span class="numbers-points">0</span>
+                </div>
+                <div class="points">
+                    <span class="numbers-points">0</span>
+                </div>
+            </div>
+        </div>
+        <div id="record" class="col-6">
+            <div class="lvl-background score-record-background">
+                <p id="text-squares" class="core-record-tittle">RECORD</p>
+                <div class="points">
+                    <span class="numbers-record">0</span>
+                </div>
+                <div class="points">
+                    <span class="numbers-record">0</span>
+                </div>
+                <div class="points">
+                    <span class="numbers-record">0</span>
+                </div>
+                <div class="points">
+                    <span class="numbers-record">0</span>
+                </div>
+                <div class="points">
+                    <span class="numbers-record">0</span>
+                </div>
+                <div class="points">
+                    <span class="numbers-record">0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="game-in-progres" class="row spacer-bottom the-game-elements">
+        <div class="col">
+            <div id="gamewindows" class="lvl-background">
+                
+            </div>
+        </div>
+    </div>
     </div>
 <script>startMenu()</script>
 </body>

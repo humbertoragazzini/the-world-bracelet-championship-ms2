@@ -295,3 +295,7 @@ img{
   animation-name: appear-element;
   opacity: 1;
 }
+.row.hidden{
+  display: none;
+  visibility: hidden;
+}

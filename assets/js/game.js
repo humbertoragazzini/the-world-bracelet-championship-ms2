@@ -88,115 +88,24 @@ class Player{
     return usuario;
   }
 
+
+
 function startGame(){
-    let gamingwindow = document.getElementById("thebody")
-    gamingwindow.innerHTML = `
-    <div id="animated-background" class="container appear">
-    <div id="a" class="moving-jewels "><img src='assets/image/backgrounds/jewels/jewel-triangle.gif'></div>
-    <div id="b" class="moving-jewels "><img src='assets/image/backgrounds/jewels/jewel-square.gif'></div>
-    <div id="c" class="moving-jewels "><img src='assets/image/backgrounds/jewels/jewel-diamond.gif'></div>
-    <div id="d" class="moving-jewels "><img src='assets/image/backgrounds/jewels/jewel-square.gif'></div>
-    <div id="e" class="moving-jewels "><img src='assets/image/backgrounds/jewels/jewel-triangle.gif'></div>
-    <div id="f" class="moving-jewels "><img src='assets/image/backgrounds/jewels/jewel-diamond.gif'></div>
-    <div id="g" class="moving-jewels "><img src='assets/image/backgrounds/jewels/jewel-triangle.gif'></div>
-    <div id="H" class="moving-jewels "><img src='assets/image/backgrounds/jewels/jewel-square.gif'></div>
-    <div id="I" class="moving-jewels "><img src='assets/image/backgrounds/jewels/jewel-diamond.gif'></div>
-    <div id="J" class="moving-jewels "><img src='assets/image/backgrounds/jewels/jewel-square.gif'></div>
-    <div id="K" class="moving-jewels "><img src='assets/image/backgrounds/jewels/jewel-triangle.gif'></div>
-    <div id="N" class="moving-jewels "><img src='assets/image/backgrounds/jewels/jewel-diamond.gif'></div>
-    <div id="M" class="moving-jewels "><img src='assets/image/backgrounds/jewels/jewel-triangle.gif'></div>
-    <div id="O" class="moving-jewels "><img src='assets/image/backgrounds/jewels/jewel-square.gif'></div>
-    <div id="P" class="moving-jewels "><img src='assets/image/backgrounds/jewels/jewel-diamond.gif'></div>
-    <div id="q" class="moving-jewels "><img src='assets/image/backgrounds/jewels/jewel-square.gif'></div>
-    <div id="R" class="moving-jewels "><img src='assets/image/backgrounds/jewels/jewel-triangle.gif'></div>
-    <div id="S" class="moving-jewels "><img src='assets/image/backgrounds/jewels/jewel-diamond.gif'></div>
-    <div id="T" class="moving-jewels "><img src='assets/image/backgrounds/jewels/jewel-triangle.gif'></div>
-    <div id="U" class="moving-jewels "><img src='assets/image/backgrounds/jewels/jewel-square.gif'></div>
-    <div id="Y" class="moving-jewels "><img src='assets/image/backgrounds/jewels/jewel-diamond.gif'></div>
-    
-<div id="tittle" class="row justify-content-center spacer-bottom spacer-top">
-    <div class="col-6">
-        <div class="lvl-background">
-            <p id="text-squares">LEVEL 1</p>
-        </div>
-    </div>
-    <div class="col-6">
-        <div class="lvl-background">
-            <p id="text-squares">00:00</p>
-        </div>
-    </div>
-</div>
-<div id="panel-score-record" class="row spacer-bottom align-items-center">
-    <div id="score" class="col-6">
-        <div class="lvl-background score-record-background">
-            <p id="text-squares" class="core-record-tittle">SCORE</p>
-            <div class="points">
-                <span class="numbers-points">0</span>
-            </div>
-            <div class="points">
-                <span class="numbers-points">0</span>
-            </div>
-            <div class="points">
-                <span class="numbers-points">0</span>
-            </div>
-            <div class="points">
-                <span class="numbers-points">0</span>
-            </div>
-            <div class="points">
-                <span class="numbers-points">0</span>
-            </div>
-            <div class="points">
-                <span class="numbers-points">0</span>
-            </div>
-        </div>
-    </div>
-    <div id="record" class="col-6">
-        <div class="lvl-background score-record-background">
-            <p id="text-squares" class="core-record-tittle">RECORD</p>
-            <div class="points">
-                <span class="numbers-record">0</span>
-            </div>
-            <div class="points">
-                <span class="numbers-record">0</span>
-            </div>
-            <div class="points">
-                <span class="numbers-record">0</span>
-            </div>
-            <div class="points">
-                <span class="numbers-record">0</span>
-            </div>
-            <div class="points">
-                <span class="numbers-record">0</span>
-            </div>
-            <div class="points">
-                <span class="numbers-record">0</span>
-            </div>
-        </div>
-    </div>
-</div>
-<div id="game-in-progres" class="row spacer-bottom">
-    <div class="col">
-        <div id="gamewindows" class="lvl-background">
-            
-        </div>
-    </div>
-</div>
-</div>
-<script>
-theGameStart()
-</script>
-    `
-}
+    startmenu = document.getElementsByClassName("the-start-menu-elements");
+    gameelements = document.getElementsByClassName("the-game-elements");
 
-function popupgamestart(){
-    let thejewelposition = document.getElementById('gamewindows');
-
-    thejewelposition.innerHTML = `
-        <p class="appear">In this place will be every single jewel to use, remember the positions, shape and colors, it will be the differece betwen be a champion or just another bracelet maker</p>
-        <p class="appear">And in this other place you will have the bracelet ready to be filled, again be careful, you have to fill it with the jewels in the correct positions, colors and shapes, inside of the holes where the jewels have to be fitted you will see a number, this number correspond to the actual position, wich is randomly changed</p>`;
+    function added(element,classtoadd){
+        element.classList.add(classtoadd);
+    }
+    for(let i=0;i<startmenu.length;i++)
+    {
+        setTimeout(added,3000,startmenu[i],"hidden");
+        setTimeout(added,3000,gameelements[i],"appear");
     }
 
-  setTimeout(popupgamestart, 3000);
+}
+
+
 
 
 
