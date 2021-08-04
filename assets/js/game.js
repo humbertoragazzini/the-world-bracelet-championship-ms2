@@ -102,16 +102,36 @@ function startGame(){
         setTimeout(added,1500,startmenu[i],"hidden");
         setTimeout(added,1500,gameelements[i],"appear");
     }
-}
 
-document.addEventListener("DOMContentLoaded",function(){
-new jBox('Modal', {
-    width: 300,
-    height: 100,
-    attach: '#myModal',
-    title: 'My Modal Window',
-    content: '<i>Hello there!</i>'
-  })})
+    let shapes = ['url(assets/image/backgrounds/jewels/jewel-triangle.gif)','url(assets/image/backgrounds/jewels/jewel-triangle.gif)','url(assets/image/backgrounds/jewels/jewel-diamond.gif)','url(assets/image/backgrounds/jewels/jewel-square.gif)','url(assets/image/backgrounds/jewels/jewel-triangle.gif)','url(assets/image/backgrounds/jewels/jewel-diamond.gif)','url(assets/image/backgrounds/jewels/jewel-square.gif)']; 
+    let j = 0;
+    divdejoyas = document.getElementsByClassName("joyas");
+    joyas = document.getElementById("bracelettomake");
+    testbutton = document.getElementById("jewelstochose");
+    let cache;
+    
+    joyas.addEventListener("click",function(){
+        console.log("primera");
+        cache = event.target;
+        if(cache.classList.contains("joyas"))
+        {
+        for(let i=0;i<divdejoyas.length;i++){
+            if(divdejoyas[i]!=cache)
+            {
+                console.log("paso");
+                divdejoyas[i].removeEventListener("click",null);
+            }
+        }
+        
+        }
+    })
+    testbutton.addEventListener("click", function (){
+        console.log(event.target);
+        console.log(cache);
+        cache.style.backgroundImage = event.target.style.backgroundImage;
+    });  
+    
+}
 
 
 

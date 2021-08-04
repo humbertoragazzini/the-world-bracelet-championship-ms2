@@ -299,3 +299,15 @@ img{
   display: none;
   visibility: hidden;
 }
+.jewels-space{
+  background-size: cover;
+  background-position: center;
+}
+.shapes{
+  background-size: cover;
+    height: 98px;
+    width: 98px;
+}
+.joyas{
+  background-color: rgba(0,0,0,0.5);
+}
