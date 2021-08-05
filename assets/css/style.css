@@ -303,11 +303,19 @@ img{
   background-size: cover;
   background-position: center;
 }
-.shapes{
+.btn.shapes{
   background-size: cover;
-    height: 98px;
-    width: 98px;
+    height: 12vw;
+    width: 13vw;
 }
 .joyas{
   background-color: rgba(0,0,0,0.5);
+}
+.btn.colors{
+  font-size: 0.5em;
+  text-align: center;
+  margin-top: auto;
+  border-radius: 50%;
+  height: 10vw;
+  width: 10vw;
 }

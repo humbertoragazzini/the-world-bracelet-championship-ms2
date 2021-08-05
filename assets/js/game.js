@@ -103,10 +103,11 @@ function startGame(){
         setTimeout(added,1500,gameelements[i],"appear");
     }
 
-    let shapes = ['url(assets/image/backgrounds/jewels/jewel-triangle.gif)','url(assets/image/backgrounds/jewels/jewel-triangle.gif)','url(assets/image/backgrounds/jewels/jewel-diamond.gif)','url(assets/image/backgrounds/jewels/jewel-square.gif)','url(assets/image/backgrounds/jewels/jewel-triangle.gif)','url(assets/image/backgrounds/jewels/jewel-diamond.gif)','url(assets/image/backgrounds/jewels/jewel-square.gif)']; 
+    let colorsarray = [`url('assets/image/backgrounds/jewels/jewel-diamond-white.png')`,`url('assets/image/backgrounds/jewels/jewel-diamond-red.png')`,`url('assets/image/backgrounds/jewels/jewel-diamond-blue.png')`]; 
     let j = 0;
     divdejoyas = document.getElementsByClassName("joyas");
     joyas = document.getElementById("bracelettomake");
+    colors = document.getElementById("jewelscolors");
     testbutton = document.getElementById("jewelstochose");
     let cache;
     
@@ -125,10 +126,35 @@ function startGame(){
         
         }
     })
+
+    colors.addEventListener(`click`,function(){
+        console.log(event.target.innerHTML);
+        itemstochange = document.getElementsByClassName("shapes");
+        if(event.target.innerHTML=="White"){
+            for(let i=0;i<itemstochange.length;i++){
+                itemstochange[i].style.backgroundImage=colorsarray[0];
+            }
+        }
+        if(event.target.innerHTML=="Red"){
+            for(let i=0;i<itemstochange.length;i++){
+                itemstochange[i].style.backgroundImage=colorsarray[1];
+            }
+        }
+        if(event.target.innerHTML=="Blue"){
+            for(let i=0;i<itemstochange.length;i++){
+                itemstochange[i].style.backgroundImage=colorsarray[2];
+            }
+        }
+    })
+
     testbutton.addEventListener("click", function (){
-        console.log(event.target);
-        console.log(cache);
-        cache.style.backgroundImage = event.target.style.backgroundImage;
+        try {
+            console.log(event.target);
+            console.log(cache);
+            cache.style.backgroundImage = event.target.style.backgroundImage;
+          } catch (error) {
+              alert("please select first witch place you want to fill up");
+          }
     });  
     
 }
