@@ -103,6 +103,10 @@ function startGame(){
         setTimeout(added,1500,gameelements[i],"appear");
     }
 
+}
+
+function fillingBraceletInGame(){
+
     let colorsarray = [`url('assets/image/backgrounds/jewels/jewel-diamond-white.png')`,`url('assets/image/backgrounds/jewels/jewel-diamond-red.png')`,`url('assets/image/backgrounds/jewels/jewel-diamond-blue.png')`]; 
     let j = 0;
     divdejoyas = document.getElementsByClassName("joyas");
@@ -112,14 +116,12 @@ function startGame(){
     let cache;
     
     joyas.addEventListener("click",function(){
-        console.log("primera");
         cache = event.target;
         if(cache.classList.contains("joyas"))
         {
         for(let i=0;i<divdejoyas.length;i++){
             if(divdejoyas[i]!=cache)
             {
-                console.log("paso");
                 divdejoyas[i].removeEventListener("click",null);
             }
         }
@@ -128,7 +130,6 @@ function startGame(){
     })
 
     colors.addEventListener(`click`,function(){
-        console.log(event.target.innerHTML);
         itemstochange = document.getElementsByClassName("shapes");
         if(event.target.innerHTML=="White"){
             for(let i=0;i<itemstochange.length;i++){
@@ -149,14 +150,21 @@ function startGame(){
 
     testbutton.addEventListener("click", function (){
         try {
-            console.log(event.target);
-            console.log(cache);
+            if(cache.classList.contains("joyas")){
             cache.style.backgroundImage = event.target.style.backgroundImage;
+            }
           } catch (error) {
               alert("please select first witch place you want to fill up");
           }
     });  
     
+}
+
+function gameInProgress(){
+    let intro;
+    
+    let newplayer = new Player();
+
 }
 
 
