@@ -179,9 +179,6 @@ function gameInProgress(){
         addedOrRemove(toolsmaker,"hidden");
         addedOrRemove(newuserform,"hidden");
     }
-
-    
-
 }
 
 

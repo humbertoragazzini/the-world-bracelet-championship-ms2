@@ -9,5 +9,4 @@ var removePxFromPosition = function(position){
 }
 
 var addedOrRemove = function(element,classtoadd){
-    element.classList.toggle(classtoadd);
-}
+    element.classList.toggle(classtoadd);}
