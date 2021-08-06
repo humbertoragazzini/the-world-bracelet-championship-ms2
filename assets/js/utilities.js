@@ -7,3 +7,7 @@ var removePxFromPosition = function(position){
     let number = Number(filter2);
     return number;
 }
+
+var addedOrRemove = function(element,classtoadd){
+    element.classList.toggle(classtoadd);
+}

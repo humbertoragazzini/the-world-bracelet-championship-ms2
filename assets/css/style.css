@@ -261,8 +261,6 @@ img{
   background-color: rgba(0,0,0,0.2);
   border: solid 4px rgba(0,0,0,1);
   border-radius: 5px;
-  visibility: hidden;
-  display: none;
 }
 #toolsmaker{
   width: 100%;
@@ -270,12 +268,6 @@ img{
   background-color: rgba(0,0,0,0.2);
   border: solid 4px rgba(0,0,0,1);
   border-radius: 5px;
-  visibility: hidden;
-  display: none;
-}
-#jewelstochose{
-  visibility: hidden;
-  display: none;
 }
 #thebracelet{
   height: 50vw;
@@ -307,6 +299,10 @@ img{
   display: none;
   visibility: hidden;
 }
+.hidden{
+  display: none;
+  visibility: hidden;
+}
 .jewels-space{
   background-size: cover;
   background-position: center;
@@ -318,7 +314,6 @@ img{
 }
 .joyas{
   background-color: rgba(0,0,0,0.5);
-  visibility: hidden;
 }
 .btn.colors{
   font-size: 0.5em;

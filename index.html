@@ -116,7 +116,7 @@
     <div id="game-in-progres" class="row spacer-bottom the-game-elements">
         <div class="col">
             <div id="gamewindows" class="lvl-background">
-                <div id="bracelettomake">
+                <div id="bracelettomake" class="hidden">
                     <p>jewels</p>
                     <div class="jewels-space joyas" style="width: 10%;height: 16%;display: inline-block;"></div>
                     <div class="jewels-space joyas" style="width: 10%;height: 16%;display: inline-block;"></div>
@@ -126,7 +126,7 @@
                     <div class="jewels-space joyas" style="width: 10%;height: 16%;display: inline-block;"></div>
                     <div class="jewels-space joyas" style="width: 10%;height: 16%;display: inline-block;"></div>
                 </div>
-                <div id="toolsmaker">
+                <div id="toolsmaker" class="hidden">
                     <div id="jewelscolors">
                         <p>Select the color of the jewel</p>
                             <div id="blue" class="btn colors" type="button" style="background-color:blue;">Blue</div>
@@ -145,12 +145,12 @@
                             <div id="diamond7" class="btn btn-dark shapes" type="button"style="background-size: cover;"></div>
                     </div>
                 </div>
-                <form>
+                <div id="newuserform" class="">
                     <p>Creating New Player</p>
                     <label>Player Name:</label>
-                    <input type="text">
-                    <button class="btn btn-success">Create</button>
-                </form>
+                    <input id="playername" type="text">
+                    <button class="btn btn-success" onclick="gameInProgress()">Create</button>
+                </div>
             </div>
         </div>
     </div>

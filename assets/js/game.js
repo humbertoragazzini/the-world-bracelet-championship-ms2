@@ -1,3 +1,5 @@
+
+//player class used to create a player object
 class Player{
 
     constructor(name,record,level,identifier){
@@ -21,6 +23,7 @@ class Player{
     }
   
   }
+// because the users will be saved in localstorage we need to recover it from there, this function allow us to do it
 
   function recoverUser(data){
       let user = new Player(name,record,level,identifier);
@@ -30,7 +33,7 @@ class Player{
 
 
   localStorage.setItem('1',beto.name+'/'+beto.record+'/'+beto.level+'/'+beto.identifier);
-
+//in local storage all the data is saved it in text format "string" this function filter every single variable from the string to create the player object
   function recoverDataFromLocal(user,key){
       let name = '';
       let record = '';
@@ -89,21 +92,20 @@ class Player{
   }
 
 
-
+//this function make the start menu disapear and make the game apear
 function startGame(){
     startmenu = document.getElementsByClassName("the-start-menu-elements");
     gameelements = document.getElementsByClassName("the-game-elements");
 
-    function added(element,classtoadd){
-        element.classList.add(classtoadd);
-    }
     for(let i=0;i<startmenu.length;i++)
     {
-        setTimeout(added,1500,startmenu[i],"hidden");
-        setTimeout(added,1500,gameelements[i],"appear");
+        setTimeout(addedOrRemove,1500,startmenu[i],"hidden");
+        setTimeout(addedOrRemove,1500,gameelements[i],"appear");
     }
 
 }
+
+
 
 function fillingBraceletInGame(){
 
@@ -161,12 +163,26 @@ function fillingBraceletInGame(){
 }
 
 function gameInProgress(){
+    console.log("paso");
+    let regex = new RegExp("^[0-9a-zA-Z\b]+$");
     let intro;
-    
     let newplayer = new Player();
+    let bracelettomake = document.getElementById("bracelettomake");
+    let toolsmaker = document.getElementById("toolsmaker");
+    let newuserform = document.getElementById("newuserform");
+    playername = document.getElementById("playername");
+    if(playername.value == "" || !regex.test(playername.value)){
+        alert("completa el nombre hijo de mil puta");
+    }else{
+        newplayer.nameAsig(playername.value);
+        addedOrRemove(bracelettomake,"hidden");
+        addedOrRemove(toolsmaker,"hidden");
+        addedOrRemove(newuserform,"hidden");
+    }
+
+    
 
 }
-
 
 
 
