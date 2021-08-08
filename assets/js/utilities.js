@@ -24,3 +24,9 @@ var gameTimer = function(){
     let interval = setInterval(second,1000);
     
 }
+
+var resetHtml(elements){
+    for(let i=0;i<elements.length;i++){
+        elements[i].style.backgroundImage = "";
+    }
+}
