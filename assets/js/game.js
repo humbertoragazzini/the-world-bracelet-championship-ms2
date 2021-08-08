@@ -23,6 +23,51 @@ class Player{
     }
   
   }
+//
+class Level{
+
+    constructor(){
+        this.logicallevelforjewels=1;
+        this.logicallevelforcolors=1;
+        this.leveltoshow = 0;
+    }
+
+    newLevel(){
+        let dificulty = [];
+        this.leveltoshow = this.leveltoshow + 1;
+        if(this.logicallevelforjewels<7){
+            this.logicallevelforjewels = Math.round(Math.sqrt(this.leveltoshow));
+            dificulty[0] = this.logicallevelforjewels;
+            dificulty[2] = this.leveltoshow
+        }else{dificulty[0]=7;dificulty[2] = this.leveltoshow;}
+        if(this.logicallevelforcolors<7){
+            this.logicallevelforcolors = Math.round(Math.sqrt(this.leveltoshow+1));
+            dificulty[1] = this.logicallevelforcolors;
+        }else{dificulty[1]=7;}
+        return dificulty;
+    }
+}
+//class game
+
+class Game{
+    constructor(player){
+        this.player=player;
+        this.record;
+        this.level = new Level();
+    }
+    playerAsig(player){
+        this.player=player;
+    }
+    levelAsig(level){
+        this.level=level;
+    }
+    recordAsig(record){
+        this.record=record;
+    }
+    newGame(){
+        return this.level.newLevel();
+    }
+}
 // because the users will be saved in localstorage we need to recover it from there, this function allow us to do it
 
   function recoverUser(data){
@@ -162,7 +207,18 @@ function fillingBraceletInGame(){
     
 }
 
-function gameInProgress(){
+function gameBuilder(player,game,bracelet,tools,form){
+    setTimeout(addedOrRemove, 1000,form,"hidden");
+    addedOrRemove(form,"disapear");
+    setTimeout(addedOrRemove, 1000,bracelet.children[0],"hidden");
+    addedOrRemove(bracelet.children[0],"appear");
+    fillingBraceletInGame()
+    console.log(game.newGame());
+    console.log(game.newGame());
+
+}
+
+function firstSteps(){
     console.log("paso");
     let regex = new RegExp("^[0-9a-zA-Z\b]+$");
     let intro;
@@ -170,14 +226,16 @@ function gameInProgress(){
     let bracelettomake = document.getElementById("bracelettomake");
     let toolsmaker = document.getElementById("toolsmaker");
     let newuserform = document.getElementById("newuserform");
+    let gameinprogress
     playername = document.getElementById("playername");
     if(playername.value == "" || !regex.test(playername.value)){
         alert("completa el nombre hijo de mil puta");
     }else{
         newplayer.nameAsig(playername.value);
-        addedOrRemove(bracelettomake,"hidden");
-        addedOrRemove(toolsmaker,"hidden");
-        addedOrRemove(newuserform,"hidden");
+        gameinprogress = new Game(newplayer);
+        gameBuilder(newplayer,gameinprogress,bracelettomake,toolsmaker,newuserform);
+        
+
     }
 }
 
