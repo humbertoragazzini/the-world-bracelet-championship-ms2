@@ -1,4 +1,3 @@
-
 //player class used to create a player object
 class Player{
 
@@ -208,15 +207,22 @@ function fillingBraceletInGame(){
 }
 
 function gameBuilder(player,game,bracelet,tools,form){
+    clock = document.getElementById("timer");
     setTimeout(addedOrRemove, 1000,form,"hidden");
     addedOrRemove(form,"disapear");
-    setTimeout(addedOrRemove, 1000,bracelet.children[0],"hidden");
-    addedOrRemove(bracelet.children[0],"appear");
-    fillingBraceletInGame()
-    console.log(game.newGame());
-    console.log(game.newGame());
+    let games=5;
+        do{
+            console.log("pasoarriba");
+            setTimeout(addedOrRemove, 1000,tools,"hidden");
+            addedOrRemove(tools,"appear");
+            fillingBraceletInGame()
+            gameTimer();
+            games++;
+            console.log("pasoabajo");
+        }while(games==5)
 
 }
+
 
 function firstSteps(){
     console.log("paso");
@@ -242,8 +248,10 @@ function firstSteps(){
 
 
 
-
-
+//setTimeout(addedOrRemove, 1000,bracelet,"hidden");
+//addedOrRemove(bracelet,"appear");
+//setTimeout(addedOrRemove, 1000,bracelet.children[0],"hidden");
+//addedOrRemove(bracelet.children[0],"appear");
 
 
 

@@ -56,19 +56,19 @@
     <div id="tittle" class="row justify-content-center spacer-bottom spacer-top the-game-elements">
         <div class="col-6">
             <div class="lvl-background">
-                <p id="text-squares">LEVEL 1</p>
+                <p class="text-squares">LEVEL 1</p>
             </div>
         </div>
         <div class="col-6">
             <div class="lvl-background">
-                <p id="text-squares">00:00</p>
+                <p id="timer" class="text-squares">Time(20s):</p>
             </div>
         </div>
     </div>
     <div id="panel-score-record" class="row spacer-bottom align-items-center the-game-elements">
         <div id="score" class="col-6">
             <div class="lvl-background score-record-background">
-                <p id="text-squares" class="core-record-tittle">SCORE</p>
+                <p class="core-record-tittle text-squares">SCORE</p>
                 <div class="points">
                     <span class="numbers-points">0</span>
                 </div>
@@ -91,7 +91,7 @@
         </div>
         <div id="record" class="col-6">
             <div class="lvl-background score-record-background">
-                <p id="text-squares" class="core-record-tittle">RECORD</p>
+                <p class="core-record-tittle text-squares">RECORD</p>
                 <div class="points">
                     <span class="numbers-record">0</span>
                 </div>
@@ -126,6 +126,7 @@
                     <div class="jewels-space joyas hidden" style="width: 10%;height: 16%;display: inline-block;"></div>
                     <div class="jewels-space joyas hidden" style="width: 10%;height: 16%;display: inline-block;"></div>
                 </div>
+                <button class="btn btn-success" onclick="testResult()">Send Bracelet</button>
                 <div id="toolsmaker" class="hidden">
                     <div id="jewelscolors">
                     
