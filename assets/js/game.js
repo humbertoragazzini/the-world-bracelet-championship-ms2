@@ -37,12 +37,10 @@ class Level{
         if(this.logicallevelforjewels<7){
             this.logicallevelforjewels = Math.round(Math.sqrt(this.leveltoshow));
             dificulty[0] = this.logicallevelforjewels;
-            dificulty[2] = this.leveltoshow
-        }else{dificulty[0]=7;dificulty[2] = this.leveltoshow;}
-        if(this.logicallevelforcolors<7){
-            this.logicallevelforcolors = Math.round(Math.sqrt(this.leveltoshow+1));
-            dificulty[1] = this.logicallevelforcolors;
-        }else{dificulty[1]=7;}
+            dificulty[1] = this.leveltoshow
+        }else{
+            dificulty[0]=7;
+            dificulty[1] = this.leveltoshow+1;}
         return dificulty;
     }
 }
@@ -77,6 +75,7 @@ class Game{
 
 
   localStorage.setItem('1',beto.name+'/'+beto.record+'/'+beto.level+'/'+beto.identifier);
+
 //in local storage all the data is saved it in text format "string" this function filter every single variable from the string to create the player object
   function recoverDataFromLocal(user,key){
       let name = '';
@@ -210,18 +209,17 @@ function gameBuilder(player,game,bracelet,tools,form){
     clock = document.getElementById("timer");
     setTimeout(addedOrRemove, 1000,form,"hidden");
     addedOrRemove(form,"disapear");
-    let games=5;
-        do{
-            console.log("pasoarriba");
-            setTimeout(addedOrRemove, 1000,tools,"hidden");
-            addedOrRemove(tools,"appear");
-            fillingBraceletInGame()
-            gameTimer();
-            games++;
-            console.log("pasoabajo");
-        }while(games==5)
-
+    setTimeout(addedOrRemove, 1000,tools,"hidden");
+    addedOrRemove(tools,"appear");
+    setTimeout(addedOrRemove, 1000,bracelet,"hidden");
+    addedOrRemove(bracelet,"appear");
+    setTimeout(addedOrRemove, 1000,bracelet.children[0],"hidden");
+    addedOrRemove(bracelet.children[0],"appear");
+    gameTimerTrigger(tools,bracelet,clock);
+    console.log(game.newGame());
+    
 }
+
 
 
 function firstSteps(){
@@ -240,18 +238,32 @@ function firstSteps(){
         newplayer.nameAsig(playername.value);
         gameinprogress = new Game(newplayer);
         gameBuilder(newplayer,gameinprogress,bracelettomake,toolsmaker,newuserform);
-        
-
     }
 }
 
+function gameTimerTrigger(tools,bracelet,elementclock){
+    let   sec = 0;
+    function second(){
+    sec++;
+    console.log(sec);
+    elementclock.innerHTML=String(sec);
+        if(sec==20){
+            sec=0;
+            clearInterval(interval);
+            elementclock.innerHTML="0000";
+            setTimeout(addedOrRemove, 1000,tools,"hidden");
+            addedOrRemove(tools,"disapear");
+            setTimeout(addedOrRemove, 1000,bracelet,"hidden");
+            addedOrRemove(bracelet,"disapear");
+            setTimeout(addedOrRemove, 1000,bracelet.children[0],"hidden");
+            addedOrRemove(bracelet.children[0],"disapear");
+        }
+    }
+    let interval = setInterval(second,1000);
+    
+}
 
 
-
-//setTimeout(addedOrRemove, 1000,bracelet,"hidden");
-//addedOrRemove(bracelet,"appear");
-//setTimeout(addedOrRemove, 1000,bracelet.children[0],"hidden");
-//addedOrRemove(bracelet.children[0],"appear");
 
 
 

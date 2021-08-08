@@ -11,21 +11,9 @@ var removePxFromPosition = function(position){
 var addedOrRemove = function(element,classtoadd){
     element.classList.toggle(classtoadd);}
 
-var gameTimer = function(){
-    let   sec = 0;
-    function second(){
-    sec++;
-        if(sec==20){
-            sec=0;
-            clearInterval(interval);
-        }
-    console.log(sec);
-    }
-    let interval = setInterval(second,1000);
-    
-}
 
-var resetHtml(elements){
+
+var resetHtml = function(elements){
     for(let i=0;i<elements.length;i++){
         elements[i].style.backgroundImage = "";
     }
