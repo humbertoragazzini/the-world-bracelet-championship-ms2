@@ -213,14 +213,21 @@ function gameBuilder(player,game,bracelet,tools,form){
     addedOrRemove(tools,"appear");
     setTimeout(addedOrRemove, 1000,bracelet,"hidden");
     addedOrRemove(bracelet,"appear");
-    setTimeout(addedOrRemove, 1000,bracelet.children[0],"hidden");
-    addedOrRemove(bracelet.children[0],"appear");
-    gameTimerTrigger(tools,bracelet,clock);
-    console.log(game.newGame());
-    
+    let p = document.createElement("div");
+    p.innerHTML = randomJewelsInyector(3);
+    bracelet.appendChild(p);
 }
 
-
+function randomJewelsInyector(level){
+    let elements = "";
+    let jewels = [`<p>"azul"</p>`,`<p>"red"</p>`,`<p>"green"</p>`,`<p>"yellow"</p>`,`<p>"black"</p>`,`<p>"purple"</p>`,`<p>"azulado"</p>`];
+    for(let i=0;i<level;i++){
+        position = Math.round((Math.random()*7));
+        console.log(position);
+        elements = elements + jewels[position];
+    }
+    return elements;
+}
 
 function firstSteps(){
     console.log("paso");
@@ -241,7 +248,7 @@ function firstSteps(){
     }
 }
 
-function gameTimerTrigger(tools,bracelet,elementclock){
+function gameTimerTrigger(player,tools,bracelet,elementclock){
     let   sec = 0;
     function second(){
     sec++;
@@ -255,12 +262,10 @@ function gameTimerTrigger(tools,bracelet,elementclock){
             addedOrRemove(tools,"disapear");
             setTimeout(addedOrRemove, 1000,bracelet,"hidden");
             addedOrRemove(bracelet,"disapear");
-            setTimeout(addedOrRemove, 1000,bracelet.children[0],"hidden");
-            addedOrRemove(bracelet.children[0],"disapear");
+            localStorage.setItem('2',player.name+'/'+player.record+'/'+player.level+'/');
         }
     }
     let interval = setInterval(second,1000);
-    
 }
 
 
