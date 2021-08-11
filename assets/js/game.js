@@ -27,21 +27,16 @@ class Level{
 
     constructor(){
         this.logicallevelforjewels=1;
-        this.logicallevelforcolors=1;
         this.leveltoshow = 0;
     }
 
     newLevel(){
-        let dificulty = [];
         this.leveltoshow = this.leveltoshow + 1;
         if(this.logicallevelforjewels<7){
             this.logicallevelforjewels = Math.round(Math.sqrt(this.leveltoshow));
-            dificulty[0] = this.logicallevelforjewels;
-            dificulty[1] = this.leveltoshow
         }else{
-            dificulty[0]=7;
-            dificulty[1] = this.leveltoshow+1;}
-        return dificulty;
+            this.logicallevelforjewels=7;
+            this.leveltoshow = this.leveltoshow+1;}
     }
 }
 //class game
@@ -62,7 +57,7 @@ class Game{
         this.record=record;
     }
     newGame(){
-        return this.level.newLevel();
+        this.level.newLevel();
     }
 }
 // because the users will be saved in localstorage we need to recover it from there, this function allow us to do it
@@ -205,24 +200,19 @@ function fillingBraceletInGame(){
     
 }
 
-function gameBuilder(player,game,bracelet,tools,form){
-    clock = document.getElementById("timer");
-    setTimeout(addedOrRemove, 1000,form,"hidden");
-    addedOrRemove(form,"disapear");
-    setTimeout(addedOrRemove, 1000,tools,"hidden");
-    addedOrRemove(tools,"appear");
-    setTimeout(addedOrRemove, 1000,bracelet,"hidden");
-    addedOrRemove(bracelet,"appear");
+
+
+function popupJewelsCombination(dificulty,braceletdiv){
     let p = document.createElement("div");
-    p.innerHTML = randomJewelsInyector(3);
-    bracelet.appendChild(p);
+    p.innerHTML = randomJewelsInyector(dificulty);
+    braceletdiv.appendChild(p);
 }
 
 function randomJewelsInyector(level){
     let elements = "";
-    let jewels = [`<p>"azul"</p>`,`<p>"red"</p>`,`<p>"green"</p>`,`<p>"yellow"</p>`,`<p>"black"</p>`,`<p>"purple"</p>`,`<p>"azulado"</p>`];
+    let jewels = [`<img src='assets/image/backgrounds/jewels/jewel-diamond.gif'>`,`<img src='assets/image/backgrounds/jewels/jewel-diamond.gif'>`,`<img src='assets/image/backgrounds/jewels/jewel-diamond.gif'>`,`<img src='assets/image/backgrounds/jewels/jewel-diamond.gif'>`,`<p>"black"</p>`,`<p>"purple"</p>`,`<p>"azulado"</p>`];
     for(let i=0;i<level;i++){
-        position = Math.round((Math.random()*7));
+        position = Math.round((Math.random()*6));
         console.log(position);
         elements = elements + jewels[position];
     }
@@ -232,6 +222,7 @@ function randomJewelsInyector(level){
 function firstSteps(){
     console.log("paso");
     let regex = new RegExp("^[0-9a-zA-Z\b]+$");
+    clock = document.getElementById("timer");
     let intro;
     let newplayer = new Player();
     let bracelettomake = document.getElementById("bracelettomake");
@@ -244,8 +235,23 @@ function firstSteps(){
     }else{
         newplayer.nameAsig(playername.value);
         gameinprogress = new Game(newplayer);
-        gameBuilder(newplayer,gameinprogress,bracelettomake,toolsmaker,newuserform);
+        gameSpaceAppear(bracelettomake,toolsmaker,newuserform)
+        Swal.fire({
+            title: '<strong>First Level Combination</strong>',
+            html:`<img src='assets/image/backgrounds/jewels/jewel-diamond.gif'>`,
+            showCloseButton: true,
+            focusConfirm: false,
+          })
     }
+}
+
+function gameSpaceAppear(bracelettomake,toolsmaker,newuserform){
+    setTimeout(addedOrRemove, 1000,newuserform,"hidden");
+    addedOrRemove(newuserform,"disapear");
+    setTimeout(addedOrRemove, 1000,toolsmaker,"hidden");
+    addedOrRemove(toolsmaker,"appear");
+    setTimeout(addedOrRemove, 1000,bracelettomake,"hidden");
+    addedOrRemove(bracelettomake,"appear");
 }
 
 function gameTimerTrigger(player,tools,bracelet,elementclock){
@@ -267,8 +273,6 @@ function gameTimerTrigger(player,tools,bracelet,elementclock){
     }
     let interval = setInterval(second,1000);
 }
-
-
 
 
 

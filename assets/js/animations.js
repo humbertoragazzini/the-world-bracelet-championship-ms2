@@ -144,4 +144,3 @@ function movingNumbers(number,inter,numberToMatch){
   
 }
 
-
