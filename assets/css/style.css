@@ -323,3 +323,13 @@ img{
   height: 10vw;
   width: 10vw;
 }
+.popup{
+  display: inline;
+  width: 13%;
+  height: auto;
+}
+
+.hiddenforjewels{
+  display: none;
+  visibility: hidden;
+}

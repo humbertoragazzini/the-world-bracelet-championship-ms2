@@ -145,16 +145,20 @@ function startGame(){
 
 
 
-function fillingBraceletInGame(){
+function fillingBraceletInGame(level){
 
     let colorsarray = [`url('assets/image/backgrounds/jewels/jewel-diamond-white.png')`,`url('assets/image/backgrounds/jewels/jewel-diamond-red.png')`,`url('assets/image/backgrounds/jewels/jewel-diamond-blue.png')`]; 
     let j = 0;
+    let jewelstofillup = document.getElementsByClassName(`jewels-space`);
     divdejoyas = document.getElementsByClassName("joyas");
     joyas = document.getElementById("bracelettomake");
     colors = document.getElementById("jewelscolors");
     testbutton = document.getElementById("jewelstochose");
     let cache;
-    
+    for(let i=0;i<level;i++)
+    {
+        jewelstofillup[i].classList.remove("hiddenforjewels");
+    }
     joyas.addEventListener("click",function(){
         cache = event.target;
         if(cache.classList.contains("joyas"))
@@ -192,6 +196,7 @@ function fillingBraceletInGame(){
         try {
             if(cache.classList.contains("joyas")){
             cache.style.backgroundImage = event.target.style.backgroundImage;
+            cache.classList.add("filled");
             }
           } catch (error) {
               alert("please select first witch place you want to fill up");
@@ -201,16 +206,10 @@ function fillingBraceletInGame(){
 }
 
 
-
-function popupJewelsCombination(dificulty,braceletdiv){
-    let p = document.createElement("div");
-    p.innerHTML = randomJewelsInyector(dificulty);
-    braceletdiv.appendChild(p);
-}
-
 function randomJewelsInyector(level){
-    let elements = "";
-    let jewels = [`<img src='assets/image/backgrounds/jewels/jewel-diamond.gif'>`,`<img src='assets/image/backgrounds/jewels/jewel-diamond.gif'>`,`<img src='assets/image/backgrounds/jewels/jewel-diamond.gif'>`,`<img src='assets/image/backgrounds/jewels/jewel-diamond.gif'>`,`<p>"black"</p>`,`<p>"purple"</p>`,`<p>"azulado"</p>`];
+    let elements = ``;
+    let caca= `url("assets/image/backgrounds/jewels/jewel-diamond-white.png")`;
+    let jewels = [caca,caca,caca,caca,caca,caca,caca,caca];
     for(let i=0;i<level;i++){
         position = Math.round((Math.random()*6));
         console.log(position);
@@ -235,16 +234,11 @@ function firstSteps(){
     }else{
         newplayer.nameAsig(playername.value);
         gameinprogress = new Game(newplayer);
-        gameSpaceAppear(bracelettomake,toolsmaker,newuserform)
-        Swal.fire({
-            title: '<strong>First Level Combination</strong>',
-            html:`<img src='assets/image/backgrounds/jewels/jewel-diamond.gif'>`,
-            showCloseButton: true,
-            focusConfirm: false,
-          })
+        gameSpaceAppear(bracelettomake,toolsmaker,newuserform);
+        runningLevel(gameinprogress);
+
     }
 }
-
 function gameSpaceAppear(bracelettomake,toolsmaker,newuserform){
     setTimeout(addedOrRemove, 1000,newuserform,"hidden");
     addedOrRemove(newuserform,"disapear");
@@ -275,8 +269,56 @@ function gameTimerTrigger(player,tools,bracelet,elementclock){
 }
 
 
+function runningLevel(gameinprogress){
+    let pattern;
+    var Popuplevel = Swal.mixin({
+        toast: true,
+        grow: 'fullscreen',
+        width: `100%`,
+        position: 'center',
+        showConfirmButton: false,
+        timer: 2000,
+        timerProgressBar: true,
+      })
+    var combination = randomJewelsInyector(gameinprogress.level.logicallevelforjewels);  
+      Popuplevel.fire({
+        html: combination,
+        title: 'Memorize this pattern'
+      })
+      fillingBraceletInGame(gameinprogress.level.logicallevelforjewels);
+    document.getElementById("sendit").addEventListener("click",tester);
+    elementtocheck = document.getElementsByClassName("filled");
 
+    let verificator = "";
+    let counter;
+    function tester(){
+        for(let i=0;i<(gameinprogress.level.logicallevelforjewels);i++)
+        {
+            console.log("paso por el for");
+            verificator=verificator+elementtocheck[i].style.backgroundImage; 
+        }
+        console.log("verificator "+verificator);
+        console.log("combination "+combination);
+        if(verificator==combination){
+            console.log("perfect");
+            gameinprogress.level.newLevel()
+            console.log(gameinprogress.level);
+            document.getElementById("sendit").removeEventListener("click",tester);
+            runningLevel(gameinprogress);
+        }else{
+            console.log("sorry you lose");    
+        }
+        
+    }
+}
 
+function apearJewelsToFill(level){
+    let jewelstofillup = document.getElementsByClassName(`jewels-space`);
+    for(let i=0;i<level;i++)
+    {
+        jewelstofillup[i].classList.remove("hiddenforjewels");
+    }
+}
 
 
 
