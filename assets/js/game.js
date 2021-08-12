@@ -44,17 +44,12 @@ class Level{
 class Game{
     constructor(player){
         this.player=player;
-        this.record;
+        this.record=0;
         this.level = new Level();
     }
-    playerAsig(player){
-        this.player=player;
-    }
-    levelAsig(level){
-        this.level=level;
-    }
-    recordAsig(record){
-        this.record=record;
+    recordInGame(){
+        this.record=this.record+this.level.logicallevelforjewels*this.level.leveltoshow;
+        this.player.recordAsig(this.record);
     }
     newGame(){
         this.level.newLevel();
@@ -273,8 +268,6 @@ function runningLevel(gameinprogress){
     let pattern;
     var Popuplevel = Swal.mixin({
         toast: true,
-        grow: 'fullscreen',
-        width: `100%`,
         position: 'center',
         showConfirmButton: false,
         timer: 2000,
@@ -303,6 +296,10 @@ function runningLevel(gameinprogress){
             console.log("perfect");
             gameinprogress.level.newLevel()
             console.log(gameinprogress.level);
+            gameinprogress.recordInGame();
+            console.log("level:"+gameinprogress.record);
+            console.log("level:"+gameinprogress.player.record);
+            probamos(String(gameinprogress.record),"numbers-points")
             document.getElementById("sendit").removeEventListener("click",tester);
             runningLevel(gameinprogress);
         }else{

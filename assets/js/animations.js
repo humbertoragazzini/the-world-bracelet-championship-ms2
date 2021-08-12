@@ -104,8 +104,11 @@ function cleanIndex(){
 
 //function test(){
 
-function probamos(data,type){
-
+var probamos = function(data,type){
+for(let i=data.length;i<6;i++)
+{
+  data="0"+data;
+}
 let numberchain = data;
 let animationsnumbers = [];
 let elementnumbers = document.getElementsByClassName(type);
