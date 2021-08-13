@@ -11,6 +11,11 @@ body{
   min-width: 360px;
   min-height: 640px;
 }
+
+body p {
+  margin-top: 0px;
+  margin-bottom: 0rem;
+}
 /*this is the styling of the main background, its not include the jewels, its just the gold background one*/
 
 #animated-background{
@@ -74,7 +79,7 @@ img{
 }
 
 /*--RESPOSIVE--*/
-@media only screen and (max-width: 4160px) {
+@media only screen and (min-width: 4160px) {
 
   /*index*/
   
@@ -90,7 +95,7 @@ img{
 
 }
 
-@media only screen and (max-width: 1400px) {
+@media only screen and (min-width: 1400px) {
 
   /*index*/
   #start-button{
@@ -101,7 +106,7 @@ img{
 
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (min-width: 1200px) {
 
   /*index*/
   #start-button{
@@ -112,7 +117,7 @@ img{
 
 }
 
-@media only screen and (max-width: 992px) {
+@media only screen and (min-width: 992px) {
 
   /*index*/
   #start-button{
@@ -126,7 +131,7 @@ img{
   
 } 
 
-@media only screen and (max-width: 768px) {
+@media only screen and (min-width: 768px) {
 
   /*index*/
   #start-button{
@@ -137,7 +142,7 @@ img{
 
 }
 
-@media only screen and (max-width: 575px) {
+@media only screen and (min-width: 575px) {
 
   /*index*/
   #start-button{
