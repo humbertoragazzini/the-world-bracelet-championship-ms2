@@ -89,7 +89,7 @@ function cleanIndex(){
               element.style.filter = `blur(${String((removePxFromPosition(element.style.filter)+5))}px)`;
               element.style.opacity = element.style.opacity - 0.034;
           }else{
-                  element.remove();      
+                        
                   for(let i=0;i<fadeupanimationobjects.length;i++)
                     {
                       fadeupanimationobjects[i].animationOff();

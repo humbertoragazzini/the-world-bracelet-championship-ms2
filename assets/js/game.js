@@ -195,6 +195,7 @@ function fillingBraceletInGame(level){
             }
           } catch (error) {
               alert("please select first witch place you want to fill up");
+              return;
           }
     });  
     
@@ -231,7 +232,6 @@ function firstSteps(){
         gameinprogress = new Game(newplayer);
         gameSpaceAppear(bracelettomake,toolsmaker,newuserform);
         runningLevel(gameinprogress);
-
     }
 }
 function gameSpaceAppear(bracelettomake,toolsmaker,newuserform){
@@ -264,8 +264,9 @@ function gameTimerTrigger(player,tools,bracelet,elementclock){
 }
 
 
+
 function runningLevel(gameinprogress){
-    let pattern;
+    
     var Popuplevel = Swal.mixin({
         toast: true,
         position: 'center',
@@ -279,19 +280,23 @@ function runningLevel(gameinprogress){
         title: 'Memorize this pattern'
       })
       fillingBraceletInGame(gameinprogress.level.logicallevelforjewels);
-    document.getElementById("sendit").addEventListener("click",tester);
-    elementtocheck = document.getElementsByClassName("filled");
-
-    let verificator = "";
-    let counter;
+      let eventtrigger = document.getElementById("sendit");
+      eventtrigger.addEventListener("click",tester);
     function tester(){
+        let verificator = "";
+        let elementtocheck = document.getElementsByClassName("filled");
         for(let i=0;i<(gameinprogress.level.logicallevelforjewels);i++)
-        {
-            console.log("paso por el for");
-            verificator=verificator+elementtocheck[i].style.backgroundImage; 
-        }
-        console.log("verificator "+verificator);
-        console.log("combination "+combination);
+            {
+                console.log("nivel adentro del for: "+gameinprogress.level.logicallevelforjewels)
+                console.log(verificator);
+            if(elementtocheck[i].style.backgroundImage!=undefined){
+                verificator=verificator+elementtocheck[i].style.backgroundImage; 
+            }else{
+                  alert("please fill all the jewels");
+                  return;
+                }
+            }
+        
         if(verificator==combination){
             console.log("perfect");
             gameinprogress.level.newLevel()
@@ -301,11 +306,14 @@ function runningLevel(gameinprogress){
             console.log("level:"+gameinprogress.player.record);
             probamos(String(gameinprogress.record),"numbers-points")
             document.getElementById("sendit").removeEventListener("click",tester);
+            verificator="";
             runningLevel(gameinprogress);
         }else{
-            console.log("sorry you lose");    
+            console.log("sorry you lose");
+            resetGame();
+            apearJewelsToReset();
+            eventtrigger.removeEventListener("click",tester);
         }
-        
     }
 }
 
@@ -315,6 +323,33 @@ function apearJewelsToFill(level){
     {
         jewelstofillup[i].classList.remove("hiddenforjewels");
     }
+}
+function apearJewelsToReset(){
+    let jewelstofillup = document.getElementsByClassName(`jewels-space`);
+    for(let i=0;i<7;i++)
+    {
+        if(i!=0){
+            jewelstofillup[i].classList.add("hiddenforjewels");
+        }
+    }
+}
+
+function resetGame(){
+
+    startmenu = document.getElementsByClassName("the-start-menu-elements");
+    gameelements = document.getElementsByClassName("the-game-elements");
+    bracelettomake = document.getElementById("bracelettomake");
+    toolsmaker = document.getElementById("toolsmaker");
+    form = document.getElementById("newuserform");
+    setTimeout(addedOrRemove,200,toolsmaker,"appear");
+    setTimeout(addedOrRemove,200,toolsmaker,"hidden");
+    setTimeout(addedOrRemove,200,bracelettomake,"appear");
+    setTimeout(addedOrRemove,200,bracelettomake,"hidden");
+    setTimeout(addedOrRemove,200,form,"disapear");
+    setTimeout(addedOrRemove,200,form,"hidden");
+
+
+
 }
 
 
