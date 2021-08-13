@@ -142,7 +142,7 @@ function startGame(){
 
 function fillingBraceletInGame(level){
 
-    let colorsarray = [`url('assets/image/backgrounds/jewels/jewel-diamond-white.png')`,`url('assets/image/backgrounds/jewels/jewel-diamond-red.png')`,`url('assets/image/backgrounds/jewels/jewel-diamond-blue.png')`]; 
+    let colorsarray = [`url('assets/image/backgrounds/jewels/jewel-diamond-white.png')`,`url('assets/image/backgrounds/jewels/jewel-diamond-red.png')`,`url('assets/image/backgrounds/jewels/jewel-diamond-blue.png')`,`url('assets/image/backgrounds/jewels/jewel-diamond-yellow.png')`]; 
     let j = 0;
     let jewelstofillup = document.getElementsByClassName(`jewels-space`);
     divdejoyas = document.getElementsByClassName("joyas");
@@ -183,6 +183,11 @@ function fillingBraceletInGame(level){
         if(event.target.innerHTML=="Blue"){
             for(let i=0;i<itemstochange.length;i++){
                 itemstochange[i].style.backgroundImage=colorsarray[2];
+            }
+        }
+        if(event.target.innerHTML=="Yellow"){
+            for(let i=0;i<itemstochange.length;i++){
+                itemstochange[i].style.backgroundImage=colorsarray[3];
             }
         }
     })
