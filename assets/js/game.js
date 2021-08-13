@@ -27,7 +27,7 @@ class Level{
 
     constructor(){
         this.logicallevelforjewels=1;
-        this.leveltoshow = 0;
+        this.leveltoshow = 1;
     }
 
     newLevel(){
@@ -203,13 +203,26 @@ function fillingBraceletInGame(level){
 
 
 function randomJewelsInyector(level){
-    let elements = ``;
+    let elements = [];
+    elements[0]="";
+    elements[1]="";
     let caca= `url("assets/image/backgrounds/jewels/jewel-diamond-white.png")`;
-    let jewels = [caca,caca,caca,caca,caca,caca,caca,caca];
+    let caca2= `url("assets/image/backgrounds/jewels/jewel-diamond-red.png")`;
+    let caca3= `url("assets/image/backgrounds/jewels/jewel-diamond-yellow.png")`;
+    let caca4= `url("assets/image/backgrounds/jewels/jewel-diamond-red.png")`;
+    let jewels = [caca,caca2,caca3,caca4,caca,caca2,caca3,caca4];
+    let caca1= `<img src='assets/image/backgrounds/jewels/jewel-diamond-white.png'>`;
+    let caca12=`<img src='assets/image/backgrounds/jewels/jewel-diamond-red.png'>`;
+    let caca13=`<img src='assets/image/backgrounds/jewels/jewel-diamond-yellow.png'>`;
+    let caca14=`<img src='assets/image/backgrounds/jewels/jewel-diamond-red.png'>`;
+    let jewels1 = [caca1,caca12,caca13,caca14,caca1,caca12,caca13,caca14];
     for(let i=0;i<level;i++){
         position = Math.round((Math.random()*6));
         console.log(position);
-        elements = elements + jewels[position];
+        elements[0] = elements[0]+jewels[position];
+        console.log(elements[0]);
+        elements[1] = elements[1] + jewels1[position];
+        console.log(elements[1]);
     }
     return elements;
 }
@@ -271,12 +284,12 @@ function runningLevel(gameinprogress){
         toast: true,
         position: 'center',
         showConfirmButton: false,
-        timer: 2000,
+        timer: 10000,
         timerProgressBar: true,
       })
     var combination = randomJewelsInyector(gameinprogress.level.logicallevelforjewels);  
       Popuplevel.fire({
-        html: combination,
+        html: combination[1],
         title: 'Memorize this pattern'
       })
       fillingBraceletInGame(gameinprogress.level.logicallevelforjewels);
@@ -297,16 +310,19 @@ function runningLevel(gameinprogress){
                 }
             }
         
-        if(verificator==combination){
+        if(verificator==combination[0]){
+
+            document.getElementById("levelingametoshow").innerHTML =  "LEVEL " + gameinprogress.level.leveltoshow;
             console.log("perfect");
             gameinprogress.level.newLevel()
             console.log(gameinprogress.level);
             gameinprogress.recordInGame();
             console.log("level:"+gameinprogress.record);
             console.log("level:"+gameinprogress.player.record);
-            probamos(String(gameinprogress.record),"numbers-points")
+            probamos(String(gameinprogress.record),"numbers-points");
             document.getElementById("sendit").removeEventListener("click",tester);
             verificator="";
+            resetBackGroundJewels(elementtocheck)
             runningLevel(gameinprogress);
         }else{
             console.log("sorry you lose");
@@ -329,9 +345,20 @@ function apearJewelsToReset(){
     for(let i=0;i<7;i++)
     {
         if(i!=0){
+            jewelstofillup[i].style.backgroundImage="";
             jewelstofillup[i].classList.add("hiddenforjewels");
+            jewelstofillup[i].classList.remove("filled");
+        }else{
+            jewelstofillup[0].style.backgroundImage="";
+            jewelstofillup[0].classList.remove("filled");
         }
     }
+}
+function resetBackGroundJewels(jewelstoreset){
+    for(let i=0;i<jewelstoreset.length;i++)
+        {
+            jewelstoreset[i].style.backgroundImage="";
+        }
 }
 
 function resetGame(){
