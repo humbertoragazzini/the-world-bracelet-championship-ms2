@@ -61,18 +61,15 @@ class Game{
       let user = new Player(name,record,level,identifier);
   }
 
-  var beto = new Player("jorge",156488,4,1);
-
-
-  localStorage.setItem('1',beto.name+'/'+beto.record+'/'+beto.level+'/'+beto.identifier);
+  
 
 //in local storage all the data is saved it in text format "string" this function filter every single variable from the string to create the player object
-  function recoverDataFromLocal(user,key){
+  function recoverDataFromLocal(key){
       let name = '';
       let record = '';
       let level = '';
       let cache = '';
-      let identifier = key;
+      let user = localStorage.getItem(key);
       let i = 0;
       lengthofdata = user.length;
 
@@ -120,7 +117,7 @@ class Game{
         }
     }
 
-    let usuario = new Player(name,record,level,identifier);
+    let usuario = new Player(name,record,level);
     return usuario;
   }
 
@@ -314,9 +311,9 @@ function runningLevel(gameinprogress){
                   return;
                 }
             }
-        
+            let key;
         if(verificator==combination[0]){
-
+            
             document.getElementById("levelingametoshow").innerHTML =  "LEVEL " + gameinprogress.level.leveltoshow;
             console.log("perfect");
             gameinprogress.level.newLevel()
@@ -331,6 +328,15 @@ function runningLevel(gameinprogress){
             runningLevel(gameinprogress);
         }else{
             console.log("sorry you lose");
+            if(localStorage.length=0)
+            {
+                key = 1;
+                localStorage.setItem(key,gameinprogress.player.name+'/'+gameinprogress.record+'/'+gameinprogress.level.leveltoshow+'/'+gameinprogress.player.identifier);
+            }else{
+                key = localStorage.length + 1;
+                localStorage.setItem(key,gameinprogress.player.name+'/'+gameinprogress.record+'/'+gameinprogress.level.leveltoshow+'/'+gameinprogress.player.identifier);
+                fillRecordsTable();
+            }
             resetGame();
             apearJewelsToReset();
             eventtrigger.removeEventListener("click",tester);
@@ -379,15 +385,58 @@ function resetGame(){
     setTimeout(addedOrRemove,200,bracelettomake,"hidden");
     setTimeout(addedOrRemove,200,form,"disapear");
     setTimeout(addedOrRemove,200,form,"hidden");
-
-
-
 }
 
 
+function createCellRecords(name,level,score){
+    table = document.getElementById("recordstable");
+    row =  document.createElement("tr");
+    celName = document.createElement("td");
+    celLevel = document.createElement("td");
+    celScore = document.createElement("td");
+    celName.innerHTML= `<p>`+name+`</p>`;
+    celLevel.innerHTML= `<p>`+level+`</p>`;
+    celScore.innerHTML= `<p>`+score+`</p>`;
+    row.appendChild(celName);
+    row.appendChild(celLevel);
+    row.appendChild(celScore);
+    table.appendChild(row);
+}
 
+function orderRecords(){
 
+    let users = [];
+    if(localStorage.length>0)
+    {
+        for(let i=0;i<localStorage.length;i++){
+            users[i]=recoverDataFromLocal(i+1);
+        }
+    }
 
+    var n, i, k, aux;
+    n = users.length;
+    for (k = 1; k < n; k++) {
+        for (i = 0; i < (n - k); i++) {
+            if (Number(users[i].record) > Number(users[i + 1].record)) {
+                aux = users[i];
+                users[i] = users[i + 1];
+                users[i + 1] = aux;
+            }
+        }
+    }
+
+    return users;
+}
+
+function fillRecordsTable(){
+    usersordered = orderRecords();
+    console.log(usersordered);
+    aux=usersordered.length-1;
+    while(aux>=0){
+        createCellRecords(usersordered[aux].name,usersordered[aux].level,usersordered[aux].record)
+        aux=aux-1;
+    }
+}
 
 
 
