@@ -126,7 +126,7 @@ class Game{
 function startGame(){
     startmenu = document.getElementsByClassName("the-start-menu-elements");
     gameelements = document.getElementsByClassName("the-game-elements");
-
+    fillRecordsTable();
     for(let i=0;i<startmenu.length;i++)
     {
         setTimeout(addedOrRemove,1500,startmenu[i],"hidden");
@@ -167,7 +167,7 @@ function fillingBraceletInGame(level){
 
     colors.addEventListener(`click`,function(){
         itemstochange = document.getElementsByClassName("shapes");
-        if(event.target.innerHTML=="White"){
+        if(event.target.innerHTML==`<p>White</p>`){
             for(let i=0;i<itemstochange.length;i++){
                 itemstochange[i].style.backgroundImage=colorsarray[0];
             }
@@ -296,51 +296,55 @@ function runningLevel(gameinprogress){
       })
       fillingBraceletInGame(gameinprogress.level.logicallevelforjewels);
       let eventtrigger = document.getElementById("sendit");
+      let key;
+      let timeoff = setTimeout(tester,10000);
       eventtrigger.addEventListener("click",tester);
     function tester(){
+        clearTimeout(timeoff);
         let verificator = "";
         let elementtocheck = document.getElementsByClassName("filled");
         for(let i=0;i<(gameinprogress.level.logicallevelforjewels);i++)
             {
-                console.log("nivel adentro del for: "+gameinprogress.level.logicallevelforjewels)
-                console.log(verificator);
-            if(elementtocheck[i].style.backgroundImage!=undefined){
+            if(elementtocheck[i]!=undefined){
                 verificator=verificator+elementtocheck[i].style.backgroundImage; 
             }else{
                   alert("please fill all the jewels");
                   return;
                 }
             }
-            let key;
-        if(verificator==combination[0]){
+        function submition(){
+
+            if(verificator==combination[0]){
             
-            document.getElementById("levelingametoshow").innerHTML =  "LEVEL " + gameinprogress.level.leveltoshow;
-            console.log("perfect");
-            gameinprogress.level.newLevel()
-            console.log(gameinprogress.level);
-            gameinprogress.recordInGame();
-            console.log("level:"+gameinprogress.record);
-            console.log("level:"+gameinprogress.player.record);
-            probamos(String(gameinprogress.record),"numbers-points");
-            document.getElementById("sendit").removeEventListener("click",tester);
-            verificator="";
-            resetBackGroundJewels(elementtocheck)
-            runningLevel(gameinprogress);
-        }else{
-            console.log("sorry you lose");
-            if(localStorage.length=0)
-            {
-                key = 1;
-                localStorage.setItem(key,gameinprogress.player.name+'/'+gameinprogress.record+'/'+gameinprogress.level.leveltoshow+'/'+gameinprogress.player.identifier);
+                document.getElementById("levelingametoshow").innerHTML =  "LEVEL " + gameinprogress.level.leveltoshow;
+                console.log("perfect");
+                gameinprogress.level.newLevel()
+                console.log(gameinprogress.level);
+                gameinprogress.recordInGame();
+                console.log("level:"+gameinprogress.record);
+                console.log("level:"+gameinprogress.player.record);
+                probamos(String(gameinprogress.record),"numbers-points");
+                document.getElementById("sendit").removeEventListener("click",tester);
+                verificator="";
+                resetBackGroundJewels(elementtocheck)
+                runningLevel(gameinprogress);
             }else{
-                key = localStorage.length + 1;
-                localStorage.setItem(key,gameinprogress.player.name+'/'+gameinprogress.record+'/'+gameinprogress.level.leveltoshow+'/'+gameinprogress.player.identifier);
-                fillRecordsTable();
+                console.log("sorry you lose");
+                if(localStorage.length=0)
+                {
+                    key = 1;
+                    localStorage.setItem(key,gameinprogress.player.name+'/'+gameinprogress.record+'/'+gameinprogress.level.leveltoshow+'/'+gameinprogress.player.identifier);
+                }else{
+                    key = localStorage.length + 1;
+                    localStorage.setItem(key,gameinprogress.player.name+'/'+gameinprogress.record+'/'+gameinprogress.level.leveltoshow+'/'+gameinprogress.player.identifier);
+                    fillRecordsTable();
+                }
+                resetGame();
+                apearJewelsToReset();
+                eventtrigger.removeEventListener("click",tester);
             }
-            resetGame();
-            apearJewelsToReset();
-            eventtrigger.removeEventListener("click",tester);
         }
+        submition();
     }
 }
 
@@ -390,7 +394,8 @@ function resetGame(){
 
 function createCellRecords(name,level,score){
     table = document.getElementById("recordstable");
-    row =  document.createElement("tr");
+    row =  document.createElement(`tr`);
+    row.classList.add("data");
     celName = document.createElement("td");
     celLevel = document.createElement("td");
     celScore = document.createElement("td");
@@ -429,16 +434,32 @@ function orderRecords(){
 }
 
 function fillRecordsTable(){
-    //limpiar la tabla antes de rellenarla
+    
+    cleanRowsRecords()
     usersordered = orderRecords();
     counter=usersordered.length-1;
     for(counter;counter>=0;counter--){
         createCellRecords(usersordered[counter].name,usersordered[counter].level,usersordered[counter].record)
     }
+    maximumRecord();
+}
+
+function maximumRecord(){
+    records=document.getElementsByClassName("data");
+    maxrecord = records[0].children[2].firstElementChild.innerText;
+    probamos(maxrecord,"numbers-record");
 }
 
 
-
+function cleanRowsRecords(){
+    rowstoclean = document.getElementsByClassName("data");
+    aux=rowstoclean.length;
+    for(let i=0;i<aux;i++)
+    {
+        console.log("paso por el delete");
+        document.getElementById("recordstable").deleteRow(1);
+    }
+}
 
 
 

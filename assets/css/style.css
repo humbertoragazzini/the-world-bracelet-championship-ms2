@@ -314,6 +314,7 @@ img{
 }
 .btn.shapes{
   background-size: cover;
+    border-radius: 50%;
     height: 12vw;
     width: 13vw;
 }
