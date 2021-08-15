@@ -429,12 +429,11 @@ function orderRecords(){
 }
 
 function fillRecordsTable(){
+    //limpiar la tabla antes de rellenarla
     usersordered = orderRecords();
-    console.log(usersordered);
-    aux=usersordered.length-1;
-    while(aux>=0){
-        createCellRecords(usersordered[aux].name,usersordered[aux].level,usersordered[aux].record)
-        aux=aux-1;
+    counter=usersordered.length-1;
+    for(counter;counter>=0;counter--){
+        createCellRecords(usersordered[counter].name,usersordered[counter].level,usersordered[counter].record)
     }
 }
 
