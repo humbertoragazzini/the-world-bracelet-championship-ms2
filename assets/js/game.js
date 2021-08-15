@@ -22,7 +22,7 @@ class Player{
     }
   
   }
-//
+// class level 
 class Level{
 
     constructor(){
@@ -136,7 +136,7 @@ function startGame(){
 }
 
 
-
+//this function make posible to select the color and the shape of the jewels
 function fillingBraceletInGame(level){
 
     let colorsarray = [`url('assets/image/backgrounds/jewels/jewel-diamond-white.png')`,`url('assets/image/backgrounds/jewels/jewel-diamond-red.png')`,`url('assets/image/backgrounds/jewels/jewel-diamond-blue.png')`,`url('assets/image/backgrounds/jewels/jewel-diamond-yellow.png')`]; 
@@ -203,7 +203,7 @@ function fillingBraceletInGame(level){
     
 }
 
-
+//the random jewels inyector like the name said inyect randome elements and the url addresses, this function make the random combination to be follow
 function randomJewelsInyector(level){
     let elements = [];
     elements[0]="";
@@ -229,6 +229,7 @@ function randomJewelsInyector(level){
     return elements;
 }
 
+//this is the beginning of the game where its checked the name and the creation of the object user and game
 function firstSteps(){
     console.log("paso");
     let regex = new RegExp("^[0-9a-zA-Z\b]+$");
@@ -249,6 +250,8 @@ function firstSteps(){
         runningLevel(gameinprogress);
     }
 }
+
+//this function make visible the game area
 function gameSpaceAppear(bracelettomake,toolsmaker,newuserform){
     setTimeout(addedOrRemove, 1000,newuserform,"hidden");
     addedOrRemove(newuserform,"disapear");
@@ -279,9 +282,9 @@ function gameTimerTrigger(player,tools,bracelet,elementclock){
 }
 
 
-
+//start of a level
 function runningLevel(gameinprogress){
-    
+    //popup with the combination to be used
     var Popuplevel = Swal.mixin({
         toast: true,
         position: 'center',
@@ -294,15 +297,19 @@ function runningLevel(gameinprogress){
         html: combination[1],
         title: 'Memorize this pattern'
       })
+      //function to make posible fillup the empty spaces with jewels
       fillingBraceletInGame(gameinprogress.level.logicallevelforjewels);
       let eventtrigger = document.getElementById("sendit");
       let key;
       let timeoff = setTimeout(tester,10000);
       eventtrigger.addEventListener("click",tester);
+      //function tester, test if the combination is okay
     function tester(){
+        //this timeout was declare before to give time limite to complete the level
         clearTimeout(timeoff);
         let verificator = "";
         let elementtocheck = document.getElementsByClassName("filled");
+        //check if all the spaces are filled before test
         for(let i=0;i<(gameinprogress.level.logicallevelforjewels);i++)
             {
             if(elementtocheck[i]!=undefined){
@@ -312,24 +319,21 @@ function runningLevel(gameinprogress){
                   return;
                 }
             }
+        //submit of the combination maded by the user
         function submition(){
 
             if(verificator==combination[0]){
-            
+                //we record the level in the interface
                 document.getElementById("levelingametoshow").innerHTML =  "LEVEL " + gameinprogress.level.leveltoshow;
-                console.log("perfect");
                 gameinprogress.level.newLevel()
-                console.log(gameinprogress.level);
                 gameinprogress.recordInGame();
-                console.log("level:"+gameinprogress.record);
-                console.log("level:"+gameinprogress.player.record);
                 probamos(String(gameinprogress.record),"numbers-points");
                 document.getElementById("sendit").removeEventListener("click",tester);
                 verificator="";
-                resetBackGroundJewels(elementtocheck)
+                resetBackGroundJewels(elementtocheck);
                 runningLevel(gameinprogress);
             }else{
-                console.log("sorry you lose");
+                //the user lose, so next step its record the data in the localstorage
                 if(localStorage.length=0)
                 {
                     key = 1;
@@ -339,6 +343,7 @@ function runningLevel(gameinprogress){
                     localStorage.setItem(key,gameinprogress.player.name+'/'+gameinprogress.record+'/'+gameinprogress.level.leveltoshow+'/'+gameinprogress.player.identifier);
                     fillRecordsTable();
                 }
+                //we reset the interface to make all be ready to use again
                 resetGame();
                 apearJewelsToReset();
                 eventtrigger.removeEventListener("click",tester);
@@ -348,6 +353,8 @@ function runningLevel(gameinprogress){
     }
 }
 
+
+//this function make the space appear to be accesible for user
 function apearJewelsToFill(level){
     let jewelstofillup = document.getElementsByClassName(`jewels-space`);
     for(let i=0;i<level;i++)
@@ -355,6 +362,7 @@ function apearJewelsToFill(level){
         jewelstofillup[i].classList.remove("hiddenforjewels");
     }
 }
+//we reset the status of the spaces to make them ready for a next filling
 function apearJewelsToReset(){
     let jewelstofillup = document.getElementsByClassName(`jewels-space`);
     for(let i=0;i<7;i++)
@@ -369,6 +377,8 @@ function apearJewelsToReset(){
         }
     }
 }
+
+//because we use the background like a shape and color of the jewels, we reset this background to "" for a future level
 function resetBackGroundJewels(jewelstoreset){
     for(let i=0;i<jewelstoreset.length;i++)
         {
@@ -376,6 +386,8 @@ function resetBackGroundJewels(jewelstoreset){
         }
 }
 
+
+//this function basically make all the html elements disappear and appear depending of the element to make the game area ready for a next user
 function resetGame(){
 
     startmenu = document.getElementsByClassName("the-start-menu-elements");
@@ -391,7 +403,7 @@ function resetGame(){
     setTimeout(addedOrRemove,200,form,"hidden");
 }
 
-
+// with this function we create a row of the last users data like name,record, and level
 function createCellRecords(name,level,score){
     table = document.getElementById("recordstable");
     row =  document.createElement(`tr`);
@@ -408,6 +420,7 @@ function createCellRecords(name,level,score){
     table.appendChild(row);
 }
 
+//because its a array of users, this function give some order to this user array to make them more nice to see it, in this case the order its by record
 function orderRecords(){
 
     let users = [];
@@ -433,6 +446,7 @@ function orderRecords(){
     return users;
 }
 
+//this function fillup the html record table and execute the maximumRecord function to record the best record in the record square
 function fillRecordsTable(){
     
     cleanRowsRecords()
@@ -444,13 +458,14 @@ function fillRecordsTable(){
     maximumRecord();
 }
 
+//this small function take the best record from the table and call the probamos function to record this record en the record square
 function maximumRecord(){
     records=document.getElementsByClassName("data");
     maxrecord = records[0].children[2].firstElementChild.innerText;
     probamos(maxrecord,"numbers-record");
 }
 
-
+//when a game finished to avoid duplicated data this function clean the entery table for new data
 function cleanRowsRecords(){
     rowstoclean = document.getElementsByClassName("data");
     aux=rowstoclean.length;
