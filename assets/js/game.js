@@ -220,18 +220,14 @@ function randomJewelsInyector(level){
     let jewels1 = [caca1,caca12,caca13,caca14,caca1,caca12,caca13,caca14];
     for(let i=0;i<level;i++){
         position = Math.round((Math.random()*6));
-        console.log(position);
         elements[0] = elements[0]+jewels[position];
-        console.log(elements[0]);
         elements[1] = elements[1] + jewels1[position];
-        console.log(elements[1]);
     }
     return elements;
 }
 
 //this is the beginning of the game where its checked the name and the creation of the object user and game
 function firstSteps(){
-    console.log("paso");
     let regex = new RegExp("^[0-9a-zA-Z\b]+$");
     clock = document.getElementById("timer");
     let intro;
@@ -265,7 +261,6 @@ function gameTimerTrigger(player,tools,bracelet,elementclock){
     let   sec = 0;
     function second(){
     sec++;
-    console.log(sec);
     elementclock.innerHTML=String(sec);
         if(sec==20){
             sec=0;
@@ -471,7 +466,6 @@ function cleanRowsRecords(){
     aux=rowstoclean.length;
     for(let i=0;i<aux;i++)
     {
-        console.log("paso por el delete");
         document.getElementById("recordstable").deleteRow(1);
     }
 }
