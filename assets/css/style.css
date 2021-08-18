@@ -42,7 +42,7 @@ body p {
  background-image: url('../image/backgrounds/belt-background.png');
  background-position: center;
  background-repeat: no-repeat;
- background-size: contain;
+ background-size: 650px;
 }
 
 /*styling of the a tag, button to start the game*/
@@ -50,7 +50,7 @@ body p {
 #start-button{
   position: relative;
   font-family: Ethnocentric;
-  font-size: 70px;
+  font-size:35px;
   top: 11vh;
   z-index: 6;
   animation-duration: 2s;
@@ -79,10 +79,15 @@ img{
 }
 
 /*--RESPOSIVE--*/
-@media only screen and (min-width: 4160px) {
+@media only screen and (max-width: 4160px) {
 
   /*index*/
-  
+  #start-button{
+    font-size: 90px;
+  }
+  #image-background{
+    background-size: 1800px;
+  }
   /*game*/
   .points{
   font-size: 35px;
@@ -95,58 +100,66 @@ img{
 
 }
 
-@media only screen and (min-width: 1400px) {
+@media only screen and (max-width: 1400px) {
 
   /*index*/
   #start-button{
-    font-size: 60px;
+    font-size: 75px;
+  }
+  #image-background{
+    background-size: 1400px;
+  }
+  /*game*/
+
+}
+
+@media only screen and (max-width: 1200px) {
+
+  /*index*/
+  #start-button{
+    font-size: 75px;
+  }
+  #image-background{
+    background-size: 1400px;
   }
 
   /*game*/
 
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (max-width: 992px) {
 
   /*index*/
   #start-button{
     font-size: 50px;
   }
-
-  /*game*/
-
-}
-
-@media only screen and (min-width: 992px) {
-
-  /*index*/
-  #start-button{
-    font-size: 37px;
-  } 
-
+  #image-background{
+    background-size: 940px;
+  }
   /*game*/
   .points{
     font-size: 30px;
   }
-  
 } 
 
-@media only screen and (min-width: 768px) {
+@media only screen and (max-width: 768px) {
 
   /*index*/
   #start-button{
-    font-size: 27px;
+    font-size: 50px;
   }
-
+  #image-background{
+    background-size: 940px;
+  }
   /*game*/
 
 }
 
-@media only screen and (min-width: 575px) {
+@media only screen and (max-width: 575px) {
 
   /*index*/
   #start-button{
-    font-size: 5vw;
+    font-size: 32px;
   }
 
   /*game*/  
@@ -156,6 +169,9 @@ img{
   }
   .points{
     font-size: 20px;
+  }
+  #image-background{
+    background-size: 600px;
   }
 
 }
