@@ -162,13 +162,13 @@
       height: 25%;
     }
     .btn.shapes {
-      height: 10vw;
-      width: 10vw;
+      height: 7vw;
+      width: 8vw;
     }
     .btn.colors {
       border-radius: 12%;
-      height: 7vw;
-      width: 7vw;
+      height: 5vw;
+      width: 10vw;
     }
     .lvl-background {
       height: 90%;
@@ -178,6 +178,9 @@
     }
     #game-in-progres {
       height: 80%;
+    }
+    .jewels-space.joyas{
+      height: 100%;
     }
   } 
   
