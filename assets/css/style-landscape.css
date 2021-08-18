@@ -1,0 +1,356 @@
+@font-face {
+    font-family: Ethnocentric;
+    src: url(../fonts/Ethnocentric-regular.woff);
+  }
+  
+  
+  /*---- INDEX ----*/
+  body{
+    overflow: hidden;
+    min-width: 360px;
+    min-height: 640px;
+  }
+  
+  body p {
+    margin-top: 0px;
+    margin-bottom: 0rem;
+  }
+  /*this is the styling of the main background, its not include the jewels, its just the gold background one*/
+  
+  #animated-background{
+    background-image: url('../image/backgrounds/background.png');
+    background-blend-mode: hard-light;
+    background-size: cover;
+    background-color: black;
+    overflow: hidden;
+    height: 100vh;
+  }
+  
+  /*styling of the first and last row*/
+  
+  .part{
+    height: 5%;
+  }
+  
+  /*staling of the boxing belt*/
+  
+  #image-background{
+   position: relative;
+   z-index: 2;
+   height: 100%;
+   background-image: url('../image/backgrounds/belt-background.png');
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: 650px;
+  }
+  
+  /*styling of the a tag, button to start the game*/
+  
+  #start-button{
+    position: relative;
+    font-family: Ethnocentric;
+    font-size:35px;
+    top: 11vh;
+    z-index: 6;
+    animation-duration: 2s;
+    animation-name: glowing;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    text-decoration: none;
+  }
+  
+  /*this propertie is for the div, this div contain the image of the jewels*/
+  
+  .moving-jewels{
+    display: block;
+    z-index: 1;
+    width: 3vw;
+    height: 0vw;
+    position: relative;
+    background-size: cover;
+  }
+  
+  /*this item make the jewels gif have the size of 57px*/
+  
+  img{
+    width: 57px;
+    height: 57px;
+  }
+  
+  /*--RESPOSIVE--*/
+  @media only screen and (max-width: 4160px) {
+  
+    /*index*/
+    #start-button{
+      font-size: 90px;
+    }
+    #image-background{
+      background-size: 1800px;
+    }
+    /*game*/
+    .points{
+    font-size: 35px;
+    }
+  
+    .text-squares {
+      font-size: 37px;
+      margin-bottom: 0rem;
+    }
+  
+  }
+  
+  @media only screen and (max-width: 1400px) {
+  
+    /*index*/
+    #start-button{
+      font-size: 75px;
+    }
+    #image-background{
+      background-size: 1400px;
+    }
+    /*game*/
+  
+  }
+  
+  @media only screen and (max-width: 1200px) {
+  
+    /*index*/
+    #start-button{
+      font-size: 75px;
+    }
+    #image-background{
+      background-size: 1400px;
+    }
+  
+    /*game*/
+  
+  }
+  
+  @media only screen and (max-width: 992px) {
+  
+    /*index*/
+    #start-button{
+      font-size: 30px;
+    }
+    #image-background{
+      background-size: 800px;
+    }
+    /*game*/
+    .points{
+      font-size: 30px;
+    }
+  } 
+  
+  @media only screen and (max-width: 768px) {
+  
+    /*index*/
+    #start-button{
+      font-size: 30px;
+    }
+    #image-background{
+      background-size: 940px;
+    }
+    /*game*/
+  
+  }
+  
+  @media only screen and (max-width: 575px) {
+  
+    /*index*/
+    #start-button{
+      font-size: 32px;
+    }
+  
+    /*game*/  
+    #text-squares {
+      font-size: 20px;
+      margin-bottom: 0rem;
+    }
+    .points{
+      font-size: 20px;
+    }
+    #image-background{
+      background-size: 600px;
+    }
+  
+  }
+  
+  /*--ANIMATION--*/
+  
+  @keyframes glowing {
+    from{
+      text-shadow: 1px 1px 20px white,-1px -1px 20px white,0px 1px 20px white,0px -1px 20px white;
+    }
+    to{
+      text-shadow: 1px 1px 0px white,-1px -1px 0px white,0px 1px 0px white,0px -1px 0px white;
+    }
+  }
+  
+  @keyframes disapear-element {
+    from{
+      opacity: 1.0;
+    }
+    to{
+      opacity: 0.0;
+    }
+  }
+  
+  @keyframes appear-element {
+    from{
+      opacity: 0.0;
+    }
+    to{
+      opacity: 1.0;
+    }
+  }
+  
+  /*------game styling-------*/
+  
+  .lvl-background{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    border-radius: 10px;
+    text-align: center;
+    z-index: 2;
+  }
+  
+  .score-record-background.lvl-background{
+  }
+  
+  .spacer-bottom{
+    color: white;
+    border-bottom: solid 5px rgba(0,0,0,0);
+  }
+  
+  .spacer-top{
+    color: white;
+    border-top: solid 5px rgba(0,0,0,0);
+  }
+  
+  #tittle{
+    height: 5%;
+    font-family: Ethnocentric;
+  }
+  
+  #panel-score-record{
+    height: 10%;
+    font-family: Ethnocentric;
+    color: white;
+  }
+  
+  #game-in-progres{
+    height: 85%;
+    font-family: Ethnocentric;
+    color: white;
+  }
+  
+  .points{
+      background-color: rgba(0,0,0,0.5);
+      overflow: hidden;
+      float: left;
+      margin-left: 3%;
+      border-radius: 3px;
+      width: 13%;
+      height: 40%;
+  }
+  
+  #record{
+    height: 100%;
+  }
+  
+  #score{
+    height: 100%;
+  }
+  
+  .numbers-points{
+    position: relative;
+    top: 0px;
+  }
+  
+  .numbers-record{
+    position: relative;
+    top: 0px;
+  }
+  
+  #bracelettomake{
+    width: 100%;
+    height: 50%;
+    background-color: rgba(0,0,0,0.2);
+    border: solid 4px rgba(0,0,0,1);
+    border-radius: 5px;
+  }
+  #toolsmaker{
+    width: 100%;
+    height: 50%;
+    position: relative;
+    background-color: rgba(0,0,0,0.2);
+    border: solid 4px rgba(0,0,0,1);
+    border-radius: 5px;
+  }
+  #thebracelet{
+    height: 50vw;
+    width: 50vw;
+    border-radius: 50%;
+    transform: rotate3d(1,0,0,60deg);
+  }
+  #innerbracelet{
+    height: 50vw;
+    border: solid 1em black;
+    width: 50vw;
+    border-radius: 50%;
+    transform: rotateZ(0deg);
+  }
+  .braceletjewels{
+    transform: rotate3d(1,0,0,60deg);
+  }
+  .disapear{
+    animation-duration: 1s;
+    animation-name: disapear-element;
+    opacity: 0;
+  }
+  .appear{
+    animation-duration: 1s;
+    animation-name: appear-element;
+    opacity: 1;
+  }
+  .row.hidden{
+    display: none;
+    visibility: hidden;
+  }
+  .hidden{
+    display: none;
+    visibility: hidden;
+  }
+  .jewels-space{
+    background-size: cover;
+    background-position: center;
+  }
+  .btn.shapes{
+    background-size: cover;
+      border-radius: 50%;
+      height: 12vw;
+      width: 13vw;
+  }
+  .joyas{
+    background-color: rgba(0,0,0,0.5);
+  }
+  .btn.colors{
+    font-size: 0.5em;
+    text-align: center;
+    margin-top: auto;
+    border-radius: 50%;
+    height: 10vw;
+    width: 10vw;
+  }
+  .popup{
+    display: inline;
+    width: 13%;
+    height: auto;
+  }
+  
+  .hiddenforjewels{
+    display: none;
+    visibility: hidden;
+  }

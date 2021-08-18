@@ -38,7 +38,7 @@ body p {
 #image-background{
  position: relative;
  z-index: 2;
- height: 90%;
+ height: 100%;
  background-image: url('../image/backgrounds/belt-background.png');
  background-position: center;
  background-repeat: no-repeat;
@@ -120,7 +120,7 @@ img{
     font-size: 75px;
   }
   #image-background{
-    background-size: 1400px;
+    background-size: 1900px;
   }
 
   /*game*/
@@ -134,7 +134,7 @@ img{
     font-size: 50px;
   }
   #image-background{
-    background-size: 940px;
+    background-size: 1300px;
   }
   /*game*/
   .points{
@@ -149,7 +149,7 @@ img{
     font-size: 50px;
   }
   #image-background{
-    background-size: 940px;
+    background-size: 1250px;
   }
   /*game*/
 
@@ -171,7 +171,7 @@ img{
     font-size: 20px;
   }
   #image-background{
-    background-size: 600px;
+    background-size: 840px;
   }
 
 }
