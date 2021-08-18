@@ -69,9 +69,20 @@ class Game{
       let record = '';
       let level = '';
       let cache = '';
-      let user = localStorage.getItem(key);
+      let user;
+      let flag;
+      let usuario;
+      let lengthofdata;
+      if(localStorage.getItem(key)!=null)
+      {
+        user = localStorage.getItem(key);
+        lengthofdata = user.length;
+      }else{
+        console.log("catch");
+        lengthofdata=(-1);
+    }
       let i = 0;
-      lengthofdata = user.length;
+      
 
     while(i<lengthofdata){
         if(user[0]!='/'){
@@ -116,8 +127,12 @@ class Game{
             break;
         }
     }
-
-    let usuario = new Player(name,record,level);
+    if(lengthofdata!=(-1)){
+        usuario = new Player(name,record,level);
+    }else{
+        usuario=false;
+    }
+     
     return usuario;
   }
 
@@ -229,7 +244,6 @@ function randomJewelsInyector(level){
 //this is the beginning of the game where its checked the name and the creation of the object user and game
 function firstSteps(){
     let regex = new RegExp("^[0-9a-zA-Z\b]+$");
-    clock = document.getElementById("timer");
     let intro;
     let newplayer = new Player();
     let bracelettomake = document.getElementById("bracelettomake");
@@ -257,24 +271,6 @@ function gameSpaceAppear(bracelettomake,toolsmaker,newuserform){
     addedOrRemove(bracelettomake,"appear");
 }
 
-function gameTimerTrigger(player,tools,bracelet,elementclock){
-    let   sec = 0;
-    function second(){
-    sec++;
-    elementclock.innerHTML=String(sec);
-        if(sec==20){
-            sec=0;
-            clearInterval(interval);
-            elementclock.innerHTML="0000";
-            setTimeout(addedOrRemove, 1000,tools,"hidden");
-            addedOrRemove(tools,"disapear");
-            setTimeout(addedOrRemove, 1000,bracelet,"hidden");
-            addedOrRemove(bracelet,"disapear");
-            localStorage.setItem('2',player.name+'/'+player.record+'/'+player.level+'/');
-        }
-    }
-    let interval = setInterval(second,1000);
-}
 
 
 //start of a level
@@ -296,12 +292,10 @@ function runningLevel(gameinprogress){
       fillingBraceletInGame(gameinprogress.level.logicallevelforjewels);
       let eventtrigger = document.getElementById("sendit");
       let key;
-      let timeoff = setTimeout(tester,10000);
       eventtrigger.addEventListener("click",tester);
       //function tester, test if the combination is okay
+    
     function tester(){
-        //this timeout was declare before to give time limite to complete the level
-        clearTimeout(timeoff);
         let verificator = "";
         let elementtocheck = document.getElementsByClassName("filled");
         //check if all the spaces are filled before test
@@ -310,7 +304,8 @@ function runningLevel(gameinprogress){
             if(elementtocheck[i]!=undefined){
                 verificator=verificator+elementtocheck[i].style.backgroundImage; 
             }else{
-                  alert("please fill all the jewels");
+                  submition();
+                  alert("Remember to complet all the spaces, try again");
                   return;
                 }
             }
@@ -329,14 +324,28 @@ function runningLevel(gameinprogress){
                 runningLevel(gameinprogress);
             }else{
                 //the user lose, so next step its record the data in the localstorage
-                if(localStorage.length=0)
+                if(localStorage.length==0)
                 {
                     key = 1;
                     localStorage.setItem(key,gameinprogress.player.name+'/'+gameinprogress.record+'/'+gameinprogress.level.leveltoshow+'/'+gameinprogress.player.identifier);
-                }else{
-                    key = localStorage.length + 1;
-                    localStorage.setItem(key,gameinprogress.player.name+'/'+gameinprogress.record+'/'+gameinprogress.level.leveltoshow+'/'+gameinprogress.player.identifier);
+                    orderRecords();
                     fillRecordsTable();
+                }else{
+                    if(localStorage.length<8)
+                    {
+                        key = localStorage.length + 1;
+                        localStorage.setItem(key,gameinprogress.player.name+'/'+gameinprogress.record+'/'+gameinprogress.level.leveltoshow+'/'+gameinprogress.player.identifier);
+                        fillRecordsTable();
+                        console.log("paso por el if");
+                    }else{
+                        key = 8;
+                        orderRecords();
+                        localStorage.setItem(key,gameinprogress.player.name+'/'+gameinprogress.record+'/'+gameinprogress.level.leveltoshow+'/'+gameinprogress.player.identifier);
+                        fillRecordsTable();
+                        console.log(localStorage.length);
+                    }
+                    
+                
                 }
                 //we reset the interface to make all be ready to use again
                 resetGame();
@@ -421,9 +430,18 @@ function orderRecords(){
     let users = [];
     if(localStorage.length>0)
     {
+
+        console.log(localStorage.length);
+        console.log("llego al orderrecords");
+        let j = 1;
         for(let i=0;i<localStorage.length;i++){
-            users[i]=recoverDataFromLocal(i+1);
-        }
+            if(recoverDataFromLocal(j)!=false){
+                users[i]=recoverDataFromLocal(j);
+                j++;
+            }else{j++;i--;}
+
+        }//hacer un try catch adentro de recoverdatafromlocal, que si falla retorne false, y que si funciona que retorne true, y asi podel levantar la informacion sin depender del key
+    console.log(users);
     }
 
     var n, i, k, aux;
@@ -437,13 +455,20 @@ function orderRecords(){
             }
         }
     }
-
+    let j=0;
+    console.log(users.length);
+    if(users.length==8){
+    for(let i=users.length-1;i>=0;i--){
+        localStorage.setItem(String(8-i),users[i].name+'/'+users[i].record+'/'+users[i].level+'/'+users[i].identifier);
+        console.log("para verificar el orden en esta funcion"+j+1,users[i].name+'/'+users[i].record+'/'+users[i].level+'/'+users[i].identifier);
+    }
+    }
     return users;
 }
 
 //this function fillup the html record table and execute the maximumRecord function to record the best record in the record square
 function fillRecordsTable(){
-    
+    console.log("llego al fillrecords");
     cleanRowsRecords()
     usersordered = orderRecords();
     counter=usersordered.length-1;
@@ -455,9 +480,18 @@ function fillRecordsTable(){
 
 //this small function take the best record from the table and call the probamos function to record this record en the record square
 function maximumRecord(){
+
     records=document.getElementsByClassName("data");
-    maxrecord = records[0].children[2].firstElementChild.innerText;
-    probamos(maxrecord,"numbers-record");
+    if(records[0]!=undefined)
+    {
+        maxrecord = records[0].children[2].firstElementChild.innerText;
+        probamos(maxrecord,"numbers-record");
+    }else{
+        return;
+    }
+
+    
+
 }
 
 //when a game finished to avoid duplicated data this function clean the entery table for new data
@@ -470,6 +504,11 @@ function cleanRowsRecords(){
     }
 }
 
+
+function counterClock(sec){
+    if(sec<10){sec++}
+    else{}
+}
 
 
 
