@@ -107,14 +107,23 @@
     #bracelettomake {
       height: 20%;
     }
+    #jewelscolors{
+      margin-top: 5%;
+    }
     .btn.shapes {
       height: 10vw;
+      margin: 25px auto;
       width: 10vw;
+      max-width: 150px;
+      max-height: 150px;
     }
     .btn.colors {
       border-radius: 12%;
+      margin: 25px auto;
       height: 7vw;
       width: 7vw;
+      max-width: 120px;
+      max-height: 120px;
     }
     .lvl-background {
       height: 95%;
@@ -192,7 +201,8 @@
     }
     .btn.shapes {
       height: 7vw;
-      width: 8vw;
+      width: 7vw;
+      margin: 0px auto;
     }
     .btn.colors {
       border-radius: 12%;
@@ -207,6 +217,22 @@
     }
     #game-in-progres {
       height: 80%;
+    }
+    #jewelscolors{
+      height: 35%;
+      margin: 0% auto;
+    }
+    #jewelstochose{
+      height: 45%;
+    }
+    #userform{
+      text-align: -webkit-center;
+    }
+    .levelandscore{
+      text-align: center;
+    }
+    .tittlelvlandrecord{
+      text-align: center;
     }
   } 
   
@@ -254,7 +280,9 @@
     .jewels-space.joyas{
       height: 100%;
     }
-
+    #recordstable{
+      width: 400px;
+    }
   }
   
   @media only screen and (max-width: 575px) {
@@ -275,7 +303,10 @@
     #image-background{
       background-size: 600px;
     }
-  
+    
+    #recordstable{
+      width: 400px;
+    }
   }
   
   /*--ANIMATION--*/

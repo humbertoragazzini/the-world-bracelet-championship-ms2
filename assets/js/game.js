@@ -416,8 +416,8 @@ function createCellRecords(name,level,score){
     celLevel = document.createElement("td");
     celScore = document.createElement("td");
     celName.innerHTML= `<p>`+name+`</p>`;
-    celLevel.innerHTML= `<p>`+level+`</p>`;
-    celScore.innerHTML= `<p>`+score+`</p>`;
+    celLevel.innerHTML= `<p class="levelandscore">`+level+`</p>`;
+    celScore.innerHTML= `<p class="levelandscore">`+score+`</p>`;
     row.appendChild(celName);
     row.appendChild(celLevel);
     row.appendChild(celScore);
