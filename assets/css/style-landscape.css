@@ -89,12 +89,41 @@
     }
     /*game*/
     .points{
-    font-size: 35px;
+      font-size: 37px;
     }
-  
     .text-squares {
       font-size: 37px;
       margin-bottom: 0rem;
+    }
+    #game-in-progres {
+      height: 80%;
+    }
+    #panel-score-record {
+      height: 15%;
+    }
+    #tittle {
+    height: 8%;
+    }
+    #bracelettomake {
+      height: 20%;
+    }
+    .btn.shapes {
+      height: 10vw;
+      width: 10vw;
+    }
+    .btn.colors {
+      border-radius: 12%;
+      height: 7vw;
+      width: 7vw;
+    }
+    .lvl-background {
+      height: 95%;
+    }
+    #toolsmaker {
+      height: 80%;
+    }
+    .jewels-space.joyas{
+      height: 100%;
     }
   
   }
@@ -179,9 +208,6 @@
     #game-in-progres {
       height: 80%;
     }
-    .jewels-space.joyas{
-      height: 100%;
-    }
   } 
   
   @media only screen and (max-width: 768px) {
@@ -206,6 +232,7 @@
     .points {
       font-size: 14px;
     }
+    
     #bracelettomake {
       height: 20%;
     }
@@ -223,6 +250,9 @@
     }
     #toolsmaker {
       height: 80%;
+    }
+    .jewels-space.joyas{
+      height: 100%;
     }
 
   }

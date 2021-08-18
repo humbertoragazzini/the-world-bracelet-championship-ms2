@@ -152,7 +152,9 @@ img{
     background-size: 1250px;
   }
   /*game*/
-
+  .text-squares {
+    font-size: 20px;
+  }
 }
 
 @media only screen and (max-width: 575px) {
@@ -163,17 +165,27 @@ img{
   }
 
   /*game*/  
-  #text-squares {
-    font-size: 20px;
-    margin-bottom: 0rem;
-  }
+
   .points{
-    font-size: 20px;
+    font-size: 15px;
   }
   #image-background{
     background-size: 840px;
   }
-
+  .text-squares {
+    font-size: 15px;
+  }
+  #playername{
+      width: 80%;
+      margin: 20px;
+  }
+  #newuserform{
+    padding-top: 25px;
+  }
+  #recordstable{
+      margin: 15px 5%;
+      width: 90%;
+  }
 }
 
 /*--ANIMATION--*/
