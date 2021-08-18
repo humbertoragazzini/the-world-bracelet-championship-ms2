@@ -82,7 +82,7 @@
   
     /*index*/
     #start-button{
-      font-size: 90px;
+      font-size: 70px;
     }
     #image-background{
       background-size: 1800px;
@@ -103,27 +103,33 @@
   
     /*index*/
     #start-button{
-      font-size: 75px;
+      font-size: 55px;
     }
     #image-background{
       background-size: 1400px;
     }
     /*game*/
-  
+    .text-squares {
+      font-size: 25px;
+      margin-bottom: 0rem;
+    }
   }
   
   @media only screen and (max-width: 1200px) {
   
     /*index*/
     #start-button{
-      font-size: 75px;
+      font-size: 55px;
     }
     #image-background{
       background-size: 1400px;
     }
   
     /*game*/
-  
+    .text-squares {
+      font-size: 25px;
+      margin-bottom: 0rem;
+    }
   }
   
   @media only screen and (max-width: 992px) {
@@ -139,6 +145,40 @@
     .points{
       font-size: 30px;
     }
+    .text-squares {
+      font-size: 16px;
+      margin-bottom: 0rem;
+    }
+    #panel-score-record {
+      height: 18%;
+    }
+    #tittle {
+    height: 10%;
+    }
+    .points {
+      font-size: 14px;
+    }
+    #bracelettomake {
+      height: 25%;
+    }
+    .btn.shapes {
+      height: 10vw;
+      width: 10vw;
+    }
+    .btn.colors {
+      border-radius: 12%;
+      height: 7vw;
+      width: 7vw;
+    }
+    .lvl-background {
+      height: 90%;
+    }
+    #toolsmaker {
+      height: 75%;
+    }
+    #game-in-progres {
+      height: 80%;
+    }
   } 
   
   @media only screen and (max-width: 768px) {
@@ -151,19 +191,49 @@
       background-size: 940px;
     }
     /*game*/
-  
+    .text-squares {
+      font-size: 12px;
+    }
+    #panel-score-record {
+      height: 15%;
+    }
+    #tittle {
+    height: 8%;
+    }
+    .points {
+      font-size: 14px;
+    }
+    #bracelettomake {
+      height: 20%;
+    }
+    .btn.shapes {
+      height: 10vw;
+      width: 10vw;
+    }
+    .btn.colors {
+      border-radius: 12%;
+      height: 7vw;
+      width: 7vw;
+    }
+    .lvl-background {
+      height: 95%;
+    }
+    #toolsmaker {
+      height: 80%;
+    }
+
   }
   
   @media only screen and (max-width: 575px) {
   
     /*index*/
     #start-button{
-      font-size: 32px;
+      font-size: 24px;
     }
   
     /*game*/  
     #text-squares {
-      font-size: 20px;
+      font-size: 12px;
       margin-bottom: 0rem;
     }
     .points{
@@ -209,7 +279,6 @@
   .lvl-background{
     position: relative;
     width: 100%;
-    height: 100%;
     background-color: rgba(0,0,0,0.7);
     border-radius: 10px;
     text-align: center;
@@ -230,18 +299,15 @@
   }
   
   #tittle{
-    height: 5%;
     font-family: Ethnocentric;
   }
   
   #panel-score-record{
-    height: 10%;
     font-family: Ethnocentric;
     color: white;
   }
   
   #game-in-progres{
-    height: 85%;
     font-family: Ethnocentric;
     color: white;
   }
@@ -276,14 +342,12 @@
   
   #bracelettomake{
     width: 100%;
-    height: 50%;
     background-color: rgba(0,0,0,0.2);
     border: solid 4px rgba(0,0,0,1);
     border-radius: 5px;
   }
   #toolsmaker{
     width: 100%;
-    height: 50%;
     position: relative;
     background-color: rgba(0,0,0,0.2);
     border: solid 4px rgba(0,0,0,1);
@@ -330,8 +394,6 @@
   .btn.shapes{
     background-size: cover;
       border-radius: 50%;
-      height: 12vw;
-      width: 13vw;
   }
   .joyas{
     background-color: rgba(0,0,0,0.5);
@@ -340,9 +402,6 @@
     font-size: 0.5em;
     text-align: center;
     margin-top: auto;
-    border-radius: 50%;
-    height: 10vw;
-    width: 10vw;
   }
   .popup{
     display: inline;
