@@ -53,64 +53,76 @@
     <div id="tittle" class="row justify-content-center spacer-bottom spacer-top the-game-elements">
         <div class="col-6">
             <div class="lvl-background">
-                <p id="levelingametoshow" class="text-squares">LEVEL 0</p>
+                <div class="row align-items-center center-boxes">
+                    <p id="levelingametoshow" class="text-squares">LEVEL 0</p>
+                </div>
             </div>
         </div>
         <div class="col-6">
             <div class="lvl-background">
-                <p id="timer" class="text-squares">Time(20s):</p>
+                <div class="row align-items-center center-boxes">
+                    <p id="timer" class="text-squares">Time(20s):</p>
+                </div>
             </div>
         </div>
     </div>
     <div id="panel-score-record" class="row spacer-bottom align-items-center the-game-elements">
         <div id="score" class="col-6">
             <div class="lvl-background score-record-background">
-                <p class="core-record-tittle text-squares">SCORE</p>
-                <div class="points">
-                    <span class="numbers-points">0</span>
-                </div>
-                <div class="points">
-                    <span class="numbers-points">0</span>
-                </div>
-                <div class="points">
-                    <span class="numbers-points">0</span>
-                </div>
-                <div class="points">
-                    <span class="numbers-points">0</span>
-                </div>
-                <div class="points">
-                    <span class="numbers-points">0</span>
-                </div>
-                <div class="points">
-                    <span class="numbers-points">0</span>
+                <div class="row align-items-center center-boxes">
+                    <div>
+                        <p class="core-record-tittle text-squares">SCORE</p>
+                        <div class="points">
+                            <span class="numbers-points">0</span>
+                        </div>
+                        <div class="points">
+                            <span class="numbers-points">0</span>
+                        </div>
+                        <div class="points">
+                            <span class="numbers-points">0</span>
+                        </div>
+                        <div class="points">
+                            <span class="numbers-points">0</span>
+                        </div>
+                        <div class="points">
+                            <span class="numbers-points">0</span>
+                        </div>
+                        <div class="points">
+                            <span class="numbers-points">0</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
         <div id="record" class="col-6">
             <div class="lvl-background score-record-background">
-                <p class="core-record-tittle text-squares">RECORD</p>
-                <div class="points">
-                    <span class="numbers-record">0</span>
-                </div>
-                <div class="points">
-                    <span class="numbers-record">0</span>
-                </div>
-                <div class="points">
-                    <span class="numbers-record">0</span>
-                </div>
-                <div class="points">
-                    <span class="numbers-record">0</span>
-                </div>
-                <div class="points">
-                    <span class="numbers-record">0</span>
-                </div>
-                <div class="points">
-                    <span class="numbers-record">0</span>
+                <div class="row align-items-center center-boxes">
+                    <div>
+                        <p class="core-record-tittle text-squares">RECORD</p>
+                        <div class="points">
+                            <span class="numbers-record">0</span>
+                        </div>
+                        <div class="points">
+                            <span class="numbers-record">0</span>
+                        </div>
+                        <div class="points">
+                            <span class="numbers-record">0</span>
+                        </div>
+                        <div class="points">
+                            <span class="numbers-record">0</span>
+                        </div>
+                        <div class="points">
+                            <span class="numbers-record">0</span>
+                        </div>
+                        <div class="points">
+                            <span class="numbers-record">0</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div id="game-in-progres" class="row spacer-bottom the-game-elements">
+    <div id="game-in-progres" class="row  spacer-bottom the-game-elements">
         <div class="col">
             <div id="gamewindows" class="lvl-background">
                 <div id="bracelettomake" class="hidden">
@@ -123,32 +135,33 @@
                     <div class="jewels-space joyas hiddenforjewels" style="width: 10%;display: inline-block;"></div>
                 </div>
                 <div id="toolsmaker" class="hidden">
-                    <div id="jewelscolors">
-                            <p>Select the Color</p>
-                            <div id="blue" class="btn colors" type="button" style="background-color:blue;">Blue</div>
-                            <div id="yellow" class="btn colors" type="button" style="background-color:yellow;">Yellow</div>
-                            <div id="red" class="btn colors" type="button" style="background-color:red;">Red</div>
-                            <div id="white" class="btn colors" type="button" style="background-color:white;"><p>White</p></div>
-                    </div>
+                    <div class="row align-items-center center-boxes">
+                        <div id="jewelscolors">
+                                <p>Select the Color</p>
+                                <div id="blue" class="btn colors" type="button" style="background-color:blue;">Blue</div>
+                                <div id="yellow" class="btn colors" type="button" style="background-color:yellow;">Yellow</div>
+                                <div id="red" class="btn colors" type="button" style="background-color:red;">Red</div>
+                                <div id="white" class="btn colors" type="button" style="background-color:white;"><p>White</p></div>
+                        </div>
                     
-                    <div id="jewelstochose">
-                            <p>Select the shape of the jewel</p>
-                            <div id="diamond1" class="btn btn-dark shapes" type="button" style="background-size: cover;"></div>
-                            <div id="diamond2" class="btn btn-dark shapes" type="button"style="background-size: cover;"></div>
-                            <div id="diamond3" class="btn btn-dark shapes" type="button"style="background-size: cover;"></div>
-                            <div id="diamond4" class="btn btn-dark shapes" type="button"style="background-size: cover;"></div>
-                            <div id="diamond5" class="btn btn-dark shapes" type="button"style="background-size: cover;"></div>
-                            <div id="diamond6" class="btn btn-dark shapes" type="button"style="background-size: cover;"></div>
-                            <div id="diamond7" class="btn btn-dark shapes" type="button"style="background-size: cover;"></div>
+                        <div id="jewelstochose">
+                                <p>Select the shape of the jewel</p>
+                                <div id="diamond1" class="btn btn-dark shapes" type="button" style="background-size: cover;"></div>
+                                <div id="diamond2" class="btn btn-dark shapes" type="button"style="background-size: cover;"></div>
+                                <div id="diamond3" class="btn btn-dark shapes" type="button"style="background-size: cover;"></div>
+                                <div id="diamond4" class="btn btn-dark shapes" type="button"style="background-size: cover;"></div>
+                                <div id="diamond5" class="btn btn-dark shapes" type="button"style="background-size: cover;"></div>
+                                <div id="diamond6" class="btn btn-dark shapes" type="button"style="background-size: cover;"></div>
+                                <div id="diamond7" class="btn btn-dark shapes" type="button"style="background-size: cover;"></div>
+                        </div>
+                        <button id="sendit" class="btn btn-success">Send Bracelet</button>
                     </div>
-                    
-                <button id="sendit" class="btn btn-success">Send Bracelet</button>
                 </div>
                 <div id="newuserform" class="">
                     <p>Creating New Player</p>
                     <label>Player Name:</label>
                     <input id="playername" type="text">
-                    <button class="btn btn-success" onclick="firstSteps()">Create new</button>
+                    <button id="checker" class="btn btn-success" onclick="firstSteps()">Create new</button>
                     <div id="userform">
                         <table id="recordstable">
                             <tr id="titlestable">

@@ -12,6 +12,10 @@ body{
   min-height: 640px;
 }
 
+.center-boxes{
+  height: 100%;
+}
+
 body p {
   margin-top: 0px;
   margin-bottom: 0rem;
@@ -233,7 +237,7 @@ img{
   }
   /*game*/
   .text-squares {
-    font-size: 20px;
+    font-size: 30px;
   }
   #playername{
     width: 80%;
@@ -262,7 +266,7 @@ img{
 
   /*index*/
   #start-button{
-    font-size: 32px;
+    font-size: 30px;
   }
 
   /*game*/  
