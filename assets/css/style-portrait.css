@@ -206,9 +206,17 @@ div.row.the-game-elements{
   #floatingTextarea{
     height: 180px;
   }
-  #submiting-button{
+  #panel-contact-buttons div .btn{
     width: 100%;
   }
+  .btn.btn-secondary.dropdown-toggle::after {
+    content: none;
+  }
+  #main-menu-button{
+    width: 100%;
+    margin: 9px 0px 0px 0px;
+  }
+
 }
 
 @media only screen and (max-width: 1400px) {

@@ -45,6 +45,22 @@
         <div class="row align-items-center  main-content-contact">
             <div class="col-1"></div>
             <div id="contactbackground" class="col-10 ">
+
+                <div class="row justify-content-end">
+                    <div class="col-3">
+                        <div class="dropdown">
+                            <button  class="btn btn-secondary dropdown-toggle" type="button"  id="main-menu-button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-bars"></i>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="main-menu-button">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
                 <form id="form-contact">
                     <div class="form-floating mb-3">
                         <input type="email" class="form-control is-invalid" id="floatingInputInvalid" placeholder="name@example.com">
@@ -58,10 +74,18 @@
                         <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
                         <label for="floatingTextarea">Comments</label>
                     </div>
-                    <div class="row align-items-center justify-content-center">
+                    <div id="panel-contact-buttons" class="row align-items-center justify-content-center">
+
                         <div class="col-sm-4 col-md-2 align-self-center">
                             <button id="submiting-button" class="btn btn-primary" type="submit">Submit</button>
                         </div>
+                        <div class="col-sm-4 col-md-2 align-self-center">
+                            <button id="home-button" href="index.html" class="btn btn-secondary" type="submit">Play Again</button>
+                        </div>
+                        <div class="col-sm-4 col-md-2 align-self-center">
+                            <button id="aboutus-button" href="aboutus.html" class="btn btn-success" type="submit">About Us</button>
+                        </div>
+                    
                     </div>
                 </form>
             </div>

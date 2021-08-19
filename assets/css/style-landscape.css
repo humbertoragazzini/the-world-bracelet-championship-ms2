@@ -217,7 +217,7 @@
     #floatingTextarea{
       height: 180px;
     }
-    #submiting-button{
+    .panel-contact-buttons.btn{
       width: 100%;
     }
   }
