@@ -25,7 +25,7 @@ class Animation{
 
 //jewels rain animation code
 var movements = [];
-/*document.addEventListener("DOMContentLoaded", function animationJewels(){
+document.addEventListener("DOMContentLoaded", function animationJewels(){
 
   
   var speed;
@@ -58,7 +58,7 @@ function moving(jewel,speed){
 
 }
 
-)*/
+)
 //-------------------------
 
 //start menu and boxingbelt animation when click
