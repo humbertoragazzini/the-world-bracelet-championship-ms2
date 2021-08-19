@@ -82,6 +82,10 @@
   .dark-background{
     background-color: rgba(0,0,0,0.5);
   }
+
+  div.row.the-game-elements{
+    --bs-gutter-x: 0.3rem;
+  }
   
   /*--RESPOSIVE--*/
   @media only screen and (max-width: 4160px) {
@@ -94,8 +98,9 @@
       background-size: 1800px;
     }
     /*game*/
+
     .points{
-      font-size: 37px;
+      font-size: 30px;
     }
     .text-squares {
       font-size: 35px;
@@ -112,16 +117,20 @@
     }
     #bracelettomake {
       height: 20%;
+      padding-top: 4px;
     }
     .btn.shapes {
       height: 10vw;
-      margin: 25px auto;
       width: 10vw;
-      max-width: 150px;
-      max-height: 150px;
+      margin: 25px auto;
+      max-width: 120px;
+      min-height: 60px;
+      min-width: 60px;
+      max-height: 120px;
     }
     .btn.colors {
-      border-radius: 12%;
+      border-radius: 18%;
+      text-align: -webkit-center;
       margin: 25px auto;
       height: 7vw;
       width: 7vw;
@@ -135,7 +144,11 @@
       height: 80%;
     }
     .jewels-space.joyas{
-      height: 100%;
+      height: 8vw;
+      border-radius: 10px;
+      width: 8vw;
+      max-width: 200px;
+      max-height: 200px;
     }
     #sendit.btn-success {
       color: #fff;
@@ -143,6 +156,13 @@
       border-color: #198754;
       width: 30%;
       margin: auto;
+    }
+    #recordstable {
+      margin: 0px 5%;
+      width: 85%;
+    }
+    #newuserform{
+      padding-top: 10px;
     }
   
   }
@@ -170,6 +190,10 @@
     #game-in-progres {
       height: 77%;
     }
+    #recordstable {
+      margin: 0px 5%;
+      width: 85%;
+  }
   }
   
   @media only screen and (max-width: 1200px) {
@@ -190,6 +214,8 @@
     .btn.btn-success{
       margin:10px auto;
     }
+    
+
   }
   
   @media only screen and (max-width: 992px) {
@@ -213,7 +239,7 @@
     height: 10%;
     }
     .points {
-      font-size: 20px;
+      font-size: 17px;
     }
     #bracelettomake {
       height: 25%;
@@ -254,9 +280,6 @@
     }
     .tittlelvlandrecord{
       text-align: center;
-    }
-    #newuserform{
-      padding-top: 10px;
     }
     #recordstable{
       margin: 0px 5%;
@@ -430,8 +453,6 @@
     z-index: 2;
   }
 
-  .score-record-background.lvl-background{
-  }
   
   
   .spacer-top{
@@ -482,10 +503,7 @@
   
   #bracelettomake{
     width: 100%;
-    background-color: rgba(0,0,0,0.2);
     border-radius: 5px;
-  }
-  #toolsmaker{
   }
   #thebracelet{
     height: 50vw;
