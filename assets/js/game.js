@@ -236,7 +236,7 @@ function randomJewelsInyector(level){
     for(let i=0;i<level;i++){
         position = Math.round((Math.random()*6));
         elements[0] = elements[0]+jewels[position];
-        elements[1] = elements[1] + jewels1[position];
+        elements[1] = elements[1] + (`<div class="jewels-to-show-popup">`+jewels1[position]+`<p>`+`${i+1}`+`</p>`+`</div>`);
     }
     return elements;
 }
@@ -279,7 +279,7 @@ function runningLevel(gameinprogress){
     var Popuplevel = Swal.mixin({
         toast: true,
         position: 'center',
-        showConfirmButton: false,
+        showConfirmButton: true,
         timer: 10000,
         timerProgressBar: true,
       })

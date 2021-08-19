@@ -98,7 +98,26 @@
       background-size: 1800px;
     }
     /*game*/
-
+    .jewels-to-show-popup p{
+      display: block;
+      text-align: center;
+    }
+    .jewels-to-show-popup{
+      width: 25%;
+      display: inline-table;
+      background-color: rgba(0,0,0,0.05);
+      border-radius: 15%;
+      margin: 2px 2px;
+    }
+    .swal2-popup.swal2-toast.swal2-show{
+      font-family: 'Ethnocentric';
+    }
+    .swal2-popup.swal2-toast.swal2-show h2{
+      text-align: center;
+    }
+    div .swal2-popup.swal2-toast .swal2-html-container{
+      text-align: center;
+    }
     .points{
       font-size: 30px;
     }
@@ -164,6 +183,21 @@
     #newuserform{
       padding-top: 10px;
     }
+    a.icons-menu{
+      animation-duration: 2s;
+      animation-name: glowing;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      text-decoration: none;
+      color: black;
+      flex-shrink: 0;
+      width: 100%;
+      max-width: 25%;
+      font-size: 23px;
+      padding-right: 0;
+      padding-left: 0;
+      margin: 0px auto;
+    }
   
   }
   
@@ -228,6 +262,10 @@
       background-size: 800px;
     }
     /*game*/
+    
+    a.icons-menu {
+      font-size: 22px;
+    }
     .text-squares {
       font-size: 16px;
       margin-bottom: 0rem;
@@ -313,6 +351,9 @@
       background-size: 940px;
     }
     /*game*/
+    a.icons-menu {
+      font-size: 15px;
+    }
     .text-squares {
       font-size: 12px;
     }
