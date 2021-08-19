@@ -200,6 +200,15 @@ div.row.the-game-elements{
   .main-content-contact{
     height: 90%;
   }
+  #form-contact{
+    margin: 20px auto;
+  }
+  #floatingTextarea{
+    height: 180px;
+  }
+  #submiting-button{
+    width: 100%;
+  }
 }
 
 @media only screen and (max-width: 1400px) {

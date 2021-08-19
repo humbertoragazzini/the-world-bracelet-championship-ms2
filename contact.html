@@ -44,8 +44,26 @@
         <div class="row separators-contact"></div>
         <div class="row align-items-center  main-content-contact">
             <div class="col-1"></div>
-            <div id="contactbackground" class="col-10">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem sequi enim ipsum, magnam voluptas quisquam tempore delectus amet aliquam veniam exercitationem voluptatum est, alias iusto corrupti modi deserunt dolorum dolores!</p>
+            <div id="contactbackground" class="col-10 ">
+                <form id="form-contact">
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control is-invalid" id="floatingInputInvalid" placeholder="name@example.com">
+                        <label for="floatingInputInvalid">Your Email</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="floatingname" placeholder="Your Name">
+                        <label for="floatingname">Your Name</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                        <label for="floatingTextarea">Comments</label>
+                    </div>
+                    <div class="row align-items-center justify-content-center">
+                        <div class="col-sm-4 col-md-2 align-self-center">
+                            <button id="submiting-button" class="btn btn-primary" type="submit">Submit</button>
+                        </div>
+                    </div>
+                </form>
             </div>
             <div class="col-1"></div>
         </div>
