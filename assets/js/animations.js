@@ -58,13 +58,13 @@ function moving(jewel,speed){
 
 }
 
-)
+);
 //-------------------------
 
 //start menu and boxingbelt animation when click
 
 function startMenu(){
-  start = document.getElementById("start-button");
+  let start = document.getElementById("start-button");
   start.addEventListener('click', e => cleanIndex() );
 }
 
@@ -115,11 +115,11 @@ for(let i=0; i<numberchain.length;i++){
   if(numberchain[i] != 0)
     {
       animationsnumbers[i] = new Animation(25,movingNumbers,elementnumbers[i],i,numberchain[i]);
-      animationsnumbers[i].animationOn()
+      animationsnumbers[i].animationOn();
     }else{if(numberchain[i] != elementnumbers[i].innerText)
     {
     animationsnumbers[i] = new Animation(25,movingNumbers,elementnumbers[i],i,numberchain[i]);
-    animationsnumbers[i].animationOn()
+    animationsnumbers[i].animationOn();
     }}
   }
 
@@ -144,7 +144,7 @@ function movingNumbers(number,inter,numberToMatch){
     }
   }
   
-}
+};
 
 /*----text animation for about us-----*/
 
@@ -169,4 +169,5 @@ function animationTextAboutUs(){
   }
 
 }
+
 
