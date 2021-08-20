@@ -220,6 +220,27 @@
     .panel-contact-buttons.btn{
       width: 100%;
     }
+    #panel-contact-buttons div .btn{
+      width: 100%;
+    }
+    .btn.btn-secondary.dropdown-toggle::after {
+      content: none;
+    }
+    #main-menu-button{
+      width: 100%;
+      margin: 9px 0px 0px 0px;
+      max-width: 60px;
+      background-color: rgb(0 0 0 / 59%);
+      float: right;
+    }
+    #dropdown-menu-style{
+      margin: 10px 0px 0px 0px;
+    }
+    
+    .form-floating .mb-3{
+      height: 10px;
+    }
+
   }
   
   @media only screen and (max-width: 1400px) {
@@ -360,6 +381,16 @@
     #sendit.btn-success{
       font-size: 10px;
     }
+    .form-floating.mb-3.form-floating>.form-control, .form-floating>.form-select {
+      height: calc(2.5rem + 2px);
+      line-height: 1.25;
+    }
+    #contactbackground .form-floating>label {
+      top:-7px;
+    }
+    #floatingTextarea {
+      height: 70px;
+    }
   } 
   
   @media only screen and (max-width: 768px) {
@@ -433,6 +464,17 @@
       width: 35%;
       font-size: 10px;
     }
+    .form-floating.mb-3.form-floating>.form-control, .form-floating>.form-select {
+      height: calc(2.5rem + 2px);
+      line-height: 1.25;
+    }
+    #contactbackground .form-floating>label {
+      top:-7px;
+    }
+    #floatingTextarea {
+      height: 70px;
+    }
+
   }
   
   @media only screen and (max-width: 575px) {
@@ -473,6 +515,7 @@
     #checker{
       margin:10px;
     }
+
   }
   
   /*--ANIMATION--*/
