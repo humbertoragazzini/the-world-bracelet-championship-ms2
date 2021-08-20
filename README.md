@@ -71,31 +71,24 @@ In this section i will show some of the first desing, and the development of thi
 
 With the draws i try to put all that in a more visual wireframe to have a better idea of the future final desing
 
-* **Desktop Start Menu with rain of jewels**
+* **Desktop Start Menu with rain of jewels:**[Click Me](https://github.com/humbertoragazzini/the-world-bracelet-championship-ms2/blob/master/readme-files/image/wireframes/wirefram-desktop-start.png)
 
-[Click Me](https://github.com/humbertoragazzini/the-world-bracelet-championship-ms2/blob/master/readme-files/image/wireframes/wirefram-desktop-start.png)
+* **Mobile Start Menu with rain of jewels:**[Click Me](https://github.com/humbertoragazzini/the-world-bracelet-championship-ms2/blob/master/readme-files/image/wireframes/wirefram-mobile-start.png)
 
 
-the-world-bracelet-championship-ms2/readme-files/image/wireframes/wirefram-desktop-start.png
+* **Desktop in game level:**[Click Me](https://github.com/humbertoragazzini/the-world-bracelet-championship-ms2/blob/master/readme-files/image/wireframes/wirefram-mobile-desktop-game.png)
 
-* **Mobile Start Menu with rain of jewels**
-[Click Me](https://github.com/humbertoragazzini/the-world-bracelet-championship-ms2/blob/master/readme-files/image/wireframes/wirefram-mobile-start.png)
 
-* **Desktop in game level**
 
-[Click Me](https://github.com/humbertoragazzini/the-world-bracelet-championship-ms2/blob/master/readme-files/image/wireframes/wirefram-mobile-desktop-game.png)
+* **Mobile in game level:**[Click Me](https://github.com/humbertoragazzini/the-world-bracelet-championship-ms2/blob/master/readme-files/image/wireframes/wirefram-mobile-game.png)
 
-* **Mobile in game level**
 
-[Click Me](https://github.com/humbertoragazzini/the-world-bracelet-championship-ms2/blob/master/readme-files/image/wireframes/wirefram-mobile-game.png)
 
-* **Desktop and Mobile contact**
+* **Desktop and Mobile contact:**[Click Me](https://github.com/humbertoragazzini/the-world-bracelet-championship-ms2/blob/master/readme-files/image/wireframes/wirefram-mobile-desktop-contact.png)
 
-[Click Me](https://github.com/humbertoragazzini/the-world-bracelet-championship-ms2/blob/master/readme-files/image/wireframes/wirefram-mobile-desktop-contact.png)
 
-* **Desktop and Mobile about us**
 
-[Click Me](https://github.com/humbertoragazzini/the-world-bracelet-championship-ms2/blob/master/readme-files/image/wireframes/wirefram-mobile-desktop-aboutus.png)
+* **Desktop and Mobile about us:**[Click Me](https://github.com/humbertoragazzini/the-world-bracelet-championship-ms2/blob/master/readme-files/image/wireframes/wirefram-mobile-desktop-aboutus.png)
 
 -----------------------------
 
