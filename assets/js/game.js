@@ -214,7 +214,7 @@ function fillingBraceletInGame(level){
             cache.classList.add("filled");
             }
           } catch (error) {
-              alert("please select first witch place you want to fill up");
+                customAlert('Please select first the space to be filled');
               return;
           }
     });  
@@ -276,7 +276,7 @@ function randomJewelsInyector(level){
     let jp23=`<img src='assets/image/backgrounds/jewels/trillon-white.gif'>`;
     let jp24=`<img src='assets/image/backgrounds/jewels/trillon-yellow.gif'>`;
     let jewelshtmlpopup = [jp1,jp2,jp3,jp4,jp5,jp6,jp7,jp8,jp9,jp10,jp11,jp12,jp13,jp14,jp15,jp16,jp17,jp18,jp19,jp20,jp21,jp22,jp23,jp24];
-    for(let i=0;i<level;i++){
+    for(let i=0;i<7;i++){
         position = Math.round((Math.random()*23));
         elements[0] = elements[0]+jewelstocompare[position];
         elements[1] = elements[1] + (`<div class="jewels-to-show-popup">`+jewelshtmlpopup[position]+`<p>`+`${i+1}`+`</p>`+`</div>`);
@@ -287,30 +287,36 @@ function randomJewelsInyector(level){
 //this is the beginning of the game where its checked the name and the creation of the object user and game
 function firstSteps(){
     let regex = new RegExp("^[0-9a-zA-Z\b]+$");
-    let intro;
     let newplayer = new Player();
-    let bracelettomake = document.getElementById("bracelettomake");
-    let toolsmaker = document.getElementById("toolsmaker");
     let newuserform = document.getElementById("newuserform");
     let gameinprogress
     playername = document.getElementById("playername");
     if(playername.value == "" || !regex.test(playername.value)){
-        alert("Please fill the name player, don't use spaces and simbols, thanks..");
+        customAlert("Please fill the player name, don't use space and simbols, thanks..");
     }else{
         newplayer.nameAsig(playername.value);
         gameinprogress = new Game(newplayer);
-        gameSpaceAppear(bracelettomake,toolsmaker,newuserform);
         runningLevel(gameinprogress);
+        setTimeout(addedOrRemove, 50,newuserform,"hidden");
+        addedOrRemove(newuserform,"appear");
     }
 }
 
 //this function make visible the game area
 function gameSpaceAppear(bracelettomake,toolsmaker,newuserform){
-    setTimeout(addedOrRemove, 1000,newuserform,"hidden");
+    setTimeout(addedOrRemove, 50,newuserform,"hidden");
     addedOrRemove(newuserform,"disapear");
-    setTimeout(addedOrRemove, 1000,toolsmaker,"hidden");
+    setTimeout(addedOrRemove, 50,toolsmaker,"hidden");
     addedOrRemove(toolsmaker,"appear");
-    setTimeout(addedOrRemove, 1000,bracelettomake,"hidden");
+    setTimeout(addedOrRemove, 50,bracelettomake,"hidden");
+    addedOrRemove(bracelettomake,"appear");
+}
+
+//this function make the same as gameSpacer but its only for new levels
+function renewLevelsTools(bracelettomake,toolsmaker){
+    setTimeout(addedOrRemove, 50,toolsmaker,"hidden");
+    addedOrRemove(toolsmaker,"appear");
+    setTimeout(addedOrRemove, 50,bracelettomake,"hidden");
     addedOrRemove(bracelettomake,"appear");
 }
 
@@ -318,27 +324,39 @@ function gameSpaceAppear(bracelettomake,toolsmaker,newuserform){
 
 //start of a level
 function runningLevel(gameinprogress){
+    let bracelettomake = document.getElementById("bracelettomake");
+    let toolsmaker = document.getElementById("toolsmaker");
+    let newuserform = document.getElementById("newuserform");
     //popup with the combination to be used
     var Popuplevel = Swal.mixin({
         toast: true,
         position: 'center',
         showConfirmButton: true,
-        timer: 20000,
-        timerProgressBar: true,
       })
     var combination = randomJewelsInyector(gameinprogress.level.logicallevelforjewels);  
       Popuplevel.fire({
         html: combination[1],
-        title: 'Memorize this pattern'
+        title: 'Memorize this pattern',
       })
+      let buttonconfirmation = Swal.getConfirmButton();
+      
+      buttonconfirmation.addEventListener('click',function(){
+        renewLevelsTools(bracelettomake,toolsmaker);
+      });
+     
+      fillingBraceletInGame(gameinprogress.level.logicallevelforjewels)
+      
       //function to make posible fillup the empty spaces with jewels
-      fillingBraceletInGame(gameinprogress.level.logicallevelforjewels);
       let eventtrigger = document.getElementById("sendit");
       let key;
       eventtrigger.addEventListener("click",tester);
       //function tester, test if the combination is okay
     
     function tester(){
+        buttonconfirmation.removeEventListener('click',function(){
+            renewLevelsTools(bracelettomake,toolsmaker);
+          });
+
         let verificator = "";
         let elementtocheck = document.getElementsByClassName("filled");
         //check if all the spaces are filled before test
@@ -348,7 +366,7 @@ function runningLevel(gameinprogress){
                 verificator=verificator+elementtocheck[i].style.backgroundImage; 
             }else{
                   submition();
-                  alert("Remember to complet all the spaces, try again");
+                  customAlert("Ohh You lose, Remember to complet all the spaces with the correct pattern, and do not leave empty ones.");
                   return;
                 }
             }
@@ -364,9 +382,11 @@ function runningLevel(gameinprogress){
                 document.getElementById("sendit").removeEventListener("click",tester);
                 verificator="";
                 resetBackGroundJewels(elementtocheck);
+                renewLevelsTools(bracelettomake,toolsmaker);
                 runningLevel(gameinprogress);
             }else{
                 //the user lose, so next step its record the data in the localstorage
+                customAlert("Ohh You lose, Remember to complet all the spaces with the correct pattern, and do not leave empty ones.");
                 if(localStorage.length==0)
                 {
                     key = 1;
@@ -544,7 +564,18 @@ function counterClock(sec){
     else{}
 }
 
-
+function customAlert(text){
+    var Popupsuccess = Swal.mixin({
+        toast: true,
+        icon: 'error',
+        showConfirmButton: false,
+        position: 'center',
+        timer: 5000,
+      })
+      Popupsuccess.fire({
+        title: text
+      })
+}
 
 
 

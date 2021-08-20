@@ -151,7 +151,6 @@ div.row.the-game-elements{
   #recordstable{
     margin: 15px 5%;
     width: 85%;
-    font-size: medium;
   }
   #userform{
     text-align: -webkit-center;
@@ -284,7 +283,7 @@ div.row.the-game-elements{
     font-size: 25px;
   }
   #playername{
-    width: 80%;
+    width: 30%;
     margin: 20px;
   }
   #newuserform{
