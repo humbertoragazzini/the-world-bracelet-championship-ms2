@@ -205,7 +205,7 @@
     #contactbackground{
       z-index: 6;
       height: 100%;
-      background-color: rgba(0,0,0,0.3);
+      background-color: rgba(0,0,0,0.5);
       border-radius: 5px;
     }
     .main-content-contact{
@@ -242,11 +242,11 @@
     }
     /*-----about us------*/
 
-    #reigate-photo {
-      width: 200px;
-      height: 155px;
-      float: left;
-      margin: 13px;
+    #div-text-aboutus {
+      height: 85%;
+      color: white;
+      text-align: center;
+      font-size: 25px;
     }
 
   }
@@ -298,7 +298,9 @@
     .btn.btn-success{
       margin:10px auto;
     }
-    
+    #div-text-aboutus {
+      font-size: 20px;
+    }
 
   }
   
@@ -399,6 +401,13 @@
     #floatingTextarea {
       height: 70px;
     }
+    #div-text-aboutus {
+      font-size: 12px;
+    }
+    #div-text-aboutus h1{
+      font-size: 28px;
+    }
+
   } 
   
   @media only screen and (max-width: 768px) {
@@ -481,6 +490,12 @@
     }
     #floatingTextarea {
       height: 70px;
+    }
+    #div-text-aboutus {
+      font-size: 11px;
+    }
+    #div-text-aboutus h1{
+      font-size: 20px;
     }
 
   }

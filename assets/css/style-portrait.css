@@ -119,7 +119,7 @@ div.row.the-game-elements{
   .jewels-to-show-popup{
     width: 25%;
     display: inline-table;
-    background-color: rgba(0,0,0,0.05);
+    background-color: rgba(0,0,0,0.3);
     border-radius: 15%;
     margin: 2px 2px;
   }
@@ -194,7 +194,7 @@ div.row.the-game-elements{
   #contactbackground{
     z-index: 6;
     height: 100%;
-    background-color: rgba(0,0,0,0.3);
+    background-color: rgba(0,0,0,0.5);
     border-radius: 5px;
   }
   .main-content-contact{
@@ -231,7 +231,7 @@ div.row.the-game-elements{
     height: 85%;
     color: white;
     text-align: center;
-    font-size: 12px;
+    font-size: 30px;
   }
 }
 
@@ -349,6 +349,9 @@ div.row.the-game-elements{
   #main-menu-button {
     max-width: 92px;
   }
+  #div-text-aboutus {
+    font-size: 25px;
+  }
 
 } 
 
@@ -385,6 +388,9 @@ div.row.the-game-elements{
   }
   .tittlelvlandrecord{
     text-align: center;
+  }
+  #div-text-aboutus{
+    font-size: 11px;
   }
 }
 

@@ -19,7 +19,6 @@ var gameTimer = function(){
             sec=0;
             clearInterval(interval);
         }
-    console.log(sec);
     }
     let interval = setInterval(second,1000);
     

@@ -78,7 +78,6 @@ class Game{
         user = localStorage.getItem(key);
         lengthofdata = user.length;
       }else{
-        console.log("catch");
         lengthofdata=(-1);
     }
       let i = 0;
@@ -380,13 +379,11 @@ function runningLevel(gameinprogress){
                         key = localStorage.length + 1;
                         localStorage.setItem(key,gameinprogress.player.name+'/'+gameinprogress.record+'/'+gameinprogress.level.leveltoshow+'/'+gameinprogress.player.identifier);
                         fillRecordsTable();
-                        console.log("paso por el if");
                     }else{
                         key = 8;
                         orderRecords();
                         localStorage.setItem(key,gameinprogress.player.name+'/'+gameinprogress.record+'/'+gameinprogress.level.leveltoshow+'/'+gameinprogress.player.identifier);
                         fillRecordsTable();
-                        console.log(localStorage.length);
                     }
                     
                 
@@ -474,9 +471,6 @@ function orderRecords(){
     let users = [];
     if(localStorage.length>0)
     {
-
-        console.log(localStorage.length);
-        console.log("llego al orderrecords");
         let j = 1;
         for(let i=0;i<localStorage.length;i++){
             if(recoverDataFromLocal(j)!=false){
@@ -485,7 +479,6 @@ function orderRecords(){
             }else{j++;i--;}
 
         }//hacer un try catch adentro de recoverdatafromlocal, que si falla retorne false, y que si funciona que retorne true, y asi podel levantar la informacion sin depender del key
-    console.log(users);
     }
 
     var n, i, k, aux;
@@ -500,11 +493,9 @@ function orderRecords(){
         }
     }
     let j=0;
-    console.log(users.length);
     if(users.length==8){
     for(let i=users.length-1;i>=0;i--){
         localStorage.setItem(String(8-i),users[i].name+'/'+users[i].record+'/'+users[i].level+'/'+users[i].identifier);
-        console.log("para verificar el orden en esta funcion"+j+1,users[i].name+'/'+users[i].record+'/'+users[i].level+'/'+users[i].identifier);
     }
     }
     return users;
@@ -512,7 +503,6 @@ function orderRecords(){
 
 //this function fillup the html record table and execute the maximumRecord function to record the best record in the record square
 function fillRecordsTable(){
-    console.log("llego al fillrecords");
     cleanRowsRecords()
     usersordered = orderRecords();
     counter=usersordered.length-1;
@@ -563,32 +553,3 @@ function counterClock(sec){
 
 
 
-
-  /*
-function theGameStartChallenge(jewels,bracelet){
-    jewels.innerHTML = `
-    <div class="row align-items-center" style="height: 100%;">
-    <div class="col-2"><p>1</p><img src="assets/image/backgrounds/jewels/jewel-diamond.gif"> </div>
-    <div class="col-2"><p>2</p><img src="assets/image/backgrounds/jewels/jewel-diamond.gif"> </div>
-    <div class="col-2"><p>3</p><img src="assets/image/backgrounds/jewels/jewel-diamond.gif"> </div>
-    <div class="col-2"><p>4</p><img src="assets/image/backgrounds/jewels/jewel-diamond.gif"> </div>
-    <div class="col-2"><p>5</p><img src="assets/image/backgrounds/jewels/jewel-diamond.gif"> </div>
-    <div class="col-2"><p>6</p><img src="assets/image/backgrounds/jewels/jewel-diamond.gif"> </div>
-</div>`;
-}
-
-function theGameStartFillersButtons(jewels,bracelet){
-    jewels.innerHTML = `
-    
-<div class="row" style="height: 75%;"></div>
-<div id="picestouse">
-<div class="row align-items-center" style="height: 100%;">
-<div class="col-2"><button type="button" class="btn"><img src="assets/image/backgrounds/jewels/jewel-diamond.gif"></button></div>
-<div class="col-2"><button type="button" class="btn"><img src="assets/image/backgrounds/jewels/jewel-diamond.gif"></button></div>
-<div class="col-2"><button type="button" class="btn"><img src="assets/image/backgrounds/jewels/jewel-diamond.gif"></button></div>
-<div class="col-2"><button type="button" class="btn"><img src="assets/image/backgrounds/jewels/jewel-diamond.gif"></button></div>
-<div class="col-2"><button type="button" class="btn"><img src="assets/image/backgrounds/jewels/jewel-diamond.gif"></button></div>
-<div class="col-2"><button type="button" class="btn"><img src="assets/image/backgrounds/jewels/jewel-diamond.gif"></button></div>
-</div></div>`;
-}
-*/
