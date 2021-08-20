@@ -374,6 +374,7 @@
     #recordstable{
       margin: 0px 5%;
       width: 85%;
+      font-size: smaller;
     }
     #userform{
       text-align: -webkit-center;
@@ -459,10 +460,12 @@
     }
     #newuserform{
       padding-top: 5px;
+      font-size: x-small;
     }
     #recordstable{
       margin: 0px 5%;
       width: 85%;
+      font-size: xx-small;
     }
     #userform{
       text-align: -webkit-center;
