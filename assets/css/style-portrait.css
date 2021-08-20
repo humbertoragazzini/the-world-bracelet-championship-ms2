@@ -215,8 +215,13 @@ div.row.the-game-elements{
   #main-menu-button{
     width: 100%;
     margin: 9px 0px 0px 0px;
+    max-width: 60px;
+    background-color: rgb(0 0 0 / 59%);
+    float: right;
   }
-
+  #dropdown-menu-style{
+    margin: 10px 0px 0px 0px;
+  }
 }
 
 @media only screen and (max-width: 1400px) {
