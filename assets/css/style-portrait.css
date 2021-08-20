@@ -227,12 +227,11 @@ div.row.the-game-elements{
   }
 
   /*-----about us------*/
-
-  #reigate-photo {
-    width: 200px;
-    height: 155px;
-    float: left;
-    margin: 13px;
+  #div-text-aboutus{
+    height: 85%;
+    color: white;
+    text-align: center;
+    font-size: 12px;
   }
 }
 

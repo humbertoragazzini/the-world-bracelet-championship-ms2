@@ -146,3 +146,29 @@ function movingNumbers(number,inter,numberToMatch){
   
 }
 
+/*----text animation for about us-----*/
+
+function animationTextAboutUs(){
+
+  var text = document.getElementById("text-to-show");
+  let textadder = `The world championship of bracelets was created by me Humberto Ragazzini, a young web developer student, who is currently pursuing his degree with great excitement. My inspiration to create this fun game was to watch my wife do her hobby, which is designing and assembling real bracelets, colorful and creative pieces that can be added all kinds of stones and jewels to enhance the beauty and wear it as a unique accessory. observing, I discovered that the fun and interesting thing is that you must follow a pattern, be it of threads or jewels, and I thought why not turn it into an animated, fun and striking game where everyone can play it! I am passionate about everything that has to do with memory exercises, numbers, sequences or patterns and it seemed like a very fun idea to combine both things, the creative and the mathematical, so this idea was born, hoping that everyone feels included and have a nice and entertaining time playing it.`;
+  let textchange = "";
+  let timers;
+  let counter = 0;
+  timers = setInterval(addLetter,50,textadder);
+  
+  function addLetter(textadder){
+    textchange = textchange + textadder[counter];
+    text.innerHTML = textchange;
+    counter = counter + 1;
+    console.log(textadder.length);
+    console.log(counter);
+    if(counter==textadder.length)
+    {
+      clearInterval(timers);
+      return;
+    }
+  }
+
+}
+
