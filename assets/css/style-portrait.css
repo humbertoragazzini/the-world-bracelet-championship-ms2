@@ -590,6 +590,7 @@ div.row.the-game-elements{
 .btn.colors{
     font-size: 0.5em;
     text-align: -webkit-center;
+    padding: 20px 0px;
     margin-top: auto;
     border-radius: 18%;
     height: 10vw;

@@ -149,12 +149,14 @@
     }
     .btn.colors {
       border-radius: 18%;
+      padding: 20px 0px;
       text-align: -webkit-center;
       margin: 25px auto;
       height: 7vw;
       width: 7vw;
       max-width: 120px;
       max-height: 120px;
+      font-size: 0.5em;
     }
     .lvl-background {
       height: 95%;
@@ -341,6 +343,7 @@
     }
     .btn.colors {
       border-radius: 12%;
+      padding: 12px 0px;
       height: 5vw;
       width: 10vw;
     }
@@ -445,6 +448,7 @@
       width: 10vw;
     }
     .btn.colors {
+      font-size: 0.4em;
       border-radius: 12%;
       height: 7vw;
       width: 7vw;
@@ -682,7 +686,6 @@
     background-color: rgba(0,0,0,0.5);
   }
   .btn.colors{
-    font-size: 0.5em;
     text-align: center;
     margin-top: auto;
   }
