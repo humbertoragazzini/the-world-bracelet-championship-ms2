@@ -167,15 +167,10 @@ The big start button its in the beginning of the page, i try to given to the sit
     
 The site it has made to be responsive between 360p to up to 4160px:
     
-* Image of the mobile web site: 
-   
-   
-    ![The full web gif]()
-    
 * Image to show the responsive design in the web site: 
    
-   
-    ![The full web gif]()
+    ![responsive](readme-files/image/animations/testing/responsive1.gif)
+    ![responsive](readme-files/image/animations/testing/responsive2.gif)
 
 ## **Validators**
 
