@@ -276,7 +276,7 @@ function randomJewelsInyector(level){
     let jp23=`<img src='assets/image/backgrounds/jewels/trillon-white.gif'>`;
     let jp24=`<img src='assets/image/backgrounds/jewels/trillon-yellow.gif'>`;
     let jewelshtmlpopup = [jp1,jp2,jp3,jp4,jp5,jp6,jp7,jp8,jp9,jp10,jp11,jp12,jp13,jp14,jp15,jp16,jp17,jp18,jp19,jp20,jp21,jp22,jp23,jp24];
-    for(let i=0;i<7;i++){
+    for(let i=0;i<level;i++){
         position = Math.round((Math.random()*23));
         elements[0] = elements[0]+jewelstocompare[position];
         elements[1] = elements[1] + (`<div class="jewels-to-show-popup">`+jewelshtmlpopup[position]+`<p>`+`${i+1}`+`</p>`+`</div>`);
