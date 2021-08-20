@@ -215,12 +215,24 @@ div.row.the-game-elements{
   #main-menu-button{
     width: 100%;
     margin: 9px 0px 0px 0px;
-    max-width: 60px;
+    max-width: 90px;
     background-color: rgb(0 0 0 / 59%);
     float: right;
   }
   #dropdown-menu-style{
     margin: 10px 0px 0px 0px;
+  }
+  #main-menu-button span{
+    margin-right: 5px;
+  }
+
+  /*-----about us------*/
+
+  #reigate-photo {
+    width: 200px;
+    height: 155px;
+    float: left;
+    margin: 13px;
   }
 }
 
@@ -334,6 +346,9 @@ div.row.the-game-elements{
   }
   .tittlelvlandrecord{
     text-align: center;
+  }
+  #main-menu-button {
+    max-width: 92px;
   }
 
 } 
@@ -556,7 +571,7 @@ div.row.the-game-elements{
 }
 .btn.shapes {
   background-size: cover;
-  border-radius: 50%;
+  border-radius: 6px;
   height: 12vw;
   width: 12vw;
   max-width: 150px;

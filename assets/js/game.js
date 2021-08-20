@@ -154,7 +154,11 @@ function startGame(){
 //this function make posible to select the color and the shape of the jewels
 function fillingBraceletInGame(level){
 
-    let colorsarray = [`url('assets/image/backgrounds/jewels/jewel-diamond-white.png')`,`url('assets/image/backgrounds/jewels/jewel-diamond-red.png')`,`url('assets/image/backgrounds/jewels/jewel-diamond-blue.png')`,`url('assets/image/backgrounds/jewels/jewel-diamond-yellow.png')`]; 
+    let colorsarray = [`url('assets/image/backgrounds/jewels/jewel-diamond-white.png')`,`url('assets/image/backgrounds/jewels/jewel-diamond-red.png')`,`url('assets/image/backgrounds/jewels/jewel-diamond-blue.png')`,`url('assets/image/backgrounds/jewels/jewel-diamond-yellow.gif')`]; 
+    let white = [`url('assets/image/backgrounds/jewels/heart-white.gif')`,`url('assets/image/backgrounds/jewels/octagon-white.gif')`,`url('assets/image/backgrounds/jewels/oval-white.gif')`,`url('assets/image/backgrounds/jewels/asscher-white.gif')`,`url('assets/image/backgrounds/jewels/marquise-white.gif')`,`url('assets/image/backgrounds/jewels/pear-white.gif')`,`url('assets/image/backgrounds/jewels/trillon-white.gif')`];
+    let red = [`url('assets/image/backgrounds/jewels/heart-red.gif')`,`url('assets/image/backgrounds/jewels/octagon-red.gif')`,`url('assets/image/backgrounds/jewels/oval-red.gif')`,`url('assets/image/backgrounds/jewels/asscher-red.gif')`,`url('assets/image/backgrounds/jewels/marquise-red.gif')`,`url('assets/image/backgrounds/jewels/pear-red.gif')`,`url('assets/image/backgrounds/jewels/trillon-red.gif')`];
+    let blue = [`url('assets/image/backgrounds/jewels/heart-blue.gif')`,`url('assets/image/backgrounds/jewels/octagon-blue.gif')`,`url('assets/image/backgrounds/jewels/oval-blue.gif')`,`url('assets/image/backgrounds/jewels/asscher-blue.gif')`,`url('assets/image/backgrounds/jewels/marquise-blue.gif')`,`url('assets/image/backgrounds/jewels/pear-blue.gif')`,`url('assets/image/backgrounds/jewels/trillon-blue.gif')`];
+    let yellow = [`url('assets/image/backgrounds/jewels/heart-yellow.gif')`,`url('assets/image/backgrounds/jewels/octagon-yellow.gif')`,`url('assets/image/backgrounds/jewels/oval-yellow.gif')`,`url('assets/image/backgrounds/jewels/asscher-yellow.gif')`,`url('assets/image/backgrounds/jewels/marquise-yellow.gif')`,`url('assets/image/backgrounds/jewels/pear-yellow.gif')`,`url('assets/image/backgrounds/jewels/trillon-yellow.gif')`];
     let j = 0;
     let jewelstofillup = document.getElementsByClassName(`jewels-space`);
     divdejoyas = document.getElementsByClassName("joyas");
@@ -184,22 +188,22 @@ function fillingBraceletInGame(level){
         itemstochange = document.getElementsByClassName("shapes");
         if(event.target.innerHTML==`<p>White</p>`){
             for(let i=0;i<itemstochange.length;i++){
-                itemstochange[i].style.backgroundImage=colorsarray[0];
+                itemstochange[i].style.backgroundImage=white[i];
             }
         }
         if(event.target.innerHTML=="Red"){
             for(let i=0;i<itemstochange.length;i++){
-                itemstochange[i].style.backgroundImage=colorsarray[1];
+                itemstochange[i].style.backgroundImage=red[i];
             }
         }
         if(event.target.innerHTML=="Blue"){
             for(let i=0;i<itemstochange.length;i++){
-                itemstochange[i].style.backgroundImage=colorsarray[2];
+                itemstochange[i].style.backgroundImage=blue[i];
             }
         }
         if(event.target.innerHTML=="Yellow"){
             for(let i=0;i<itemstochange.length;i++){
-                itemstochange[i].style.backgroundImage=colorsarray[3];
+                itemstochange[i].style.backgroundImage=yellow[i];
             }
         }
     })
@@ -223,20 +227,60 @@ function randomJewelsInyector(level){
     let elements = [];
     elements[0]="";
     elements[1]="";
-    let caca= `url("assets/image/backgrounds/jewels/jewel-diamond-white.png")`;
-    let caca2= `url("assets/image/backgrounds/jewels/jewel-diamond-red.png")`;
-    let caca3= `url("assets/image/backgrounds/jewels/jewel-diamond-yellow.png")`;
-    let caca4= `url("assets/image/backgrounds/jewels/jewel-diamond-red.png")`;
-    let jewels = [caca,caca2,caca3,caca4,caca,caca2,caca3,caca4];
-    let caca1= `<img src='assets/image/backgrounds/jewels/jewel-diamond-white.png'>`;
-    let caca12=`<img src='assets/image/backgrounds/jewels/jewel-diamond-red.png'>`;
-    let caca13=`<img src='assets/image/backgrounds/jewels/jewel-diamond-yellow.png'>`;
-    let caca14=`<img src='assets/image/backgrounds/jewels/jewel-diamond-red.png'>`;
-    let jewels1 = [caca1,caca12,caca13,caca14,caca1,caca12,caca13,caca14];
+    let jc1= `url("assets/image/backgrounds/jewels/heart-blue.gif")`;
+    let jc2= `url("assets/image/backgrounds/jewels/heart-red.gif")`;
+    let jc3= `url("assets/image/backgrounds/jewels/heart-white.gif")`;
+    let jc4= `url("assets/image/backgrounds/jewels/heart-yellow.gif")`;
+    let jc5= `url("assets/image/backgrounds/jewels/octagon-blue.gif")`;
+    let jc6= `url("assets/image/backgrounds/jewels/octagon-red.gif")`;
+    let jc7= `url("assets/image/backgrounds/jewels/octagon-white.gif")`;
+    let jc8= `url("assets/image/backgrounds/jewels/octagon-yellow.gif")`;
+    let jc9= `url("assets/image/backgrounds/jewels/asscher-blue.gif")`;
+    let jc10= `url("assets/image/backgrounds/jewels/asscher-red.gif")`;
+    let jc11= `url("assets/image/backgrounds/jewels/asscher-white.gif")`;
+    let jc12= `url("assets/image/backgrounds/jewels/asscher-yellow.gif")`;
+    let jc13= `url("assets/image/backgrounds/jewels/marquise-blue.gif")`;
+    let jc14= `url("assets/image/backgrounds/jewels/marquise-red.gif")`;
+    let jc15= `url("assets/image/backgrounds/jewels/marquise-white.gif")`;
+    let jc16= `url("assets/image/backgrounds/jewels/marquise-yellow.gif")`;
+    let jc17= `url("assets/image/backgrounds/jewels/pear-blue.gif")`;
+    let jc18= `url("assets/image/backgrounds/jewels/pear-red.gif")`;
+    let jc19= `url("assets/image/backgrounds/jewels/pear-white.gif")`;
+    let jc20= `url("assets/image/backgrounds/jewels/pear-yellow.gif")`;
+    let jc21= `url("assets/image/backgrounds/jewels/trillon-blue.gif")`;
+    let jc22= `url("assets/image/backgrounds/jewels/trillon-red.gif")`;
+    let jc23= `url("assets/image/backgrounds/jewels/trillon-white.gif")`;
+    let jc24= `url("assets/image/backgrounds/jewels/trillon-yellow.gif")`;
+    let jewelstocompare = [jc1,jc2,jc3,jc4,jc5,jc6,jc7,jc8,jc9,jc10,jc11,jc12,jc13,jc14,jc15,jc16,jc17,jc18,jc19,jc20,jc21,jc22,jc23,jc24];
+    let jp1= `<img src='assets/image/backgrounds/jewels/heart-blue.gif'>`;
+    let jp2=`<img src='assets/image/backgrounds/jewels/heart-red.gif'>`;
+    let jp3=`<img src='assets/image/backgrounds/jewels/heart-white.gif'>`;
+    let jp4=`<img src='assets/image/backgrounds/jewels/heart-yellow.gif'>`;
+    let jp5=`<img src='assets/image/backgrounds/jewels/octagon-blue.gif'>`;
+    let jp6=`<img src='assets/image/backgrounds/jewels/octagon-red.gif'>`;
+    let jp7=`<img src='assets/image/backgrounds/jewels/octagon-white.gif'>`;
+    let jp8=`<img src='assets/image/backgrounds/jewels/octagon-yellow.gif'>`;
+    let jp9=`<img src='assets/image/backgrounds/jewels/asscher-blue.gif'>`;
+    let jp10=`<img src='assets/image/backgrounds/jewels/asscher-red.gif'>`;
+    let jp11=`<img src='assets/image/backgrounds/jewels/asscher-white.gif'>`;
+    let jp12=`<img src='assets/image/backgrounds/jewels/asscher-yellow.gif'>`;
+    let jp13=`<img src='assets/image/backgrounds/jewels/marquise-blue.gif'>`;
+    let jp14=`<img src='assets/image/backgrounds/jewels/marquise-red.gif'>`;
+    let jp15=`<img src='assets/image/backgrounds/jewels/marquise-white.gif'>`;
+    let jp16=`<img src='assets/image/backgrounds/jewels/marquise-yellow.gif'>`;
+    let jp17=`<img src='assets/image/backgrounds/jewels/pear-blue.gif'>`;
+    let jp18=`<img src='assets/image/backgrounds/jewels/pear-red.gif'>`;
+    let jp19=`<img src='assets/image/backgrounds/jewels/pear-white.gif'>`;
+    let jp20=`<img src='assets/image/backgrounds/jewels/pear-yellow.gif'>`;
+    let jp21=`<img src='assets/image/backgrounds/jewels/trillon-blue.gif'>`;
+    let jp22=`<img src='assets/image/backgrounds/jewels/trillon-red.gif'>`;
+    let jp23=`<img src='assets/image/backgrounds/jewels/trillon-white.gif'>`;
+    let jp24=`<img src='assets/image/backgrounds/jewels/trillon-yellow.gif'>`;
+    let jewelshtmlpopup = [jp1,jp2,jp3,jp4,jp5,jp6,jp7,jp8,jp9,jp10,jp11,jp12,jp13,jp14,jp15,jp16,jp17,jp18,jp19,jp20,jp21,jp22,jp23,jp24];
     for(let i=0;i<level;i++){
-        position = Math.round((Math.random()*6));
-        elements[0] = elements[0]+jewels[position];
-        elements[1] = elements[1] + (`<div class="jewels-to-show-popup">`+jewels1[position]+`<p>`+`${i+1}`+`</p>`+`</div>`);
+        position = Math.round((Math.random()*23));
+        elements[0] = elements[0]+jewelstocompare[position];
+        elements[1] = elements[1] + (`<div class="jewels-to-show-popup">`+jewelshtmlpopup[position]+`<p>`+`${i+1}`+`</p>`+`</div>`);
     }
     return elements;
 }
@@ -280,7 +324,7 @@ function runningLevel(gameinprogress){
         toast: true,
         position: 'center',
         showConfirmButton: true,
-        timer: 10000,
+        timer: 20000,
         timerProgressBar: true,
       })
     var combination = randomJewelsInyector(gameinprogress.level.logicallevelforjewels);  

@@ -229,7 +229,7 @@
     #main-menu-button{
       width: 100%;
       margin: 9px 0px 0px 0px;
-      max-width: 60px;
+      max-width: 90px;
       background-color: rgb(0 0 0 / 59%);
       float: right;
     }
@@ -239,6 +239,14 @@
     
     .form-floating .mb-3{
       height: 10px;
+    }
+    /*-----about us------*/
+
+    #reigate-photo {
+      width: 200px;
+      height: 155px;
+      float: left;
+      margin: 13px;
     }
 
   }
@@ -650,7 +658,7 @@
   }
   .btn.shapes{
     background-size: cover;
-      border-radius: 50%;
+      border-radius: 6px;
   }
   .joyas{
     background-color: rgba(0,0,0,0.5);
