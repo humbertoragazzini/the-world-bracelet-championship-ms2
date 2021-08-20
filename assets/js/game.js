@@ -296,7 +296,7 @@ function firstSteps(){
     let gameinprogress
     playername = document.getElementById("playername");
     if(playername.value == "" || !regex.test(playername.value)){
-        alert("completa el nombre hijo de mil puta");
+        alert("Please fill the name player, don't use spaces and simbols, thanks..");
     }else{
         newplayer.nameAsig(playername.value);
         gameinprogress = new Game(newplayer);
