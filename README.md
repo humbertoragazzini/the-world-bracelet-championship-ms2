@@ -137,8 +137,7 @@ The big start button its in the beginning of the page, i try to given to the sit
 
 ![The Big Start](readme-files/image/animations/surface/the-new-game-section.gif)
 
-- In the middle of this section we have the text area for a new name, this name cannot contain space and simbols, next or below this text area we put a green button, this button create the new player an start the new game, we add some notifications, alert to tell the user to fillup the player name before start the game.
-- Below the new player section we add a table with all the records of every single player until reach the ammount of 8.
+- In the middle of this section we have the text area for a new name, this name cannot contain space and simbols, next or below this text area we put a green button, this button create the new player an start the new game, we add some notifications, alert to tell the user to fillup the player name before start the game. Below the new player section we add a table with all the records of every single player until reach the ammount of 8.
 
 ![The Big Start](readme-files/image/animations/surface/the-new-player.gif)
 
@@ -146,20 +145,75 @@ The big start button its in the beginning of the page, i try to given to the sit
 
 - The contact section has a contact form with the posibility to send a message to the developer, all the fiels are required and we add popups about error and confirmation email.
 
-![The Big Start](readme-files/image/animations/surface/the-contact-form.gif)
+![The new contact](readme-files/image/animations/surface/the-contact-form.gif)
 
 ### **The new about us section**
 
 - About us is just a small pice of text explaning the idea, how and who did it, a small but really importat paraghrap.
 
-![The Big Start](readme-files/image/animations/surface/the-aboutus.gif)
+![The about us section](readme-files/image/animations/surface/the-aboutus.gif)
 
 ### **Overview of the whole site**
 
 - This is an overview of the site in a mobile device mode:
 
-![The Big Start](readme-files/image/animations/surface/the-overview.gif)
+![An overview](readme-files/image/animations/surface/the-overview.gif)
     
+-----------------------------
+
+# **Testing**
+
+## **Responsive**
+    
+The site it has made to be responsive between 360p to up to 4160px:
+    
+* Image of the mobile web site: 
+   
+   
+    ![The full web gif]()
+    
+* Image to show the responsive design in the web site: 
+   
+   
+    ![The full web gif]()
+
+## **Validators**
+
+**I did the validation for every single page, this are the result:**
+
+* **HTML validation**
+
+    * Index validation:
+    
+    ![index](readme-files/image/validators/html-index-check.png)
 
 
+    * Contact validation:
+    
+    ![contact](readme-files/image/validators/html-contact-check.png)
+
+
+    * About Us validation:
+    
+    ![about us](readme-files/image/validators/html-aboutus-check.png)
+
+* **CSS validation**
+
+    * Css validation result landscape & portrait:
+
+    ![about us](readme-files/image/validators/css-check.png)
+
+* **JShint validation**
+
+    JShint validator (some warnings are because i split the js into a couple of files, so for this reason some functions are variables from others js files):
+
+    * ANIMATION.JS:
+        * ![about us](readme-files/image/validators/animation-js-check.png)
+    * GAME.JS:
+        * ![about us](readme-files/image/validators/game-js-check.png)
+    * SENDEMAIL.JS:
+        * ![about us](readme-files/image/validators/sendemail-js-check.png)
+    * UTILITIES.JS:
+        * ![about us](readme-files/image/validators/utilities-js-check.png)
+## **Testing Web Site**
 
