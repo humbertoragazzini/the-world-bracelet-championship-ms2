@@ -63,9 +63,7 @@ In this section the basic structure will be outlined, and how the information wi
 
 ### **First ideas**
 
-In this section i will show some of the first desing, and the development of this first ideas to a more visual wireframes
-
-[Click Me](https://github.com/humbertoragazzini/the-world-bracelet-championship-ms2/blob/master/readme-files/image/firstideas/firstideas/first-idea.jpg)
+In this section i will show some of the first desing, and the development of this first ideas to a more visual wireframes [Click Me](https://github.com/humbertoragazzini/the-world-bracelet-championship-ms2/blob/master/readme-files/image/firstideas/firstideas/first-idea.jpg)
 
 ### **Wireframes**
 
@@ -93,3 +91,75 @@ With the draws i try to put all that in a more visual wireframe to have a better
 -----------------------------
 
 ## **Surface**
+
+The colors was selected by looking the bracelet made by my wife
+
+Before start coding the index, I did a research about what are the most common mobile and pc resolution around the world.
+
+The most common mobile resolution is:
+
+Resolution | Mobile percentage
+------------ | -------------
+360x640  | 10.77%
+414x896 | 7.37%
+360x780 | 5.9%
+375x667 | 5.56%
+360x800 | 5.52% 
+360x760 | 5.15% 
+
+Data taken from _[statcounter](https://gs.statcounter.com/screen-resolution-stats/mobile/worldwide)_
+
+For this reason i get to the body a minimum width of 360px to ajust to the bast majority of them.
+
+For desktop screen resolution the numbers are different
+
+Resolution | Desktop porcentage
+------------ | -------------
+1920x1080  | 20.99%
+1366x768 | 20.23%
+1536x864 | 9.72%
+1440x900 | 6.23%
+1280x720 | 5.45%
+1600x900 | 3.47%
+
+Between the 1080px and 768px resolution we have almost the 50% of the users, if we add 768px, 864px and 900p we have more than 60% of the users.
+
+### **The big Start**
+
+The big start button its in the beginning of the page, i try to given to the site the real feeling of a mobile or computer game, so i focus my design in some basic game main menu adding to this big button a really gold metal bealt with jewels, and to given even more glamorous colorfullness we add a nice jewel rain (this rain its a randome positionin jewels with width limited in real time).
+
+![The Big Start](readme-files/image/animations/surface/the-start-menu.gif)
+
+
+### **The new game section**
+
+- Here we have the on the top the best score, the level in the game, and a small navbar with the home contact and about us icons, the two squares with score and recods have animation when the player go throu the levels.
+
+![The Big Start](readme-files/image/animations/surface/the-new-game-section.gif)
+
+- In the middle of this section we have the text area for a new name, this name cannot contain space and simbols, next or below this text area we put a green button, this button create the new player an start the new game, we add some notifications, alert to tell the user to fillup the player name before start the game.
+- Below the new player section we add a table with all the records of every single player until reach the ammount of 8.
+
+![The Big Start](readme-files/image/animations/surface/the-new-player.gif)
+
+### **The new contact section**
+
+- The contact section has a contact form with the posibility to send a message to the developer, all the fiels are required and we add popups about error and confirmation email.
+
+![The Big Start](readme-files/image/animations/surface/the-contact-form.gif)
+
+### **The new about us section**
+
+- About us is just a small pice of text explaning the idea, how and who did it, a small but really importat paraghrap.
+
+![The Big Start](readme-files/image/animations/surface/the-aboutus.gif)
+
+### **Overview of the whole site**
+
+- This is an overview of the site in a mobile device mode:
+
+![The Big Start](readme-files/image/animations/surface/the-overview.gif)
+    
+
+
+
