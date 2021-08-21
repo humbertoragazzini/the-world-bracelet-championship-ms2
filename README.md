@@ -2,7 +2,7 @@
 
 Welcome to the most ferocious championship around the world, the bracelet world chapionship is a game where your memory will be put through the limits, you will need to make bracelet folowing diferent patterns, every single mistake or acert will affect in your final score, try now and remember every single jewel count good luck.  
 
-In order to access the website and visit it, you can do it by the following GitHub link: [My Resume Project](https://humbertoragazzini.github.io/ms-1-front-end/)
+In order to access the website and visit it, you can do it by the following GitHub link: [TBWC](https://humbertoragazzini.github.io/the-world-bracelet-championship-ms2/)
 
 # **UX**
 
@@ -210,5 +210,170 @@ The site it has made to be responsive between 360p to up to 4160px:
         * ![about us](readme-files/image/validators/sendemail-js-check.png)
     * UTILITIES.JS:
         * ![about us](readme-files/image/validators/utilities-js-check.png)
+
 ## **Testing Web Site**
 
+## **Testing Web Site**
+
+* Home Page:
+    - Tested:
+        1) Animation working
+        2) Start button working
+        3) Layout okay across all devices
+ 
+            
+* About Us:
+    - Tested:
+        1) Animation working
+        2) Text animation okay
+        3) bootstrap menu working perfect
+        4) Layout okay across all devices
+        5) Records table game working perfet
+        6) buttons working
+        7) Text name input for new player ok.
+        8) Jewel selectr, jewel color selector, popup, random jewel pop by level working okay
+        9) When lose, all popup working record saved in local storage, and restore to fill table.
+        10) All buttons working
+        11) All icons from navbar working ok.
+
+            
+* Contact:
+    - Tested:
+        1) Animation working
+        2) Text input, name input and comment input working okay
+        3) bootstrap menu working perfect
+        4) Layout okay across all devices
+        5) Send message working, popup okay nad error working perfect
+
+## **Unfixed Bugs**
+
+* I did not find any errors, the website was tested on the following devices:
+    - Samsung s9+ (Android) Ver. 
+        - Web Browsers: 
+            - EDGE: Microsoft Edge Versión ver.46.06.4.5161
+            - Chrome: Versión 92.0.4515.159 (Build oficial) (64 bits)
+            - Mozilla: 88.0.1 (64-bit)
+            - Opera: Opera 75 Release date	2021-03-24
+    - Galaxy Tab S4 (Android) Ver.10 - 4.4.205-19646842
+        - Web Browsers: 
+            - EDGE: ver.46.04.4.5157
+            - Chrome: ver.91.0.4472.77
+            - Mozilla: ver.88.1.3
+            - Opera: ver.63.3.3116.58675
+    - Pc (windows 10) Ver.20H2 - 19042.985
+        - Web Browsers: 
+            - EDGE: Versión 92.0.902.73 (Compilación oficial) (64 bits)
+            - Chrome: Versión 92.0.4515.159 (Build oficial) (64 bits)
+            - Mozilla: 90.0.2 (64-bit)
+            - Opera: Opera 75 Release date	2021-03-24
+    - PC (Linux Ubuntu) Ver. 
+        - Web Browsers: 
+            - Mozilla:  
+
+# **Frameworks and Tecnologies**
+
+- HTML5
+
+- CSS
+
+- BOOTSTRAP 5 - _[bootstrap](https://getbootstrap.com/)_.
+
+- GITPOD - _[gimp photo editor](https://imagen.online-convert.com/es/convertir/mp4-a-gif)_.
+
+- GITHUB - _[github](https://github.com/)_.
+
+- W3C VALIDATOR - Validator html and css: _[w3c validator](https://validator.w3.org/)_.
+
+-JShint validator - Validator js: _[js validator](https://jshint.com/)_. 
+
+- GIMP - GIMP photo editor: _[gimp photo editor](https://www.gimp.org/)_.
+
+- ACTION SCREEN RECORDER - Screen recorder: _[ACTION](https://mirillis.com/es/productos/action-grabacion-de-pantalla-y-videojuegos.html)_. 
+
+- Resolve Video Editor - _[Resolve](https://www.blackmagicdesign.com/products/davinciresolve/)_.
+
+- ONLINE-CONVERTER - Video to gif: _[Online converter](https://imagen.online-convert.com/es/convertir/mp4-a-gif)_.
+
+- GOOGLE FONT - Google fonts: _[google font](https://fonts.google.com/)_.
+
+# **Deployment**
+
+## To deploy my project:
+
+1) Go to my github main page and login in.
+
+2) Select the repository, in this case :[Git Hub Repository](https://github.com/humbertoragazzini/the-world-bracelet-championship-ms2).
+    
+3) In this tab select settings.
+    
+4) Click in pages in the option menu.
+    
+5) Select in source branch master.
+    
+6) Save, the project is deployed in github pages in the following link:[TBWC](https://humbertoragazzini.github.io/the-world-bracelet-championship-ms2/)
+
+## **To clone my repository in github**
+
+To clone de repository follow this steps:
+
+1)
+    1.a) In my repository you can click in download.
+
+    1.b) Safe the file an after that uncompressed the file in you desired directory.
+
+    1.c) Now you can open the project with any IDE.
+
+2)
+    2.a) First of all we need to install git from this link [GitBash](https://git-scm.com/downloads) .
+
+    2.b) After install gitbash in the command prompt select the path where you prefer to save the files.
+
+    2.c) Execute the command in gitbash:
+    ```git clone https://github.com/humbertoragazzini/the-world-bracelet-championship-ms2.git ```
+
+    2.d) After this you now can open the project with any ide such a Visual Studio.
+
+# **Credits**
+
+
+## **Content**
+
+**The text:**
+- I have written all the web site text, my wife helped me to fixed them. (Thanks to Yamile Simes)
+
+**The form:** 
+- part of the code was utilized from the official bootstrap website and the code institute learning page
+_[bootstrap form address](https://getbootstrap.com/docs/5.0/forms/overview/)_.
+
+**The icons:** 
+- the icons were used from the font awesome website; The link was provided by the code institute learning page
+_[font awesome web site](https://fontawesome.com/)_.
+
+**The fonts:**  
+- From dafont _[font dafont](https://www.dafont.com/ethnocentric.font/)_.
+
+**Navmenu (desktop):**
+- I used it from code institute learning videos, and make some modifications
+
+**Navmenu (mobile):** 
+- Utilized it from bootstrap dropdown and navbar menus.
+_[navbar bootstrap](https://getbootstrap.com/docs/5.0/components/navbar/)_ / 
+_[dropdown menu bootstrap](https://getbootstrap.com/docs/5.0/components/dropdowns/)_.
+
+**Alerts**
+- Taked from sweetalert2 a really nice project.
+_[sweetalert2](https://sweetalert2.github.io/#usage)_ / 
+
+## **Media**
+
+**Background**: made with GIMP on windows.
+
+**Colors**: maded based in the boxing belt from wba and rainbow
+
+**Videos**: 
+
+- Edited with Resolve. 
+- Recorded with Action.
+
+**Gif**
+- Edited and Converted with onlineconverter _[online converter](https://www.onlineconverter.com/)_.
