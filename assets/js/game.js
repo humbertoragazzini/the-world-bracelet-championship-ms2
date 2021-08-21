@@ -128,7 +128,7 @@ function recoverDataFromLocal(key){
 }
 
 
-//this function make the start menu disapear and make the game apear
+//this function make the start menu disappears and make the game appear
 
 function startGame(){
 
@@ -145,7 +145,7 @@ function startGame(){
 }
 
 
-//this function make posible to select the color and the shape of the jewels
+//this function make possible to select the color and the shape of the jewels
 function fillingBraceletInGame(level){
 
     let white = [`url('assets/image/backgrounds/jewels/heart-white.gif')`,`url('assets/image/backgrounds/jewels/octagon-white.gif')`,`url('assets/image/backgrounds/jewels/oval-white.gif')`,`url('assets/image/backgrounds/jewels/asscher-white.gif')`,`url('assets/image/backgrounds/jewels/marquise-white.gif')`,`url('assets/image/backgrounds/jewels/pear-white.gif')`,`url('assets/image/backgrounds/jewels/trillon-white.gif')`];
@@ -325,7 +325,7 @@ function runningLevel(gameinprogress){
                 runningLevel(gameinprogress);
 
             }else{
-                //the user lose, so next step its record the data in the localstorage
+                //the user loses, so next step is record the data in the localstorage
                 customAlert("Ohh You lose, Remember to complet all the spaces with the correct pattern, and do not leave empty ones.");
                 if(localStorage.length==0)
                 {
@@ -396,7 +396,7 @@ function resetGame(){
     setTimeout(addedOrRemove,200,form,"hidden");
 }
 
-// with this function we create a row of the last users data like name,record, and level
+// with this function we create a row of the last users data, like name,record, and level
 function createCellRecords(name,level,score){
     let table = document.getElementById("recordstable");
     let row =  document.createElement(`tr`);
@@ -413,7 +413,7 @@ function createCellRecords(name,level,score){
     table.appendChild(row);
 }
 
-//because its a array of users, this function give some order to this user array to make them more nice to see it, in this case the order its by record
+//because is an array of users, this function give some order to this user array to make them more nice to see it, in this case the order is by record
 function orderRecords(){
 
     let users = [];
@@ -473,7 +473,7 @@ function maximumRecord(){
 
 }
 
-//when a game finished to avoid duplicated data this function clean the entery table for new data
+//when a game finished to avoid duplicated data this function clean the entire table for new data
 function cleanRowsRecords(){
     let rowstoclean = document.getElementsByClassName("data");
     let aux=rowstoclean.length;

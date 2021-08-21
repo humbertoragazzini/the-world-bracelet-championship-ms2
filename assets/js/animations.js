@@ -1,6 +1,6 @@
 //animations classes
 
-//this class add the posibility to start and stop an animation with his two methods
+//this class add the possibility to start and stop an animation with two methods
 class Animation{
 
   constructor(time,animation,parameter1,parameter2,parameter3){
@@ -99,9 +99,6 @@ function cleanIndex(){
 //--------------------------
 
 //numbers counters, animation for make the numbers change in the points and score squares
-
-
-//function test(){
 
 var probamos = function(data,type){
 for(let i=data.length;i<6;i++)

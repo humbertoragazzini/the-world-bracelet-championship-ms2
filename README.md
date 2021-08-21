@@ -1,6 +1,10 @@
 # The World Bracelet Championship - Project 1 - Humberto Ragazzini
 
-Welcome to the most ferocious championship around the world, the bracelet world chapionship is a game where your memory will be put through the limits, you will need to make bracelet folowing diferent patterns, every single mistake or acert will affect in your final score, try now and remember every single jewel count good luck.  
+Welcome to the fiercest championship around the world, The Bracelet Championship is
+A game where your memory will be put into the limits.
+You will need to make a bracelet following different patterns of Jewels. Each error or
+triumph will affect your final score, try now and remember each jewel counts…
+GOOD LUCK! 
 
 In order to access the website and visit it, you can do it by the following GitHub link: [TBWC](https://humbertoragazzini.github.io/the-world-bracelet-championship-ms2/)
 
@@ -9,30 +13,33 @@ In order to access the website and visit it, you can do it by the following GitH
 
 ## **Strategy**
 
-* **My idea**: The idea born originally when a saw my wife making a bracelet, she need to memorize every single pattern and repeated couples of times to
-make the bracelet looks like a simple geometrical form, In that momment I thought why not, traslate all that conplexitie to a game, an this was the trigger to make this idea real.
+* **My idea**: The original idea was born when I watched my wife create real bracelets, to
+This she needed to memorize each pattern and repeat them several times so that
+The bracelet looks with a certain geometric shape, at that moment I thought
+Why not transfer that complexity into a game. That was the trigger to make this Idea real.
 
-* **Make an impact in the first visit**: The first page have to be a colorful and shocking to make the first visit a pleasurable but at the same time funny moment, for this reason the first page have to be a mix between the bracelet world and the most desired price of a attlete, a gold belt.
+* **Make an impact in the first visit**: The main page had to be colorful and imposing to make the first sight enjoyable and at the same time intriguingly fun.
+For this reason, the first page would have a mix between the bracelet and an athlete's jackpot, a golden belt.
 
-* **My Goal**: The goal is give a player a good time, a challenge at the same time, and with this two things make the player stick in to the game traying to break all records
+* **My Goal**: The objective is to give the player a good time and a challenge. With these two elements draw the attention of the player to break the scores.
 
-* **User Goals**: This goals will sound really similar to my goals, but because we share the love of games, the user goal its find a game to have a nice momment and enjoy that small free time having a memory challenge.
+* **User Goals**: These goals sound like my own goals, not only because we would share a love for games but also to find a unique moment and enjoy that little free time with a memory game.
 
 -----------------------------
 
 ## **Scope**
 
 * **The principal feactures of the proyect:**
-    * The posibility to save records in the local storage.
-    * Save the Name of the user how play the game to.
-    * The maximum level reached by all the users how play the game.
-    * the posibility to see this records by order.
-    * Have a 3 main areas, but the game inself be smooth, without any reaload timme.
-    * Plenty ammount of jewels to make every level in the game unique.
-* **Full Mobile Game**
-    * The game have to be full responsive prioritazing mobile devices.
-    * Adapt the layout with the mayority of the screen resolutions.
-* **Desire Future Feactures**
+    * The possibility to save records in the local storage.
+    * Save the Name of the user who play the game.
+    * The maximum level reached by all the users who play the game.
+    * The possibility to see these records by order.
+    * Have 3 main areas, but the game itself be smooth, without any reload time.
+    * Plenty number of jewels to make every level in the game unique.
+* **Full Mobile Game:**
+    * The game must be full responsive prioritizing mobile devices.
+    * Adapt the layout with most of the screen resolutions.
+* **The principal features of the project:**
     * Online gameplay between two players.
     * Time limit in single player and multiplayer game.
     * A international database with all players records.
@@ -45,17 +52,17 @@ make the bracelet looks like a simple geometrical form, In that momment I though
 
 In this section the basic structure will be outlined, and how the information will be presented.
 
-* **What a guest would like to see the first time:
-    * Colorfull and funny start menu
-    * The sections organices by start game, a contact area, and if some player would like to read how the game was created a small about us section
+* **What a guest would like to see the first time**
+    * Colorful and animated start menu
+    * The sections are organized by start game, a contact area, and if some player would like to read how the game was created a small about us section will be able to see.
 
 * **How I present this sections**
 
-    * First a epic start: The first view in the game have to be a price, a big gold belt with the start button ready to be clicked or pressed.
-    * After the start menu: A create new player option with the all the records in a table to make them easy to read.
-    * In the game: The player need a smooth transition between a lose and a new game,with mininmum or without loading times, if its possible in the same index.
-    * A contact section: Here a small form to share opinions about the game or future new feactures, and if is any bug to be reported.
-    * An About Us section: this particular game was created by a seed, a small seed from somthing a saw, in this section i have to explain how this grow. 
+    * First an epic start: The first view in the game a price, a big golden belt with the start button ready to be clicked or pressed.
+    * After the start menu: Create new player option with the all the records in a table to make them easy to read.
+    * In the game: The player needs a smooth transition between a loss and a new game, with minimum or without loading times, if it’s possible in the same index.
+    * A contact section: Here a small form to share opinions about the game or future new features, and if is any bug to be reported.
+    * An About Us section: this game was created by a seed, a small seed from something there I saw, in this section I explain how this grow.
         
 -----------------------------
 
@@ -63,11 +70,11 @@ In this section the basic structure will be outlined, and how the information wi
 
 ### **First ideas**
 
-In this section i will show some of the first desing, and the development of this first ideas to a more visual wireframes [Click Me](https://github.com/humbertoragazzini/the-world-bracelet-championship-ms2/blob/master/readme-files/image/firstideas/first-idea.jpg)
+In this section I present some of the first designs and the development of the first ideas to a more visual wireframe. [Click Me](https://github.com/humbertoragazzini/the-world-bracelet-championship-ms2/blob/master/readme-files/image/firstideas/first-idea.jpg)
 
 ### **Wireframes**
 
-With the draws i try to put all that in a more visual wireframe to have a better idea of the future final desing
+With the drawers I tried to place all in a more visual wireframe to have a better idea of the final future design
 
 * **Desktop Start Menu with rain of jewels:**[Click Me](https://github.com/humbertoragazzini/the-world-bracelet-championship-ms2/blob/master/readme-files/image/wireframes/wirefram-desktop-start.png)
 
@@ -92,9 +99,9 @@ With the draws i try to put all that in a more visual wireframe to have a better
 
 ## **Surface**
 
-The colors was selected by looking the bracelet made by my wife
+The colors were selected by looking the different bracelets made by my wife.
 
-Before start coding the index, I did a research about what are the most common mobile and pc resolution around the world.
+Before starting to make the index code, I did a research on what are the most common resolutions for mobile phones and PCs around the world
 
 The most common mobile resolution is:
 
@@ -126,30 +133,30 @@ Between the 1080px and 768px resolution we have almost the 50% of the users, if 
 
 ### **The big Start**
 
-The big start button its in the beginning of the page, i try to given to the site the real feeling of a mobile or computer game, so i focus my design in some basic game main menu adding to this big button a really gold metal bealt with jewels, and to given even more glamorous colorfullness we add a nice jewel rain (this rain its a randome positionin jewels with width limited in real time).
+The big start button is in the beginning of the page, I try to bestow to the site the real feeling of a mobile or computer game, so I focused my design in some basic main menu game adding to this big button a golden metal belt with jewels, and to provide even more glamorous colorfulness we add a nice jewel rain (this rain is a random positioning jewels with width limited in real time).
 
 ![The Big Start](readme-files/image/animations/surface/the-start-menu.gif)
 
 
 ### **The new game section**
 
-- Here we have the on the top the best score, the level in the game, and a small navbar with the home contact and about us icons, the two squares with score and recods have animation when the player go throu the levels.
+- Here we have on the top the best score, the level in the game, and a small navbar with the home contact and about us icons, the two squares with score and record contains animation when the player go through the levels.
 
-![The Big Start](readme-files/image/animations/surface/the-new-game-section.gif)
+![The new game section](readme-files/image/animations/surface/the-new-game-section.gif)
 
-- In the middle of this section we have the text area for a new name, this name cannot contain space and simbols, next or below this text area we put a green button, this button create the new player an start the new game, we add some notifications, alert to tell the user to fillup the player name before start the game. Below the new player section we add a table with all the records of every single player until reach the ammount of 8.
+- In the middle of this section, we have the text area for a new name, this name cannot contain space or symbols, next or below this text section we put a green button, this button creates the new player and start the new game, we add some notifications, alerts to tell the user to fill up the player’s name before starting the game. Below the new player segment, we add a table with all the records of every single player until reach the amount of 8.
 
-![The Big Start](readme-files/image/animations/surface/the-new-player.gif)
+![The new game section](readme-files/image/animations/surface/the-new-player.gif)
 
 ### **The new contact section**
 
-- The contact section has a contact form with the posibility to send a message to the developer, all the fiels are required and we add popups about error and confirmation email.
+- The contact place has a contact form with the option to send a message to the developer, all the fields are required, and we add pop-ups about error and confirmation email.
 
 ![The new contact](readme-files/image/animations/surface/the-contact-form.gif)
 
 ### **The new about us section**
 
-- About us is just a small pice of text explaning the idea, how and who did it, a small but really importat paraghrap.
+- About us is a small piece of text telling the story of who, how and why this game was developed, it is small but an important paragraph
 
 ![The about us section](readme-files/image/animations/surface/the-aboutus.gif)
 
@@ -231,8 +238,8 @@ The site it has made to be responsive between 360p to up to 4160px:
         5) Records table game working perfet
         6) buttons working
         7) Text name input for new player ok.
-        8) Jewel selectr, jewel color selector, popup, random jewel pop by level working okay
-        9) When lose, all popup working record saved in local storage, and restore to fill table.
+        8) Jewel selector, jewel color selector, pop-up, random jewel pop by level working okay
+        9) When lose, all pop-up working record saved in local storage, and restore to fill table.
         10) All buttons working
         11) All icons from navbar working ok.
 
@@ -243,7 +250,7 @@ The site it has made to be responsive between 360p to up to 4160px:
         2) Text input, name input and comment input working okay
         3) bootstrap menu working perfect
         4) Layout okay across all devices
-        5) Send message working, popup okay nad error working perfect
+        5) Send message working, popup okay and error working perfect
 
 ## **Unfixed Bugs**
 
@@ -272,13 +279,15 @@ The site it has made to be responsive between 360p to up to 4160px:
     - Iphone 12 Pro (IOS) ver.14.6
         - Web Browsers:
             - Zafari: ver. 14
-            - The game after selecting the jewel gives the lost game message, which is wrong, unfortunately, I have no way to debug the error, because in my economic situation I cannot spend on an iphone, mac, or a subscription to a page such as https://www.browserstack.com/ for the costs that they would generate.
+            - The game after selecting the jewel gives the lost game message, which is wrong, unfortunately, I have no way to debug the error, because in my economic situation I cannot spend on an iphone, mac, or a subscription to a page such as https://www.browserstack.com/ All of these sites only give me between 1 and 5 minutes, so it is impossible to verify what the error is..
 
 # **Frameworks and Tecnologies**
 
 - HTML5
 
 - CSS
+
+- JS
 
 - BOOTSTRAP 5 - _[bootstrap](https://getbootstrap.com/)_.
 
@@ -288,7 +297,7 @@ The site it has made to be responsive between 360p to up to 4160px:
 
 - W3C VALIDATOR - Validator html and css: _[w3c validator](https://validator.w3.org/)_.
 
--JShint validator - Validator js: _[js validator](https://jshint.com/)_. 
+- JShint validator - Validator js: _[js validator](https://jshint.com/)_. 
 
 - GIMP - GIMP photo editor: _[gimp photo editor](https://www.gimp.org/)_.
 
