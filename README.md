@@ -16,7 +16,7 @@ make the bracelet looks like a simple geometrical form, In that momment I though
 
 * **My Goal**: The goal is give a player a good time, a challenge at the same time, and with this two things make the player stick in to the game traying to break all records
 
-* **My Goal**: This goals will sound really similar to my goals, but because we share the love of games, the user goal its find a game to have a nice momment and enjoy that small free time having a memory challenge.
+* **User Goals**: This goals will sound really similar to my goals, but because we share the love of games, the user goal its find a game to have a nice momment and enjoy that small free time having a memory challenge.
 
 -----------------------------
 
@@ -63,7 +63,7 @@ In this section the basic structure will be outlined, and how the information wi
 
 ### **First ideas**
 
-In this section i will show some of the first desing, and the development of this first ideas to a more visual wireframes [Click Me](https://github.com/humbertoragazzini/the-world-bracelet-championship-ms2/blob/master/readme-files/image/firstideas/firstideas/first-idea.jpg)
+In this section i will show some of the first desing, and the development of this first ideas to a more visual wireframes [Click Me](https://github.com/humbertoragazzini/the-world-bracelet-championship-ms2/blob/master/readme-files/image/firstideas/first-idea.jpg)
 
 ### **Wireframes**
 
