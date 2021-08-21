@@ -269,6 +269,10 @@ The site it has made to be responsive between 360p to up to 4160px:
     - PC (Linux Ubuntu) Ver. 
         - Web Browsers: 
             - Mozilla:  
+    - Iphone 12 Pro (IOS) ver.14.6
+        - Web Browsers:
+            - Zafari: ver. 14
+            - The game after selecting the jewel gives the lost game message, which is wrong, unfortunately, I have no way to debug the error, because in my economic situation I cannot spend on an iphone, mac, or a subscription to a page such as https://www.browserstack.com/ for the costs that they would generate.
 
 # **Frameworks and Tecnologies**
 
