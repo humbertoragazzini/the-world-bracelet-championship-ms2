@@ -20,7 +20,7 @@ body p {
   margin-top: 0px;
   margin-bottom: 0rem;
 }
-/*this is the styling of the main background, its not include the jewels, its just the gold background one*/
+/*this is the styling of the main background, not included the jewels, is just the gold background one*/
 
 #animated-background{
   background-image: url('../image/backgrounds/background.png');
@@ -37,7 +37,7 @@ body p {
   height: 5%;
 }
 
-/*staling of the boxing belt*/
+/*styling of the boxing belt*/
 
 #image-background{
  position: relative;
@@ -64,7 +64,7 @@ body p {
   text-decoration: none;
 }
 
-/*this propertie is for the div, this div contain the image of the jewels*/
+/*this property is for the div, this div contain the image of the jewels*/
 
 .moving-jewels{
   display: block;
